@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Your Name] - PhD Candidate in Economics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tab-button.active { 
+            border-bottom-color: #2563eb; 
+            color: #2563eb; 
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">[Your Full Name]</h1>
+                    <p class="text-lg text-gray-600 mt-1">PhD Candidate in Economics</p>
+                    <p class="text-sm text-gray-500">[University Name] • Expected Graduation: [Year]</p>
+                </div>
+                <div class="flex gap-3">
+                    <a href="mailto:your.email@university.edu" class="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                        <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                        Contact
+                    </a>
+                    <a href="cv.pdf" target="_blank" class="inline-flex items-center px-3 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">
+                        <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="bg-white border-b">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex space-x-8 overflow-x-auto">
+                <button onclick="showTab('bio')" class="tab-button active flex items-center gap-2 py-4 px-2 border-b-2 font-medium text-sm whitespace-nowrap transition-colors border-blue-600 text-blue-600">
+                    <i data-lucide="users" class="w-4 h-4"></i>
+                    Bio
+                </button>
+                <button onclick="showTab('research')" class="tab-button flex items-center gap-2 py-4 px-2 border-b-2 font-medium text-sm whitespace-nowrap transition-colors border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                    <i data-lucide="book-open" class="w-4 h-4"></i>
+                    Research
+                </button>
+                <button onclick="showTab('teaching')" class="tab-button flex items-center gap-2 py-4 px-2 border-b-2 font-medium text-sm whitespace-nowrap transition-colors border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                    <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                    Teaching
+                </button>
+                <button onclick="showTab('github')" class="tab-button flex items-center gap-2 py-4 px-2 border-b-2 font-medium text-sm whitespace-nowrap transition-colors border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                    GitHub
+                </button>
+                <button onclick="showTab('cv')" class="tab-button flex items-center gap-2 py-4 px-2 border-b-2 font-medium text-sm whitespace-nowrap transition-colors border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    CV
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-8">
+        <!-- Bio Tab -->
+        <div id="bio" class="tab-content active">
+            <div class="space-y-8">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="md:col-span-2">
+                        <div class="bg-white rounded-lg shadow-sm border">
+                            <div class="p-6 border-b">
+                                <h2 class="text-xl font-semibold">About Me</h2>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-gray-700 leading-relaxed mb-4">
+                                    I am a PhD candidate in Economics at [University Name], specializing in [your research areas, e.g., labor economics, development economics, industrial organization]. My research focuses on [brief description of your research interests and methodology].
+                                </p>
+                                <p class="text-gray-700 leading-relaxed mb-4">
+                                    My dissertation examines [brief description of dissertation topic]. I employ [methods/approaches] to investigate [research questions]. This work contributes to our understanding of [broader implications].
+                                </p>
+                                <p class="text-gray-700 leading-relaxed mb-4">
+                                    Prior to my doctoral studies, I completed my [previous degree] at [previous institution] in [year]. I have experience in [relevant experience, research methods, policy work, etc.].
+                                </p>
+                                <p class="text-gray-700 leading-relaxed">
+                                    I am currently on the academic job market for the [Year-Year] cycle and will be available for interviews at the ASSA meetings in [Location, Month Year].
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white rounded-lg shadow-sm border p-6">
+                            <div class="text-center">
+                                <div class="w-48 h-48 bg-gray-200 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                                    <span class="text-gray-500">Professional Photo</span>
+                                </div>
+                                <h3 class="font-semibold text-lg mb-2">[Your Name]</h3>
+                                <p class="text-gray-600 text-sm mb-4">PhD Candidate in Economics</p>
+                                <div class="space-y-2 text-sm text-gray-600">
+                                    <p><strong>Office:</strong> [Building, Room Number]</p>
+                                    <p><strong>Email:</strong> [your.email@university.edu]</p>
+                                    <p><strong>Phone:</strong> [Your Phone Number]</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Research Tab -->
+        <div id="research" class="tab-content">
+            <div class="space-y-8">
+                <!-- Job Market Paper -->
+                <div class="bg-white rounded-lg shadow-sm border">
+                    <div class="p-6 border-b">
+                        <h2 class="text-xl font-semibold">Job Market Paper</h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-3">"[Title of Your Job Market Paper]"</h3>
+                            <p class="text-gray-700 mb-4 leading-relaxed">
+                                [Abstract or detailed description of your job market paper. Include the main research question, methodology, key findings, and policy implications. This should be 3-4 sentences that clearly communicate the contribution and importance of your work.]
+                            </p>
+                            <div class="flex gap-3">
+                                <a href="#" class="inline-flex items-center px-3 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">
+                                    <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
+                                    Paper (PDF)
+                                </a>
+                                <a href="#" class="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                    Slides
+                                </a>
+                                <a href="#" class="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                    Online Appendix
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Working Papers -->
+                <div class="bg-white rounded-lg shadow-sm border">
+                    <div class="p-6 border-b">
+                        <h2 class="text-xl font-semibold">Working Papers</h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-gray-300 pl-6">
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">"[Working Paper Title 1]"</h4>
+                                <p class="text-sm text-gray-600 mb-2">[Co-authors if any]</p>
+                                <p class="text-gray-700 mb-3">[Brief description of the paper, research question, and main findings]</p>
+                                <div class="flex gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">Draft</a>
+                                    <a href="#" class="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">Slides</a>
+                                </div>
+                            </div>
+                            <div class="border-l-4 border-gray-300 pl-6">
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">"[Working Paper Title 2]"</h4>
+                                <p class="text-sm text-gray-600 mb-2">[Co-authors if any]</p>
+                                <p class="text-gray-700 mb-3">[Brief description of the paper, research question, and main findings]</p>
+                                <div class="flex gap-2">
+                                    <a href="#" class="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">Draft</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Applications -->
+                <div class="bg-white rounded-lg shadow-sm border">
+                    <div class="p-6 border-b">
+                        <h2 class="text-xl font-semibold">Interactive Applications</h2>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3">[Your Shiny App Title]</h3>
+                                <p class="text-gray-700 mb-4">
+                                    [Brief description of what your Shiny app does, what data it uses, and how it relates to your research]
+                                </p>
+                                <div class="flex gap-3 mb-4">
+                                    <a href="[YOUR_POSIT_SHINY_APP_URL]" target="_blank" class="inline-flex items-center px-3 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">
+                                        Open Full App
+                                    </a>
+                                    <a href="https://github.com/yourusername/shiny-app-repo" target="_blank" class="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                                        <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                                        Source Code
+                                    </a>
+                                </div>
+                                <!-- Embedded Shiny App -->
+                                <div class="border rounded-lg overflow-hidden">
+                                    <div class="bg-gray-50 px-4 py-2 border-b">
+                                        <p class="text-sm text-gray-600">Interactive Preview (Full functionality available in new tab)</p>
+                                    </div>
+                                    <iframe src="[YOUR_POSIT_SHINY_APP_URL]" width="100%" height="600" frameborder="0" class="w-full" title="[Your Shiny App Title]"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teaching Tab -->
+        <div id="teaching" class="tab-content">
+            <div class="bg-white rounded-lg shadow-sm border">
+                <div class="p-6 border-b">
+                    <h2 class="text-xl font-semibold">Teaching Experience</h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-8">
+                        <!-- Teaching Assistant -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4 border-b pb-2">Teaching Assistant</h3>
+                            <div class="space-y-4">
+                                <div class="grid md:grid-cols-3 gap-4 p-4 bg-gray-50 rounded-lg">
+                                    <div>
+                                        <h4 class="font-semibold text-gray-900">[Course Name]</h4>
+                                        <p class="text-sm text-gray-600">Professor: [Professor Name]</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-600">Level: [Undergraduate/Graduate]</p>
+                                        <p class="text-sm text-gray-600">Enrollment: [Number] students</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-600">[Semester Year]</p>
+                                        <a href="#" class="inline-block mt-2 px-3 py-1 border border-gray-300 rounded text-sm bg-white hover:bg-gray-50">Evaluations</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Instructor -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4 border-b pb-2">Instructor of Record</h3>
+                            <div class="grid md:grid-cols-3 gap-4 p-4 bg-blue-50 rounded-lg">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">[Course Name]</h4>
+                                    <p class="text-sm text-gray-600">[Course Description]</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">Level: [Undergraduate/Graduate]</p>
+                                    <p class="text-sm text-gray-600">Enrollment: [Number] students</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-600">[Semester Year]</p>
+                                    <div class="flex gap-2 mt-2">
+                                        <a href="#" class="px-3 py-1 border border-gray-300 rounded text-sm bg-white hover:bg-gray-50">Syllabus</a>
+                                        <a href="#" class="px-3 py-1 border border-gray-300 rounded text-sm bg-white hover:bg-gray-50">Evaluations</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Teaching Philosophy -->
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4 border-b pb-2">Teaching Philosophy</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                [Brief statement about your teaching philosophy, approach to student learning, and pedagogical methods. This should be 2-3 sentences highlighting your commitment to effective teaching and student success.]
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GitHub Tab -->
+        <div id="github" class="tab-content">
+            <div class="bg-white rounded-lg shadow-sm border">
+                <div class="p-6 border-b">
+                    <h2 class="text-xl font-semibold flex items-center gap-2">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                        Code & Data Repository
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-6">
+                        <div class="text-center p-6 bg-gray-50 rounded-lg">
+                            <i data-lucide="github" class="w-12 h-12 mx-auto mb-4 text-gray-600"></i>
+                            <h3 class="text-lg font-semibold mb-2">GitHub Profile</h3>
+                            <p class="text-gray-600 mb-4">Access replication code, datasets, and computational tools for my research</p>
+                            <a href="https://github.com/yourusername" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700">
+                                <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                                Visit GitHub Profile
+                            </a>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">Technical Skills</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-medium text-gray-900 mb-2">Statistical Software</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Stata</span>
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">R</span>
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Python</span>
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">MATLAB</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 mb-2">Other Tools</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Git</span>
+                                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">LaTeX</span>
+                                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">SQL</span>
+                                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">GIS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CV Tab -->
+        <div id="cv" class="tab-content">
+            <div class="bg-white rounded-lg shadow-sm border">
+                <div class="p-6 border-b">
+                    <h2 class="text-xl font-semibold">Curriculum Vitae</h2>
+                </div>
+                <div class="p-6">
+                    <div class="text-center mb-8">
+                        <a href="cv.pdf" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-md text-lg font-medium hover:bg-blue-700">
+                            <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
+                            Download Complete CV (PDF)
+                        </a>
+                        <p class="text-sm text-gray-600 mt-2">Last updated: [Date]</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4 border-b pb-2">Education</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-semibold">PhD in Economics</h4>
+                                    <p class="text-gray-600">[University Name]</p>
+                                    <p class="text-sm text-gray-500">Expected [Month Year]</p>
+                                    <p class="text-sm text-gray-600 mt-1">
+                                        Dissertation: "[Dissertation Title]"<br>
+                                        Committee: [Advisor Name] (Chair), [Member 2], [Member 3]
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">[Previous Degree, e.g., MA in Economics]</h4>
+                                    <p class="text-gray-600">[University Name]</p>
+                                    <p class="text-sm text-gray-500">[Year]</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4 border-b pb-2">Fields of Interest</h3>
+                            <div class="space-y-2">
+                                <p><strong>Primary:</strong> [Your primary field]</p>
+                                <p><strong>Secondary:</strong> [Your secondary fields]</p>
+                            </div>
+
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4 mt-6 border-b pb-2">Honors & Awards</h3>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span>[Award/Fellowship Name]</span>
+                                    <span class="text-gray-600">[Year]</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>[Award/Fellowship Name]</span>
+                                    <span class="text-gray-600">[Year]</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-16">
+        <div class="max-w-6xl mx-auto px-6 py-8">
+            <div class="text-center">
+                <p class="text-gray-600 mb-4">[Your Name] • PhD Candidate in Economics • [University Name]</p>
+                <div class="flex justify-center space-x-6 text-sm">
+                    <a href="mailto:your.email@university.edu" class="text-gray-600 hover:text-gray-900">your.email@university.edu</a>
+                    <a href="https://github.com/yourusername" class="text-gray-600 hover:text-gray-900">GitHub</a>
+                    <a href="https://linkedin.com/in/yourprofile" class="text-gray-600 hover:text-gray-900">LinkedIn</a>
+                </div>
+                <p class="text-xs text-gray-500 mt-4">
+                    Last updated: <span id="current-date"></span> • On the job market [Academic Year]
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Set current date
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
+
+        // Tab functionality
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all tab buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+                button.classList.add('border-transparent', 'text-gray-500');
+                button.classList.remove('border-blue-600', 'text-blue-600');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked tab button
+            event.target.closest('.tab-button').classList.add('active');
+            event.target.closest('.tab-button').classList.remove('border-transparent', 'text-gray-500');
+            event.target.closest('.tab-button').classList.add('border-blue-600', 'text-blue-600');
+        }
+    </script>
+</body>
+</html>
