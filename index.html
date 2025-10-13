@@ -87,10 +87,11 @@
       </div>
       <!-- End of improved info row -->
       <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-        <button onclick="showTab('research')" class="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded font-medium hover:bg-gray-800 transition-colors">
+        <button onclick="showResearchSection()" class="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded font-medium hover:bg-gray-800 transition-colors">
           <i data-lucide="book-open" class="w-4 h-4 mr-2"></i>
           Research
         </button>
+
         <a href="https://www.dropbox.com/scl/fi/1imo8sb7k49kniwvqws25/PAIVAPINTO_Resume_0825_General.pdf?rlkey=x194nfisiqjick5idcl8syju0&amp;st=8r4jqusz&amp;dl=0"
        target="_blank" rel="noopener noreferrer"
        class="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded font-medium hover:bg-gray-50 transition-colors">
@@ -571,7 +572,7 @@
         // Set current date
         document.getElementById('current-date').textContent = new Date().toLocaleDateString();
 
-        // Tab functionality
+               // Tab functionality
         function showTab(tabName) {
             // Hide all tab contents
             const tabContents = document.querySelectorAll('.tab-content');
@@ -600,6 +601,15 @@
             }
         }
 
+        // Research Tab Function
+        function showResearchSection() {
+            showTab('research');
+            const researchSection = document.getElementById('research');
+            if (researchSection) {
+                researchSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
         // Initialize with research tab active
         document.addEventListener('DOMContentLoaded', function() {
             showTab('about');
@@ -607,3 +617,4 @@
     </script>
 </body>
 </html>
+
