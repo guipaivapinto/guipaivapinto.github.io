@@ -17,6 +17,7 @@
     background-attachment: fixed;
 }
 
+        
 /* On small screens, avoid the heavy fixed parallax and save space perception */
 @media (max-width: 768px) {
   .hero-bg {
@@ -259,16 +260,30 @@
                 
                 <!-- Job Market Paper -->
                 <div class="bg-white rounded-lg shadow-sm border p-8 mb-8">
-                  <div class="flex items-start gap-4 mb-6">
-                    <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <i data-lucide="star" class="w-6 h-6 text-white"></i>
+                  <!-- Top bar: icon + title (left) AND big crimson button (right) -->
+                  <div class="flex items-start justify-between gap-4 mb-6">
+                    <div class="flex items-start gap-4">
+                      <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="star" class="w-6 h-6 text-white"></i>
+                      </div>
+                      <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Job Market Paper</h3>
+                        <p class="text-gray-600">Primary research contribution</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 class="text-xl font-bold text-gray-900 mb-2">Job Market Paper</h3>
-                      <p class="text-gray-600">Primary research contribution</p>
-                    </div>
-                  </div>
                 
+                    <!-- Big crimson button -->
+                    <a
+                      href="https://www.dropbox.com/scl/fi/0dgvw2l3jr7zorr1eqsay/GPP_JMP_OCTOBER_V3.pdf?rlkey=0t9h8mnv6audsojyeo21ye0nk&st=m8vb61mk&dl=0"
+                      target="_blank" rel="noopener noreferrer"
+                      class="inline-flex items-center rounded-md font-semibold text-white px-5 py-3 text-sm md:text-base shadow transition transform hover:brightness-95 hover:-translate-y-[1px]"
+                      style="background-color:#DC143C"
+                    >
+                      <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
+                      Download Job Market Paper
+                    </a>
+                  </div>
+
                   <div class="bg-gray-50 rounded-lg p-6">
                     <h4 class="text-lg font-semibold text-gray-900 mb-3">
                       External Negotiations and Customs Union Stability
@@ -288,37 +303,12 @@
                       <li><strong>Policy Application:</strong> Applied the framework to major episodes including EU–Mercosur negotiations, Uruguay–USA track, Uruguay–China FTA talks, and the USA–China trade war spillovers.</li>
                       <li><strong>Main Results:</strong> Collective bargaining rents raise the value of staying in the bloc, while unanimity rules and asymmetric sectoral gains slow external deal-making — explaining Mercosur’s “stable yet stumbling” outcome.</li>
                     </ul>
-                                      <a href="https://www.dropbox.com/scl/fi/0dgvw2l3jr7zorr1eqsay/GPP_JMP_OCTOBER_V3.pdf?rlkey=0t9h8mnv6audsojyeo21ye0nk&st=m8vb61mk&dl=0"
-   target="_blank" rel="noopener noreferrer"
-   class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded text-sm hover:bg-gray-800 transition-colors">
-  <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
-  Job Market Paper (PDF) 
-</a>
+    
                   </div>
 
     
                 </div>
 
-                
-
-                <!-- Notebook LM explainer + video -->
-<div class="mt-8">
-  <h4 class="text-lg font-semibold mb-2">Research Behind My Job Market Paper</h4>
-  <p class="text-gray-700 mb-4">
-    The Notebook&nbsp;LM generated a short video that explains the core ideas behind my JMP.
-  </p>
-
-  <!-- Responsive 16:9 iframe -->
-  <div class="relative w-full max-w-4xl rounded-lg overflow-hidden shadow" style="padding-top:56.25%">
-    <!-- Uses the MP4 that’s already in the repo root -->
-    <iframe
-      src="/Mercosur_s_Stumbling_Bloc%20(1).mp4"
-      title="JMP explainer video"
-      class="absolute inset-0 w-full h-full border-0"
-      allow="autoplay; encrypted-media; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  </div>
 
   <!-- Fallback: open the video directly -->
   <p class="text-sm text-gray-500 mt-2">
@@ -419,6 +409,38 @@
                 </div>
             </div>
         </div>
+
+        <!-- JMP Explainer Video (Centered Card at the End) -->
+<div class="bg-white rounded-lg shadow-sm border p-8 mt-8">
+  <div class="flex items-start gap-4 mb-6">
+    <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0">
+      <i data-lucide="play-circle" class="w-6 h-6 text-white"></i>
+    </div>
+    <div>
+      <h3 class="text-xl font-bold text-gray-900 mb-2">JMP Explainer Video</h3>
+      <p class="text-gray-600">A short video generated by Notebook&nbsp;LM explaining the core ideas behind my Job Market Paper.</p>
+    </div>
+  </div>
+
+  <div class="bg-gray-50 rounded-lg p-6">
+    <div class="max-w-4xl mx-auto">
+      <!-- Responsive 16:9 iframe container -->
+      <div class="relative w-full rounded-lg overflow-hidden shadow" style="padding-top:56.25%">
+        <iframe
+          src="/Mercosur_s_Stumbling_Bloc%20(1).mp4"
+          title="JMP explainer video"
+          class="absolute inset-0 w-full h-full border-0"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p class="text-sm text-gray-500 mt-3 text-center">
+        If the player doesn’t load, <a href="/Mercosur_s_Stumbling_Bloc%20(1).mp4" class="text-blue-600 underline">open the video directly</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
 
         <!-- Teaching Tab -->
         <div id="teaching" class="tab-content">
