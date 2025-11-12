@@ -60,12 +60,15 @@
   min-height: 60vh;
 }
 .about-right {
-  background-image: url('fortaleza-lighthouse.jpg'); /* use your image */
+  /* Remove lighthouse image from About panel */
+  background-image: none;
+  background-color: #f8fafc; /* subtle light gray background */
   background-size: cover;
   background-position: center;
   border-radius: 0.5rem;
   min-height: 320px;
 }
+
 @media (max-width: 1024px) {
   .about-split {
     grid-template-columns: 1fr;
@@ -173,30 +176,6 @@
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-12">
         <!-- About Tab -->
-        /* About: two-column split with background image only on the right */
-.about-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  min-height: 60vh;
-}
-.about-right {
-  background-image: url('fortaleza-lighthouse.jpg'); /* use your image */
-  background-size: cover;
-  background-position: center;
-  border-radius: 0.5rem;
-  min-height: 320px;
-}
-@media (max-width: 1024px) {
-  .about-split {
-    grid-template-columns: 1fr;
-  }
-  .about-right {
-    order: -1;            /* image on top when stacked */
-    height: 40vh;
-  }
-}
-
         <!-- Research Tab -->
         <div id="research" class="tab-content active">
             <div class="max-w-6xl mx-auto">
