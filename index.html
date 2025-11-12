@@ -11,11 +11,20 @@
         body { font-family: 'Inter', sans-serif; }
         
         .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('fortaleza-lighthouse.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('fortaleza-lighthouse.jpg');
+    background-size: cover;
+    background-position: center 35%; /* nudge focus upward to reduce empty sky/foreground */
+    background-attachment: fixed;
+}
+
+/* On small screens, avoid the heavy fixed parallax and save space perception */
+@media (max-width: 768px) {
+  .hero-bg {
+    background-attachment: scroll;
+    background-position: center 30%;
+  }
+}
+
         
         .section-nav {
             position: fixed;
@@ -84,9 +93,9 @@
 <body class="bg-gray-50 text-gray-900">
 
     <!-- Hero Section -->
-<section id="hero" class="min-h-screen hero-bg flex items-center justify-center md:justify-start relative">
+<section id="hero" class="min-h-[60vh] md:min-h-[70vh] hero-bg flex items-center justify-center md:justify-start relative py-10 md:py-16">
   <div class="container px-6 text-center md:text-left relative z-10">
-    <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-12 max-w-2xl shadow-2xl ml-0 md:ml-55">
+    <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-8 md:p-12 max-w-2xl shadow-2xl ml-0">
       <h1 class="text-5xl font-bold text-gray-900 mb-4">
         Guilherme Paiva Pinto
       </h1>
@@ -136,7 +145,7 @@
 </section>
 
      <!-- Attribution for Fortaleza lighthouse -->
-  <div class="absolute bottom-4 right-4 text-white text-xs opacity-70">
+  <div class="absolute bottom-3 right-3 text-white text-[10px] md:text-xs opacity-70">
     Historic Lighthouse, Fortaleza, Ceará<br>
     <span class="text-xs">David Moraes de Andrade, CC BY 3.0</span>
   </div>
