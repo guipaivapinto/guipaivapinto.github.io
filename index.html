@@ -52,6 +52,30 @@
             background-color: #374151;
             color: white;
         }
+        /* About: two-column split with background image only on the right */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  min-height: 60vh;
+}
+.about-right {
+  background-image: url('fortaleza-lighthouse.jpg'); /* use your image */
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5rem;
+  min-height: 320px;
+}
+@media (max-width: 1024px) {
+  .about-split {
+    grid-template-columns: 1fr;
+  }
+  .about-right {
+    order: -1;            /* image on top when stacked */
+    height: 40vh;
+  }
+}
+
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -149,68 +173,29 @@
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-12">
         <!-- About Tab -->
-        <div id="about" class="tab-content">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">About Me</h2>
-                
-                <div class="grid lg:grid-cols-3 gap-12">
-    <!-- Card with photo, name, contacts on the left -->
-    <div class="lg:col-span-1">
-        <div class="bg-gray-100 rounded-lg p-8 text-center">
-            <img src="WhatsApp Image 2025-07-15 at 11.11.50 AM.jpeg"
-                alt="Guilherme Paiva Pinto"
-                class="w-48 h-48 object-cover rounded-lg mx-auto mb-4 shadow-lg border-4 border-white bg-gray-200" />
-            <h3 class="font-semibold text-lg mb-2">Guilherme Paiva Pinto</h3>
-            <p class="text-gray-600 text-sm mb-4">PhD Candidate in Economics</p>
-            <div class="space-y-3 text-sm">
-                <div class="flex items-center gap-2">
-                    <i data-lucide="mail" class="w-4 h-4 text-gray-500"></i>
-                    <span>gppinto@iu.edu</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i data-lucide="map-pin" class="w-4 h-4 text-gray-500"></i>
-                    <span>Bloomington, IN</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i data-lucide="linkedin" class="w-4 h-4 text-gray-500"></i>
-                    <a href="https://linkedin.com/in/guilhermepaivap" target="_blank" class="text-gray-600 hover:text-gray-900">LinkedIn</a>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i data-lucide="github" class="w-4 h-4 text-gray-500"></i>
-                    <a href="https://github.com/guilhermepaivap" target="_blank" class="text-gray-600 hover:text-gray-900">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bio on the right -->
-    <div class="lg:col-span-2 flex flex-col justify-center">
-        <div class="prose prose-lg max-w-none">
-            <p class="text-gray-700 leading-relaxed mb-6">
-                I am a PhD candidate in Economics at <strong>Indiana University</strong>, specializing in 
-                <strong>Applied Economics with focus on International Trade and Political Economy</strong>. 
-                My current main research focuses on the dynamics of trade agreements, customs union stability, and 
-                policy coordination across emerging economies, particularly in Latin America. I also work with the 
-                intersection between Public Finance and Political Economy, with special focus on public banks, budgetary
-                processes and social expenditure. Currently, I am also a Graduate Assistant at the Tobias Center for Innovation 
-                in International Development. 
-            </p>
-            <div class="bg-gray-50 rounded-lg p-6 mt-8">
-                <h4 class="font-semibold text-gray-900 mb-3">Research Interests</h4>
-                <ul class="text-gray-700 space-y-1">
-                    <li>• International Trade Theory and Policy</li>
-                    <li>• Political Economy</li>
-                    <li>• Latin American Economics</li>
-                    <li>• Public Finance</li>
-                    <li>• Trade Agreement Negotiations</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-            </div>
-        </div>
+        /* About: two-column split with background image only on the right */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  min-height: 60vh;
+}
+.about-right {
+  background-image: url('fortaleza-lighthouse.jpg'); /* use your image */
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5rem;
+  min-height: 320px;
+}
+@media (max-width: 1024px) {
+  .about-split {
+    grid-template-columns: 1fr;
+  }
+  .about-right {
+    order: -1;            /* image on top when stacked */
+    height: 40vh;
+  }
+}
 
         <!-- Research Tab -->
         <div id="research" class="tab-content active">
@@ -250,6 +235,39 @@
                     </ul>
                   </div>
                 </div>
+
+                <a href="https://www.dropbox.com/scl/fi/0dgvw2l3jr7zorr1eqsay/GPP_JMP_OCTOBER_V3.pdf?rlkey=0t9h8mnv6audsojyeo21ye0nk&st=m8vb61mk&dl=0"
+   target="_blank" rel="noopener noreferrer"
+   class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded text-sm hover:bg-gray-800 transition-colors">
+  <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
+  Paper (PDF)
+</a>
+
+                <!-- Notebook LM explainer + video -->
+<div class="mt-8">
+  <h4 class="text-lg font-semibold mb-2">Research Behind My Job Market Paper</h4>
+  <p class="text-gray-700 mb-4">
+    The Notebook&nbsp;LM generated a short video that explains the core ideas behind my JMP.
+  </p>
+
+  <!-- Responsive 16:9 iframe -->
+  <div class="relative w-full max-w-4xl rounded-lg overflow-hidden shadow" style="padding-top:56.25%">
+    <!-- Uses the MP4 that’s already in the repo root -->
+    <iframe
+      src="/Mercosur_s_Stumbling_Bloc%20(1).mp4"
+      title="JMP explainer video"
+      class="absolute inset-0 w-full h-full border-0"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <!-- Fallback: open the video directly -->
+  <p class="text-sm text-gray-500 mt-2">
+    If the player above doesn’t load, <a href="/Mercosur_s_Stumbling_Bloc%20(1).mp4" class="text-blue-600 underline">open the video directly</a>.
+  </p>
+</div>
+
 
                 <!-- Publications -->
                 <div class="bg-white rounded-lg shadow-sm border p-8 mb-8">
