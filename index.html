@@ -417,20 +417,22 @@
 
   <div class="bg-gray-50 rounded-lg p-6">
     <div class="max-w-4xl mx-auto">
-      <!-- Responsive 16:9 iframe container -->
-      <div class="relative w-full rounded-lg overflow-hidden shadow" style="padding-top:56.25%">
-        <iframe
-          src="/Mercosur_s_Stumbling_Bloc%20(1).mp4"
-          title="JMP explainer video"
-          class="absolute inset-0 w-full h-full border-0"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <p class="text-sm text-gray-500 mt-3 text-center">
-        If the player doesn’t load, <a href="/Mercosur_s_Stumbling_Bloc%20(1).mp4" class="text-blue-600 underline">open the video directly</a>.
-      </p>
-    </div>
+      <div class="max-w-4xl mx-auto">
+  <video
+    controls
+    preload="metadata"
+    playsinline
+    class="w-full rounded-lg shadow"
+    title="JMP explainer video"
+  >
+    <source src="/Mercosur_s_Stumbling_Bloc%20(1).mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+  <p class="text-sm text-gray-500 mt-3 text-center">
+    If the player doesn’t load, <a href="/Mercosur_s_Stumbling_Bloc%20(1).mp4" class="text-blue-600 underline">open the video directly</a>.
+  </p>
+</div>
+
   </div>
 </div>
 </div>
