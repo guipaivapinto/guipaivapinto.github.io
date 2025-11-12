@@ -73,64 +73,68 @@ export default function HomePage() {
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-6 py-8">
-        {/* Bio Tab */}
-        {activeTab === "bio" && (
-          <div className="space-y-8">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="md:col-span-2">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>About Me</CardTitle>
-                  </CardHeader>
-                  <CardContent className="prose max-w-none">
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      I am a PhD candidate in Economics at [University Name], specializing in [your research areas,
-                      e.g., labor economics, development economics, industrial organization]. My research focuses on
-                      [brief description of your research interests and methodology].
-                    </p>
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      My dissertation examines [brief description of dissertation topic]. I employ [methods/approaches]
-                      to investigate [research questions]. This work contributes to our understanding of [broader
-                      implications].
-                    </p>
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      Prior to my doctoral studies, I completed my [previous degree] at [previous institution] in
-                      [year]. I have experience in [relevant experience, research methods, policy work, etc.].
-                    </p>
-                    <p className="text-gray-700 leading-relaxed">
-                      I am currently on the academic job market for the [Year-Year] cycle and will be available for
-                      interviews at the ASSA meetings in [Location, Month Year].
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-              <div>
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="text-center">
-                      <div className="w-48 h-48 bg-gray-200 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                        <span className="text-gray-500">Professional Photo</span>
-                      </div>
-                      <h3 className="font-semibold text-lg mb-2">[Your Name]</h3>
-                      <p className="text-gray-600 text-sm mb-4">PhD Candidate in Economics</p>
-                      <div className="space-y-2 text-sm text-gray-600">
-                        <p>
-                          <strong>Office:</strong> [Building, Room Number]
-                        </p>
-                        <p>
-                          <strong>Email:</strong> [your.email@university.edu]
-                        </p>
-                        <p>
-                          <strong>Phone:</strong> [Your Phone Number]
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+      {/* Bio Tab */}
+{activeTab === "bio" && (
+  <div className="space-y-8">
+    {/* Two columns: LEFT = info + JMP button; RIGHT = background image only */}
+    <section className="grid gap-8 md:grid-cols-2 min-h-[60vh]">
+      {/* LEFT */}
+      <div>
+        <Card>
+          <CardHeader>
+            <CardTitle>About Me</CardTitle>
+          </CardHeader>
+          <CardContent className="prose max-w-none">
+            <p className="text-gray-700 leading-relaxed mb-4">
+              I am a PhD candidate in Economics at [University Name], specializing in [your research areas,
+              e.g., labor economics, development economics, industrial organization]. My research focuses on
+              [brief description of your research interests and methodology].
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              My dissertation examines [brief description of dissertation topic]. I employ [methods/approaches]
+              to investigate [research questions]. This work contributes to our understanding of [broader
+              implications].
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Prior to my doctoral studies, I completed my [previous degree] at [previous institution] in
+              [year]. I have experience in [relevant experience, research methods, policy work, etc.].
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              I am currently on the academic job market for the [Year-Year] cycle and will be available for
+              interviews at the ASSA meetings in [Location, Month Year].
+            </p>
+
+            {/* Download my JMP button */}
+            <div className="mt-6">
+              <Button asChild>
+                <Link
+                  href="https://www.dropbox.com/scl/fi/0dgvw2l3jr7zorr1eqsay/GPP_JMP_OCTOBER_V3.pdf?rlkey=0t9h8mnv6audsojyeo21ye0nk&st=m8vb61mk&dl=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FileText className="w-4 h-4 mr-2" />
+                  Download my JMP
+                </Link>
+              </Button>
             </div>
-          </div>
-        )}
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* RIGHT (background image only; no overlaid content) */}
+      <div
+        aria-hidden="true"
+        className="rounded-lg overflow-hidden min-h-[320px]"
+      >
+        <div
+          className="h-full w-full bg-cover bg-center"
+          style={{ backgroundImage: "url('/fortaleza-lighthouse.jpg')" }}
+        />
+      </div>
+    </section>
+  </div>
+)}
+
 
         {/* Research Tab */}
         {activeTab === "research" && (
@@ -162,6 +166,32 @@ export default function HomePage() {
                   </div>
                 </div>
               </CardContent>
+              {/* Quick explainer before the video */}
+<div className="mt-8">
+  <h4 className="text-lg font-semibold mb-2">Research Behind My Job Market Paper</h4>
+  <p className="text-gray-700 mb-4">
+    The Notebook&nbsp;LM generated a short video that explains the core ideas behind my JMP.
+  </p>
+
+  {/* Responsive 16:9 iframe container */}
+  <div className="relative w-full max-w-4xl rounded-lg overflow-hidden shadow" style={{ paddingTop: "56.25%" }}>
+    {/* NOTE: pointing directly at the MP4 in your repo root (no new files). 
+       Some browsers will play MP4s inline inside an iframe; if not, the fallback link appears below. */}
+    <iframe
+      src="/Mercosur_s_Stumbling_Bloc%20(1).mp4"
+      title="JMP explainer video"
+      className="absolute inset-0 w-full h-full border-0"
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowFullScreen
+    />
+  </div>
+
+  {/* Fallback link, in case a browser blocks MP4 in an iframe */}
+  <p className="text-sm text-gray-500 mt-2">
+    If the player above doesn’t load, <Link href="/Mercosur_s_Stumbling_Bloc%20(1).mp4" className="text-blue-600 underline">open the video directly</Link>.
+  </p>
+</div>
+
             </Card>
 
             {/* Working Papers */}
