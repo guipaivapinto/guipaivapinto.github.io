@@ -8,439 +8,307 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        
-        .hero-bg {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('fortaleza-lighthouse.jpg');
-    background-size: cover;
-    background-position: center 35%; /* nudge focus upward to reduce empty sky/foreground */
-}
 
-        
-/* On small screens, avoid the heavy fixed parallax and save space perception */
-@media (max-width: 768px) {
-  .hero-bg {
-    background-attachment: scroll;
-    background-position: center 30%;
-  }
-}
-
-        
-        .section-nav {
-            position: fixed;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 50;
-        }
-        
-        .nav-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(107, 114, 128, 0.5);
-            margin: 6px 0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-dot.active {
-            background: #374151;
-            transform: scale(1.3);
+        :root {
+            color-scheme: light;
         }
 
-        .tab-content { 
-            display: none; 
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f6fb;
+            color: #1f2933;
+            min-height: 100vh;
         }
-        
-        .tab-content.active { 
-            display: block; 
+
+        .hero {
+            background: radial-gradient(circle at top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)) , linear-gradient(135deg, #70000f, #b51234 70%);
+            color: #f8fafc;
         }
-        
+
+        .tab-button {
+            border-bottom: 2px solid transparent;
+            color: #475569;
+            transition: all 0.2s ease;
+        }
+
         .tab-button.active {
-            background-color: #374151;
-            color: white;
+            border-bottom-color: #1d4ed8;
+            color: #1d4ed8;
+            font-weight: 600;
         }
-        /* About: two-column split with background image only on the right */
-.about-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  min-height: 60vh;
-}
-.about-right {
-  /* Remove lighthouse image from About panel */
-  background-image: none;
-  background-color: #f8fafc; /* subtle light gray background */
-  background-size: cover;
-  background-position: center;
-  border-radius: 0.5rem;
-  min-height: 320px;
-}
 
-@media (max-width: 1024px) {
-  .about-split {
-    grid-template-columns: 1fr;
-  }
-  .about-right {
-    order: -1;            /* image on top when stacked */
-    height: 40vh;
-  }
-}
+        .tab-content {
+            display: none;
+        }
 
+        .tab-content.active {
+            display: block;
+        }
+        .contact-section {
+            position: relative;
+            background-image: linear-gradient(rgba(11, 26, 47, 0.25), rgba(11, 26, 47, 0.45)), url('fortaleza-lighthouse.jpg');
+            background-size: cover;
+            background-position: center 35%;
+            padding: 2px;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-
-    <!-- Hero Section -->
-<section id="hero" class="min-h-[60vh] md:min-h-[70vh] hero-bg flex items-center justify-center md:justify-start relative py-10 md:py-16">
-  <div class="container px-6 text-center md:text-left relative z-10">
-    <div class="bg-white bg-opacity-95 backdrop-blur-sm rounded-lg p-8 md:p-12 max-w-2xl shadow-2xl ml-0">
-      <h1 class="text-5xl font-bold text-gray-900 mb-4">
-        Guilherme Paiva Pinto
-      </h1>
-      <p class="text-xl text-gray-700 mb-6">
-        PhD Candidate in Economics
-      </p>
-      <p class="text-lg text-gray-600 mb-8 max-w-2xl md:mx-0 mx-auto">
-        Indiana University, Bloomington<br>
-        Applied Economics • International Trade • Political Economy
-      </p>
-      <!-- Start of improved info row -->
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-6 mb-8">
-        <div class="flex items-center gap-2 text-gray-600">
-          <i data-lucide="map-pin" class="w-4 h-4"></i>
-          <span>Bloomington, Indiana, USA</span>
+<body>
+    <!-- Hero -->
+    <header class="hero">
+        <div class="max-w-5xl mx-auto px-6 py-16 text-center">
+            <p class="uppercase tracking-[0.3em] text-sm text-blue-200 mb-4">Economics PhD Candidate</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Guilherme Paiva Pinto</h1>
+            <p class="text-lg md:text-xl text-blue-100 leading-relaxed mb-8">
+                Indiana University Bloomington • Applied Economics • International Trade • Political Economy
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:gppinto@iu.edu" class="inline-flex items-center px-6 py-3 bg-white/10 border border-white/40 rounded-full text-sm font-semibold hover:bg-white/20 transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                    gppinto@iu.edu
+                </a>
+                <a href="https://www.dropbox.com/scl/fi/1imo8sb7k49kniwvqws25/PAIVAPINTO_Resume_0825_General.pdf?rlkey=x194nfisiqjick5idcl8syju0&st=8r4jqusz&dl=0"
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center px-6 py-3 border border-white rounded-full text-sm font-semibold hover:bg-white/20 transition-colors">
+                    <i data-lucide="download" class="w-4 h-4 mr-2"></i>
+                    View CV
+                </a>
+                <a
+                    href="https://www.dropbox.com/scl/fi/0dgvw2l3jr7zorr1eqsay/GPP_JMP_OCTOBER_V3.pdf?rlkey=0t9h8mnv6audsojyeo21ye0nk&st=m8vb61mk&dl=0"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center px-6 py-3 bg-white text-red-900 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors"
+                >
+                    <i data-lucide="book-open" class="w-4 h-4 mr-2"></i>
+                    Job Market Paper
+                </a>
+                <span class="inline-flex items-center px-6 py-3 bg-white/10 rounded-full text-sm font-semibold">
+                    <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                    Job Market 2025-2026
+                </span>
+            </div>
         </div>
-        <div class="flex items-center gap-2 text-gray-600">
-          <i data-lucide="mail" class="w-4 h-4"></i>
-          <span>gppinto@iu.edu</span>
-        </div>
-        <div class="flex items-center gap-2 text-gray-600">
-          <i data-lucide="calendar" class="w-4 h-4"></i>
-          <span>Job Market 2025-2026</span>
-        </div>
-      </div>
-      <!-- End of improved info row -->
-      <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-        <button onclick="showResearchSection()" class="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded font-medium hover:bg-gray-800 transition-colors">
-          <i data-lucide="book-open" class="w-4 h-4 mr-2"></i>
-          Research
-        </button>
+    </header>
 
-        <a href="https://www.dropbox.com/scl/fi/1imo8sb7k49kniwvqws25/PAIVAPINTO_Resume_0825_General.pdf?rlkey=x194nfisiqjick5idcl8syju0&amp;st=8r4jqusz&amp;dl=0"
-       target="_blank" rel="noopener noreferrer"
-       class="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded font-medium hover:bg-gray-50 transition-colors">
-          <i data-lucide="download" class="w-4 h-4 mr-2"></i>
-          View CV (Dropbox)
-    </a>
-          </button>
-        <a href="https://www.dropbox.com/scl/fi/0dgvw2l3jr7zorr1eqsay/GPP_JMP_OCTOBER_V3.pdf?rlkey=0t9h8mnv6audsojyeo21ye0nk&st=m8vb61mk&dl=0"
-   target="_blank" rel="noopener noreferrer"
-   class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded text-sm hover:bg-gray-800 transition-colors">
-  <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
-  JMP (Dropbox) 
-</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-    
-
-                <!-- Attribution for Fortaleza lighthouse -->
-        <div class="absolute bottom-4 right-4 text-white text-xs opacity-70">
-            Historic Lighthouse, Fortaleza, Ceará<br>
-            <span class="text-xs">David Moraes de Andrade, CC BY 3.0</span>
-        </div>
-
-
-    <!-- Navigation Tabs -->
-    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-center space-x-8 overflow-x-auto">
-                <button data-tab-target="about" onclick="showTab('about')" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-gray-300 transition-colors">
-                    <i data-lucide="user" class="w-4 h-4 mr-2 inline"></i>
+    <!-- Navigation -->
+    <nav class="bg-white border-b shadow-sm sticky top-0 z-40">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex flex-wrap gap-4 md:gap-8 justify-center">
+                <button data-tab-target="about" onclick="showTab('about')" class="tab-button py-4 flex items-center gap-2">
+                    <i data-lucide="user" class="w-4 h-4"></i>
                     About
                 </button>
-                <button data-tab-target="research" onclick="showTab('research')" class="tab-button active px-6 py-4 font-medium border-b-2 border-gray-900 transition-colors">
-                    <i data-lucide="book-open" class="w-4 h-4 mr-2 inline"></i>
+                <button data-tab-target="research" onclick="showTab('research')" class="tab-button py-4 flex items-center gap-2">
+                    <i data-lucide="book-open" class="w-4 h-4"></i>
                     Research
                 </button>
-                <button data-tab-target="teaching" onclick="showTab('teaching')" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-gray-300 transition-colors">
-                    <i data-lucide="graduation-cap" class="w-4 h-4 mr-2 inline"></i>
+                <button data-tab-target="teaching" onclick="showTab('teaching')" class="tab-button py-4 flex items-center gap-2">
+                    <i data-lucide="graduation-cap" class="w-4 h-4"></i>
                     Teaching
                 </button>
-                <button data-tab-target="contact" onclick="showTab('contact')" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-gray-300 transition-colors">
-                    <i data-lucide="mail" class="w-4 h-4 mr-2 inline"></i>
+                <button data-tab-target="contact" onclick="showTab('contact')" class="tab-button py-4 flex items-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
                     Contact
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12">
+    <!-- Content -->
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-10">
         <!-- About Tab -->
-        <!-- About Tab -->
-<div id="about" class="tab-content active">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">About Me</h2>
+        <div id="about" class="tab-content active">
+            <div class="bg-white rounded-xl shadow-sm border p-8">
+                <div class="grid lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-1">
+                        <div class="bg-gray-100 rounded-lg p-8 text-center">
+                            <img
+                                src="WhatsApp Image 2025-07-15 at 11.11.50 AM.jpeg"
+                                alt="Guilherme Paiva Pinto"
+                                class="w-48 h-48 object-cover rounded-lg mx-auto mb-4 shadow-lg border-4 border-white bg-gray-200"
+                            />
+                            <h3 class="font-semibold text-lg mb-2">Guilherme Paiva Pinto</h3>
+                            <p class="text-gray-600 text-sm mb-4">PhD Candidate in Economics</p>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex items-center gap-2 justify-center">
+                                    <i data-lucide="mail" class="w-4 h-4 text-gray-500"></i>
+                                    <span>gppinto@iu.edu</span>
+                                </div>
+                                <div class="flex items-center gap-2 justify-center">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-gray-500"></i>
+                                    <span>Bloomington, IN</span>
+                                </div>
+                                <div class="flex items-center gap-2 justify-center">
+                                    <i data-lucide="linkedin" class="w-4 h-4 text-gray-500"></i>
+                                    <a href="https://linkedin.com/in/guilhermepaivap" target="_blank" class="text-gray-600 hover:text-gray-900">LinkedIn</a>
+                                </div>
+                                <div class="flex items-center gap-2 justify-center">
+                                    <i data-lucide="github" class="w-4 h-4 text-gray-500"></i>
+                                    <a href="https://github.com/guilhermepaivap" target="_blank" class="text-gray-600 hover:text-gray-900">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="grid lg:grid-cols-3 gap-12">
-      <!-- Card with photo, name, contacts on the left -->
-      <div class="lg:col-span-1">
-        <div class="bg-gray-100 rounded-lg p-8 text-center">
-          <img
-            src="WhatsApp Image 2025-07-15 at 11.11.50 AM.jpeg"
-            alt="Guilherme Paiva Pinto"
-            class="w-48 h-48 object-cover rounded-lg mx-auto mb-4 shadow-lg border-4 border-white bg-gray-200"
-          />
-          <h3 class="font-semibold text-lg mb-2">Guilherme Paiva Pinto</h3>
-          <p class="text-gray-600 text-sm mb-4">PhD Candidate in Economics</p>
-          <div class="space-y-3 text-sm">
-            <div class="flex items-center gap-2 justify-center">
-              <i data-lucide="mail" class="w-4 h-4 text-gray-500"></i>
-              <span>gppinto@iu.edu</span>
+                    <div class="lg:col-span-2 flex flex-col justify-center">
+                        <div class="prose prose-lg max-w-none">
+                            <p class="text-gray-700 leading-relaxed mb-6">
+                                I am a PhD candidate in Economics at <strong>Indiana University</strong>, specializing in
+                                <strong>Applied Economics with focus on International Trade and Political Economy</strong>.
+                                My current main research focuses on the dynamics of trade agreements, customs union stability,
+                                and policy coordination across emerging economies, particularly in Latin America. I also work at
+                                the intersection between Public Finance and Political Economy, with special focus on public banks,
+                                budgetary processes and social expenditure. Currently, I am also a Graduate Assistant at the Tobias Center
+                                for Innovation in International Development.
+                            </p>
+                            <div class="bg-gray-50 rounded-lg p-6 mt-8">
+                                <h4 class="font-semibold text-gray-900 mb-3">Research Interests</h4>
+                                <ul class="text-gray-700 space-y-1">
+                                    <li>• International Trade Theory and Policy</li>
+                                    <li>• Political Economy</li>
+                                    <li>• Latin American Economics</li>
+                                    <li>• Public Finance</li>
+                                    <li>• Trade Agreement Negotiations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="flex items-center gap-2 justify-center">
-              <i data-lucide="map-pin" class="w-4 h-4 text-gray-500"></i>
-              <span>Bloomington, IN</span>
-            </div>
-            <div class="flex items-center gap-2 justify-center">
-              <i data-lucide="linkedin" class="w-4 h-4 text-gray-500"></i>
-              <a href="https://linkedin.com/in/guilhermepaivap" target="_blank" class="text-gray-600 hover:text-gray-900">LinkedIn</a>
-            </div>
-            <div class="flex items-center gap-2 justify-center">
-              <i data-lucide="github" class="w-4 h-4 text-gray-500"></i>
-              <a href="https://github.com/guilhermepaivap" target="_blank" class="text-gray-600 hover:text-gray-900">GitHub</a>
-            </div>
-          </div>
         </div>
-      </div>
-
-      <!-- Bio on the right -->
-      <div class="lg:col-span-2 flex flex-col justify-center">
-        <div class="prose prose-lg max-w-none">
-          <p class="text-gray-700 leading-relaxed mb-6">
-            I am a PhD candidate in Economics at <strong>Indiana University</strong>, specializing in
-            <strong>Applied Economics with focus on International Trade and Political Economy</strong>.
-            My current main research focuses on the dynamics of trade agreements, customs union stability,
-            and policy coordination across emerging economies, particularly in Latin America. I also work at
-            the intersection between Public Finance and Political Economy, with special focus on public banks,
-            budgetary processes and social expenditure. Currently, I am also a Graduate Assistant at the Tobias Center
-            for Innovation in International Development.
-          </p>
-          <div class="bg-gray-50 rounded-lg p-6 mt-8">
-            <h4 class="font-semibold text-gray-900 mb-3">Research Interests</h4>
-            <ul class="text-gray-700 space-y-1">
-              <li>• International Trade Theory and Policy</li>
-              <li>• Political Economy</li>
-              <li>• Latin American Economics</li>
-              <li>• Public Finance</li>
-              <li>• Trade Agreement Negotiations</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
         <!-- Research Tab -->
         <div id="research" class="tab-content">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Research</h2>
-                
-                <!-- Job Market Paper -->
-                <div class="bg-white rounded-lg shadow-sm border p-8 mb-8">
-                  <!-- Top bar: icon + title (left) AND big crimson button (right) -->
-                  <div class="flex items-start justify-between gap-4 mb-6">
-                    <div class="flex items-start gap-4">
-                      <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i data-lucide="star" class="w-6 h-6 text-white"></i>
-                      </div>
-                      <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Job Market Paper</h3>
-                        <p class="text-gray-600">Primary research contribution</p>
-                      </div>
-                    </div>
-                
-                    <!-- Big crimson button -->
-                    <a
-                      href="https://www.dropbox.com/scl/fi/0dgvw2l3jr7zorr1eqsay/GPP_JMP_OCTOBER_V3.pdf?rlkey=0t9h8mnv6audsojyeo21ye0nk&st=m8vb61mk&dl=0"
-                      target="_blank" rel="noopener noreferrer"
-                      class="inline-flex items-center rounded-md font-semibold text-white px-5 py-3 text-sm md:text-base shadow transition transform hover:brightness-95 hover:-translate-y-[1px]"
-                      style="background-color:#DC143C"
-                    >
-                      <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
-                      Download Job Market Paper
-                    </a>
-                  </div>
-
-                  <div class="bg-gray-50 rounded-lg p-6">
-                    <h4 class="text-lg font-semibold text-gray-900 mb-3">
-                      External Negotiations and Customs Union Stability
-                    </h4>
-                
-                    <!-- Brief summary first -->
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                      This paper explores why customs unions such as Mercosur remain stable despite recurring exit threats,
-                      yet face persistent difficulties in concluding large external trade agreements.
-                      I develop a quantitative framework to compare bloc-wide bargaining with solo negotiations,
-                      identify deviation thresholds, and deliver policy-relevant insights for regional integration strategies.
-                    </p>
-                
-                    <!-- Key details in bullets -->
-                    <ul class="list-disc pl-6 space-y-2 text-gray-700">
-                      <li><strong>Framework:</strong> Multi-country, multi-sector general-equilibrium model built on EK-style hat algebra, with Armington demand and monopolistic competition. With a Scenario Selection process. </li>
-                      <li><strong>Policy Application:</strong> Applied the framework to major episodes including EU–Mercosur negotiations, Uruguay–USA track, Uruguay–China FTA talks, and the USA–China trade war spillovers.</li>
-                      <li><strong>Main Results:</strong> Collective bargaining rents raise the value of staying in the bloc, while unanimity rules and asymmetric sectoral gains slow external deal-making — explaining Mercosur’s “stable yet stumbling” outcome.</li>
-                    </ul>
-    
-                  </div>
-
-    
-                </div>
-
-
-
-
-                <!-- Publications -->
-                <div class="bg-white rounded-lg shadow-sm border p-8 mb-8">
-                    <div class="flex items-start gap-4 mb-6">
-                        <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="book-open" class="w-6 h-6 text-white"></i>
+            <div class="space-y-8">
+                <div class="bg-white rounded-xl shadow-sm border p-8">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="star" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">Job Market Paper</h3>
+                                <p class="text-gray-600">Primary research contribution</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Papers Accepted for Publication</h3>
-                            <p class="text-gray-600">Peer-reviewed research</p>
-                        </div>
-                    </div>
-                    
-                    <div class="border-l-4 border-gray-300 pl-6">
-                        <h4 class="text-lg font-semibold text-gray-900 mb-2">
-                            "Politics and Public Banks: BNDES Loans to Local Governments in Brazil"
-                        </h4>
-                        <p class="text-gray-600 font-medium mb-2">
-                            Guilherme Paiva Pinto (Indiana University, USA), Mauricio S. Bugarin (Universidade de Brasília, Brazil), Rodrigo Schneider (Skidmore College, US)
-                        </p>
-                        <p class="text-gray-600 font-medium mb-3">Economía LACEA Journal (Accepted, Forthcoming 2025) </p>
-                        <p class="text-gray-600 font-medium mb-4"> Conferences Presentations (forthcoming/accepted): Brazillian Econometric Society meeting (SBE - 2025), Econometric Society European Winter Meeting (EWMES 2025), Latin American Law and Economics (Lawle - 2024) </p>
-                        <p class="text-gray-700 leading-relaxed mb-5">
-
-                            
-                            This study advances a quantitative political economy analysis of development banking within federative systems, 
-                            focusing on Brazil's National Bank for Economic and Social Development (BNDES). Moving beyond traditional fiscal 
-                            transfer models, we investigate the mechanisms through which federal credit operations are allocated to municipal 
-                            governments, emphasizing the political incentives that influence these disbursements. We adapt the Strategic 
-                            Partisan Transfers Hypothesis (SPTH) to the development banking context, formalizing the interaction between 
-                            federal, state, and local political alignments within Brazil's regulatory structure.
-                        </p>
-                        <a href="https://econpolrg.com/wp-content/uploads/2025/06/eprg-wp-2025-120.pdf" target="_blank" class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded text-sm hover:bg-gray-800 transition-colors">
-                            <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
-                            Read Working Paper (PDF)
+                        <a
+                            href="https://www.dropbox.com/scl/fi/0dgvw2l3jr7zorr1eqsay/GPP_JMP_OCTOBER_V3.pdf?rlkey=0t9h8mnv6audsojyeo21ye0nk&st=m8vb61mk&dl=0"
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center rounded-md font-semibold text-white px-5 py-3 text-sm shadow transition transform hover:-translate-y-[1px]"
+                            style="background-color:#DC143C"
+                        >
+                            <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
+                            Download Job Market Paper
                         </a>
                     </div>
-                </div>
 
-                <!-- Working Progress -->
-                <div class="bg-white rounded-lg shadow-sm border p-8 mb-8">
-                    <div class="flex items-start gap-4 mb-6">
-                        <div class="w-12 h-12 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="edit" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Work in Progress</h3>
-                            <p class="text-gray-600">Research in progress</p>
-                        </div>
-                    </div>
-                    
-                    <div class="border-l-4 border-gray-300 pl-6">
-                        <h4 class="text-lg font-semibold text-gray-900 mb-2">
-                            "Measuring Reciprocity in Trade Agreements Renegotiations"
-                        </h4>
-                        <p class="text-gray-600 font-medium mb-3">Work in Progress</p>
-                        <p class="text-gray-700 leading-relaxed">
-                            This project explores how reciprocity is measured and operationalized in the context of trade 
-                            agreement renegotiations, with particular attention to the institutional and political economy 
-                            challenges faced by developing countries.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Interactive Applications -->
-                <div class="bg-white rounded-lg shadow-sm border p-8">
-                    <div class="flex items-start gap-4 mb-6">
-                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="monitor" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Interactive Applications</h3>
-                            <p class="text-gray-600">Data visualization and research tools</p>
-                        </div>
-                    </div>
-                    
                     <div class="bg-gray-50 rounded-lg p-6">
                         <h4 class="text-lg font-semibold text-gray-900 mb-3">
-                            [Interactive Application]
+                            External Negotiations and Customs Union Stability
                         </h4>
                         <p class="text-gray-700 leading-relaxed mb-4">
-                            
+                            This paper explores why customs unions such as Mercosur remain stable despite recurring exit threats,
+                            focusing on how external negotiations and internal dynamics shape member incentives to stay. I develop a model
+                            where the threat of external negotiations and collective bargaining power influences the internal stability
+                            of the customs union. The model combines the external tariff-setting game with internal political economy considerations,
+                            showing how the ability to negotiate as a bloc stabilizes the union despite distributional conflicts.
                         </p>
-                        <div class="flex gap-3">
-                            <span class="inline-flex items-center px-4 py-2 bg-gray-200 text-gray-700 rounded text-sm">
-                                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
-                                Coming Soon
-                            </span>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Empirically, I examine archival data on Mercosur&apos;s negotiations, including internal communications, summit decisions,
+                            and external treaty drafts. I show that member countries use external negotiations strategically to influence internal reforms,
+                            such as tariff convergence and institutional changes. The paper contributes to the literature on trade agreements, highlighting
+                            how external leverage can offset internal frictions, sustaining integration even under political stress.
+                        </p>
+                        <div class="space-y-2 text-gray-700 text-sm">
+                            <p><strong>Keywords:</strong> Customs Unions, Trade Agreements, Political Economy of Trade, Mercosur</p>
+                            <p><strong>JEL Codes:</strong> F13, F15, F55</p>
                         </div>
                     </div>
                 </div>
-            
-        <!-- JMP Explainer Video (Centered Card at the End) -->
-<div class="bg-white rounded-lg shadow-sm border p-8 mt-8">
-  <div class="flex items-start gap-4 mb-6">
-    <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0">
-      <i data-lucide="play-circle" class="w-6 h-6 text-white"></i>
-    </div>
-    <div>
-      <h3 class="text-xl font-bold text-gray-900 mb-2">JMP Explainer Video</h3>
-      <p class="text-gray-600">A short video generated by Notebook&nbsp;LM explaining the core ideas behind my Job Market Paper.</p>
-    </div>
-  </div>
 
-  <div class="bg-gray-50 rounded-lg p-6">
-    <div class="max-w-4xl mx-auto">
-      <div class="max-w-4xl mx-auto">
-  <video
-    controls
-    preload="metadata"
-    playsinline
-    class="w-full rounded-lg shadow"
-    title="JMP explainer video"
-  >
-    <source src="/Mercosur_s_Stumbling_Bloc%20(1).mp4" type="video/mp4" />
-    Your browser does not support HTML5 video.
-  </video>
-  <p class="text-sm text-gray-500 mt-3 text-center">
-    If the player doesn’t load, <a href="/Mercosur_s_Stumbling_Bloc%20(1).mp4" class="text-blue-600 underline">open the video directly</a>.
-  </p>
-</div>
+                <div class="bg-white rounded-xl shadow-sm border p-8">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6">Working Papers & Projects</h3>
 
-  </div>
-</div>
-</div>
-        
+                    <div class="space-y-8">
+                        <div class="border rounded-lg p-6">
+                            <div class="flex items-start gap-4 mb-4">
+                                <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="layers" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900">The Political Economy of Development Banks</h4>
+                                    <p class="text-gray-600">With a focus on BNDES as a case study</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                This project investigates how development banks interact with political institutions to shape industrial policy outcomes.
+                                I examine BNDES lending decisions using proprietary administrative data, focusing on how credit allocation responds to electoral cycles,
+                                coalition structures, and regional economic priorities. The study also compares Brazil&apos;s experience with other Latin American development banks,
+                                drawing broader implications for state capacity and industrial upgrading.
+                            </p>
+                            <div class="flex flex-wrap gap-3 text-sm">
+                                <span class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-md">Political Economy</span>
+                                <span class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-md">Development Finance</span>
+                            </div>
+                        </div>
 
-        
+                        <div class="border rounded-lg p-6">
+                            <div class="flex items-start gap-4 mb-4">
+                                <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="globe" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-900">Trade Agreements and Domestic Political Coalitions</h4>
+                                    <p class="text-gray-600">Work in progress</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                This paper studies how trade agreements reshape domestic political coalitions through sectoral redistribution.
+                                I develop a political economy model where interest groups bargain over tariff schedules, and show how international commitments
+                                can reconfigure domestic alliances. The empirical component uses a new dataset on legislative voting, party manifestos, and trade exposure across industries.
+                            </p>
+                            <div class="flex flex-wrap gap-3 text-sm">
+                                <span class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-md">International Trade</span>
+                                <span class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-md">Legislative Politics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border p-8">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="play-circle" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">JMP Explainer Video</h3>
+                            <p class="text-gray-600">A short video generated by Notebook&nbsp;LM explaining the core ideas behind my Job Market Paper.</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <video
+                            controls
+                            preload="metadata"
+                            playsinline
+                            class="w-full rounded-lg shadow"
+                            title="JMP explainer video"
+                        >
+                            <source src="/Mercosur_s_Stumbling_Bloc%20(1).mp4" type="video/mp4" />
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <p class="text-sm text-gray-500 mt-3 text-center">
+                            If the player doesn’t load, <a href="/Mercosur_s_Stumbling_Bloc%20(1).mp4" class="text-blue-600 underline">open the video directly</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Teaching Tab -->
         <div id="teaching" class="tab-content">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Teaching Experience</h2>
-                
-                <!-- Award -->
-                <div class="bg-gray-50 rounded-lg p-8 mb-8 text-center">
+            <div class="bg-white rounded-xl shadow-sm border p-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-10 text-center">Teaching Experience</h2>
+
+                <div class="bg-gray-50 rounded-lg p-8 mb-10 text-center">
                     <div class="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="award" class="w-8 h-8 text-white"></i>
                     </div>
@@ -448,20 +316,18 @@
                     <p class="text-gray-600">Outstanding Introductory Economics Associate Instructor, Indiana University</p>
                 </div>
 
-                <!-- Courses -->
-                <div class="bg-white border rounded-lg p-8 mb-8">
-                    <div class="flex items-center justify-between mb-6">
+                <div class="bg-white border rounded-lg p-8 mb-8 shadow-sm">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
                         <h3 class="text-xl font-bold text-gray-900">Associate Instructor</h3>
                         <a href="mailto:gppinto@iu.edu?subject=Syllabus Request" class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded text-sm hover:bg-gray-800 transition-colors">
                             <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
                             Request Syllabus
                         </a>
                     </div>
-                    
+
                     <div class="space-y-6">
-                        <!-- Course 1 -->
                         <div class="border rounded-lg p-6">
-                            <div class="flex justify-between items-start mb-3">
+                            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-3">
                                 <div>
                                     <h4 class="font-semibold text-gray-900 text-lg mb-1">Fundamentals of Economics for Business I</h4>
                                     <p class="text-gray-600 text-sm">Microeconomics • Undergraduate Level</p>
@@ -475,20 +341,19 @@
                                 </div>
                             </div>
                             <p class="text-gray-700 text-sm">
-                                Introduction to microeconomic principles including supply and demand, market structures, 
+                                Introduction to microeconomic principles including supply and demand, market structures,
                                 consumer behavior, and firm decision-making. Emphasis on business applications and real-world examples.
                             </p>
                         </div>
 
-                        <!-- Course 2 -->
                         <div class="border rounded-lg p-6">
-                            <div class="flex justify-between items-start mb-3">
+                            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-3">
                                 <div>
                                     <h4 class="font-semibold text-gray-900 text-lg mb-1">Fundamentals of Economics for Business II and Fundamentals of Economics II</h4>
                                     <p class="text-gray-600 text-sm">Macroeconomics • Undergraduate Level</p>
                                 </div>
                                 <div class="text-right">
-                                    <p class="text-gray-600 text-sm">Fall 2022 and Spring 2023/Summer 2025 </p>
+                                    <p class="text-gray-600 text-sm">Fall 2022 and Spring 2023/Summer 2023</p>
                                     <span class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded text-xs mt-1">
                                         <i data-lucide="clock" class="w-3 h-3 mr-1"></i>
                                         Syllabus Available
@@ -496,17 +361,16 @@
                                 </div>
                             </div>
                             <p class="text-gray-700 text-sm">
-                                Introduction to macroeconomic principles including GDP, inflation, unemployment, monetary and fiscal policy, 
-                                and international economics. Focus on policy implications for business decision-making (Summer/2025). And the regular principles of macroeconomics class focused on Economics students.
+                                Covers macroeconomic topics such as GDP, inflation, unemployment, fiscal and monetary policy, and international finance.
+                                Focus on policy debates, empirical applications, and macroeconomic modeling exercises.
                             </p>
                         </div>
 
-                        <!-- Course 3 -->
                         <div class="border rounded-lg p-6">
-                            <div class="flex justify-between items-start mb-3">
+                            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-3">
                                 <div>
-                                    <h4 class="font-semibold text-gray-900 text-lg mb-1">Game Theory</h4>
-                                    <p class="text-gray-600 text-sm">Advanced Undergraduate Course</p>
+                                    <h4 class="font-semibold text-gray-900 text-lg mb-1">Game Theory and Business Strategy</h4>
+                                    <p class="text-gray-600 text-sm">Applied Microeconomics • Undergraduate Level</p>
                                 </div>
                                 <div class="text-right">
                                     <p class="text-gray-600 text-sm">Fall 2023</p>
@@ -517,14 +381,13 @@
                                 </div>
                             </div>
                             <p class="text-gray-700 text-sm">
-                                Strategic decision-making in competitive environments. Topics include Nash equilibrium, 
+                                Strategic decision-making in competitive environments. Topics include Nash equilibrium,
                                 sequential games, repeated games, and applications to economics and business strategy.
                             </p>
                         </div>
 
-                        <!-- Course 4 -->
                         <div class="border rounded-lg p-6">
-                            <div class="flex justify-between items-start mb-3">
+                            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-3">
                                 <div>
                                     <h4 class="font-semibold text-gray-900 text-lg mb-1">Survey of International Economics</h4>
                                     <p class="text-gray-600 text-sm">Trade and International Finance • Undergraduate Level</p>
@@ -538,26 +401,24 @@
                                 </div>
                             </div>
                             <p class="text-gray-700 text-sm">
-                                Introduction to international trade theory, trade policy, exchange rates, and balance of payments. 
-                                Emphasis on current global economic issues and policy debates. 
+                                Introduction to international trade theory, trade policy, exchange rates, and balance of payments.
+                                Emphasis on current global economic issues and policy debates.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Teaching Philosophy -->
-                <div class="bg-white border rounded-lg p-8 mb-8">
+                <div class="bg-white border rounded-lg p-8 shadow-sm">
                     <h3 class="text-xl font-bold text-gray-900 mb-6">Teaching Philosophy</h3>
                     <div class="prose max-w-none">
                         <p class="text-gray-700 leading-relaxed mb-4">
-                          I’m happy to share my teaching philosophy upon request.
+                            I’m happy to share my teaching philosophy upon request.
                         </p>
                         <a href="mailto:gppinto@iu.edu?subject=Teaching%20Philosophy%20Request"
                            class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded text-sm hover:bg-gray-800 transition-colors">
-                          <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
-                          Request Teaching Philosophy
+                            <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                            Request Teaching Philosophy
                         </a>
-
                     </div>
                 </div>
             </div>
@@ -565,15 +426,14 @@
 
         <!-- Contact Tab -->
         <div id="contact" class="tab-content">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-gray-900 mb-8">Contact</h2>
-                
-                <div class="bg-gray-50 rounded-lg p-8 mb-8">
-                    <p class="text-lg text-gray-700 mb-6">
+            <div class="contact-section rounded-2xl shadow-lg overflow-hidden">
+                <div class="bg-white/75 rounded-2xl border border-white/60 p-8 backdrop-blur-sm">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Contact</h2>
+                    <p class="text-lg text-gray-700 mb-8 text-center">
                         I am on the job market for the 2025-2026 academic year and available for interviews.
                     </p>
-                    
-                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+
+                    <div class="grid md:grid-cols-3 gap-6 mb-10">
                         <div class="text-center">
                             <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-3">
                                 <i data-lucide="mail" class="w-6 h-6 text-white"></i>
@@ -581,7 +441,7 @@
                             <h4 class="font-semibold text-gray-900 mb-1">Email</h4>
                             <p class="text-gray-600">gppinto@iu.edu</p>
                         </div>
-                        
+
                         <div class="text-center">
                             <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-3">
                                 <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
@@ -589,7 +449,7 @@
                             <h4 class="font-semibold text-gray-900 mb-1">Location</h4>
                             <p class="text-gray-600">Bloomington, Indiana, USA</p>
                         </div>
-                        
+
                         <div class="text-center">
                             <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-3">
                                 <i data-lucide="linkedin" class="w-6 h-6 text-white"></i>
@@ -598,34 +458,35 @@
                             <p class="text-gray-600">Professional Profile</p>
                         </div>
                     </div>
-                    
+
                     <div class="flex flex-wrap gap-4 justify-center">
                         <a href="mailto:gppinto@iu.edu" class="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded font-medium hover:bg-gray-800 transition-colors">
                             <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
                             Send Email
                         </a>
-                        <a href="https://www.dropbox.com/scl/fi/1imo8sb7k49kniwvqws25/PAIVAPINTO_Resume_0825_General.pdf?rlkey=x194nfisiqjick5idcl8syju0&amp;st=8r4jqusz&amp;dl=0"
+                        <a href="https://www.dropbox.com/scl/fi/1imo8sb7k49kniwvqws25/PAIVAPINTO_Resume_0825_General.pdf?rlkey=x194nfisiqjick5idcl8syju0&st=8r4jqusz&dl=0"
                            target="_blank" rel="noopener noreferrer"
                            class="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded font-medium hover:bg-gray-50 transition-colors">
-                          <i data-lucide="download" class="w-4 h-4 mr-2"></i>
-                          View CV (Dropbox)
+                            <i data-lucide="download" class="w-4 h-4 mr-2"></i>
+                            View CV (Dropbox)
                         </a>
-
                         <a href="https://linkedin.com/in/guilhermepaivap" target="_blank" class="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded font-medium hover:bg-gray-50 transition-colors">
                             <i data-lucide="linkedin" class="w-4 h-4 mr-2"></i>
                             LinkedIn
                         </a>
                     </div>
+                    <p class="text-xs text-gray-500 text-center mt-6">
+                        Mucuripe lighthouse in Ceará, Brazil.
+                    </p>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-lg font-semibold mb-2">Guilherme Paiva Pinto</p>
-            <p class="text-gray-400 mb-4">PhD Candidate in Economics • Indiana University, Bloomington</p>
+    <footer class="bg-white border-t mt-16">
+        <div class="max-w-5xl mx-auto px-6 py-10 text-center">
+            <p class="text-gray-600 mb-2">Guilherme Paiva Pinto • PhD Candidate in Economics • Indiana University, Bloomington</p>
             <p class="text-sm text-gray-500">
                 Last updated: <span id="current-date"></span> • On the job market 2025-2026
             </p>
@@ -633,57 +494,38 @@
     </footer>
 
     <script>
-        // Initialize Lucide icons without breaking the rest of the script if the CDN fails
         if (window.lucide && typeof window.lucide.createIcons === 'function') {
             window.lucide.createIcons();
-        } else {
-            console.warn('Lucide icons failed to load; continuing without icons.');
         }
 
-        // Set current date
         const currentDateElement = document.getElementById('current-date');
         if (currentDateElement) {
             currentDateElement.textContent = new Date().toLocaleDateString();
         }
 
-        // Tab functionality
-        function showTab(tabName) {
-            // Hide all tabs
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active');
-            });
+        function scrollToMainTop() {
+            const main = document.querySelector('main');
+            if (!main) return;
+            const y = main.getBoundingClientRect().top + window.pageYOffset - 60;
+            window.scrollTo({ top: Math.max(y, 0), behavior: 'smooth' });
+        }
 
-            // Toggle nav button states using their data attributes
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            const target = document.getElementById(tabName);
+            if (target) {
+                target.classList.add('active');
+            }
+
             document.querySelectorAll('.tab-button').forEach(button => {
                 const isActive = button.dataset.tabTarget === tabName;
                 button.classList.toggle('active', isActive);
-
-                if (isActive) {
-                    button.classList.remove('text-gray-600', 'hover:text-gray-900', 'border-transparent', 'hover:border-gray-300');
-                    button.classList.add('border-gray-900');
-                } else {
-                    button.classList.add('text-gray-600', 'hover:text-gray-900', 'border-transparent', 'hover:border-gray-300');
-                    button.classList.remove('border-gray-900');
-                }
             });
 
-            const targetTab = document.getElementById(tabName);
-            if (targetTab) {
-                targetTab.classList.add('active');
-            }
+            scrollToMainTop();
         }
 
-        // Research Tab Function
-        function showResearchSection() {
-            showTab('research');
-            const researchSection = document.getElementById('research');
-            if (researchSection) {
-                researchSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-
-        // Initialize with the about tab active
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', () => {
             showTab('about');
         });
     </script>
