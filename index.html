@@ -159,19 +159,19 @@
     <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-6">
             <div class="flex justify-center space-x-8 overflow-x-auto">
-                <button onclick="showTab('about')" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-gray-300 transition-colors">
+                <button onclick="showTab('about', event)" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-gray-300 transition-colors">
                     <i data-lucide="user" class="w-4 h-4 mr-2 inline"></i>
                     About
                 </button>
-                <button onclick="showTab('research')" class="tab-button active px-6 py-4 font-medium border-b-2 border-gray-900 transition-colors">
+                <button onclick="showTab('research', event)" class="tab-button active px-6 py-4 font-medium border-b-2 border-gray-900 transition-colors">
                     <i data-lucide="book-open" class="w-4 h-4 mr-2 inline"></i>
                     Research
                 </button>
-                <button onclick="showTab('teaching')" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-gray-300 transition-colors">
+                <button onclick="showTab('teaching', event)" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-gray-300 transition-colors">
                     <i data-lucide="graduation-cap" class="w-4 h-4 mr-2 inline"></i>
                     Teaching
                 </button>
-                <button onclick="showTab('contact')" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-gray-300 transition-colors">
+                <button onclick="showTab('contact', event)" class="tab-button px-6 py-4 font-medium text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-gray-300 transition-colors">
                     <i data-lucide="mail" class="w-4 h-4 mr-2 inline"></i>
                     Contact
                 </button>
@@ -640,7 +640,7 @@
         document.getElementById('current-date').textContent = new Date().toLocaleDateString();
 
                // Tab functionality
-        function showTab(tabName) {
+        function showTab(tabName, event) {
             // Hide all tab contents
             const tabContents = document.querySelectorAll('.tab-content');
             tabContents.forEach(content => {
