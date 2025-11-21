@@ -2,18 +2,18 @@
 
 import { useState } from "react"
 import { ChevronRight, ChevronLeft, FileText, Download } from "lucide-react"
-import MotivationSection from "@/components/sections/motivation"
-import TradePolicy from "@/components/sections/trade-policy"
-import TradePatterns from "@/components/sections/trade-patterns"
-import UruguayGains from "@/components/sections/uruguay-gains"
-import BlockingDynamics from "@/components/sections/blocking-dynamics"
+import { MercosurMotivation } from "@/components/mercosur/sections/mercosur-motivation"
+import { MercosurTradePolicy } from "@/components/mercosur/sections/mercosur-trade-policy"
+import { MercosurTradePatterns } from "@/components/mercosur/sections/mercosur-trade-patterns"
+import { MercosurUruguayGains } from "@/components/mercosur/sections/mercosur-uruguay-gains"
+import { MercosurBlockingDynamics } from "@/components/mercosur/sections/mercosur-blocking-dynamics"
 
 const sections = [
-  { id: 0, title: "Motivation", component: MotivationSection },
-  { id: 1, title: "Mercosur Trade Policy", component: TradePolicy },
-  { id: 2, title: "Partners & Trade Patterns", component: TradePatterns },
-  { id: 3, title: "Why Uruguay Gains", component: UruguayGains },
-  { id: 4, title: "Why Large Countries Block", component: BlockingDynamics },
+  { id: 0, title: "Motivation", component: MercosurMotivation },
+  { id: 1, title: "Mercosur Trade Policy", component: MercosurTradePolicy },
+  { id: 2, title: "Partners & Trade Patterns", component: MercosurTradePatterns },
+  { id: 3, title: "Why Uruguay Gains", component: MercosurUruguayGains },
+  { id: 4, title: "Why Large Countries Block", component: MercosurBlockingDynamics },
 ]
 
 export default function Home() {
