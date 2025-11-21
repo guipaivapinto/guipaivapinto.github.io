@@ -6,6 +6,8 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Static-export friendly so /mercosur works on GitHub Pages
+  output: "export",
   images: {
     unoptimized: true,
   },
