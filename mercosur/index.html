@@ -42,170 +42,231 @@
   </div>
 
   <main class="mx-auto max-w-5xl px-6 py-10 space-y-10">
-    <!-- Sections -->
+    <!-- Section 0: Motivation -->
     <section class="section space-y-8" data-section="0">
       <div class="space-y-4 rounded-lg bg-white p-8 border border-slate-200 shadow-sm">
         <h2 class="text-3xl font-bold text-slate-900">A Puzzle: <span class="text-red-900">Why Does Mercosur Stay Together?</span></h2>
         <p class="text-lg leading-relaxed text-slate-700">
-          Since 1995, Mercosur has kept a common external tariff and an internal free-trade area. Uruguay threatens exit, external negotiations stall, yet the bloc persists.
+          Since 1995, Mercosur has kept a common external tariff and an internal free trade area. Uruguay threatens exit, external negotiations stall with partners such as China, United States and European Union, yet the bloc persists and no member has actually left.
+        </p>
+        <p class="text-sm text-slate-500">
+          In the job market paper, this is framed as a stability puzzle: exit threats are persistent, but the customs union neither breaks nor delivers many large external agreements.
         </p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2">
         <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
-          <h3 class="text-lg font-semibold text-blue-900">What we see</h3>
+          <h3 class="text-lg font-semibold text-blue-900">What we see in the data</h3>
           <ul class="mt-3 space-y-2 text-slate-700 text-sm">
-            <li>→ Uruguay floats China/USA bilateral deals</li>
-            <li>→ External talks drag for years</li>
-            <li>→ The bloc never actually breaks</li>
+            <li>→ Uruguay explores bilateral ideas with partners such as United States and China</li>
+            <li>→ Negotiations with large partners drag on for many years</li>
+            <li>→ The bloc keeps a common tariff and internal free trade in place</li>
           </ul>
+          <p class="mt-3 text-xs text-slate-500">
+            See the introduction and the four historical episodes discussed in the paper for details on these tensions.
+          </p>
         </div>
         <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
-          <h3 class="text-lg font-semibold text-teal-800">Why it matters</h3>
+          <h3 class="text-lg font-semibold text-teal-800">Why this matters</h3>
           <ul class="mt-3 space-y-2 text-slate-700 text-sm">
-            <li>→ Shapes supply chains for 280M people</li>
-            <li>→ Stability parallels other regional blocs</li>
-            <li>→ Sector shocks drive political pressure</li>
+            <li>→ It affects supply chains for nearly 280 million people in South America</li>
+            <li>→ It speaks to the broader question of whether regional agreements help or hinder global liberalization</li>
+            <li>→ It links external bargaining, internal enforcement and sector specific shocks</li>
           </ul>
         </div>
       </div>
-      <div class="rounded-lg border-l-4 border-red-900 bg-white p-6 shadow-sm text-slate-700">
-        <strong class="text-red-900">Key insight:</strong> Small members gain bargaining power in the bloc; large members face concentrated manufacturing losses, so they stall external deals.
+
+      <!-- New: video card -->
+      <div class="grid gap-4 lg:grid-cols-2">
+        <div class="rounded-lg border-l-4 border-red-900 bg-white p-6 shadow-sm text-slate-700">
+          <strong class="text-red-900">Key insight:</strong>
+          <span class="block mt-2">
+            Small members gain bargaining power when they negotiate as part of the bloc, while large members face concentrated losses in manufacturing sectors. This combination helps explain why Uruguay keeps a strong interest in staying and why Brazil and Argentina often slow down external deals.
+          </span>
+          <p class="mt-3 text-xs text-slate-500">
+            This summary mirrors the abstract and results sections of the job market paper.
+          </p>
+        </div>
+        <div class="rounded-lg border border-slate-300 bg-white p-4 shadow-sm">
+          <h3 class="text-sm font-semibold text-slate-900 mb-2">Watch Mercosur leaders in action</h3>
+          <p class="text-xs text-slate-600 mb-3">
+            Short clip from a Mercosur meeting. The clip gives the political background that motivates the quantitative exercises.
+          </p>
+          <div class="w-full overflow-hidden rounded-lg shadow-sm">
+            <iframe
+              src="https://www.youtube.com/embed/ZIYG8bFOSos"
+              title="Mercosur meeting short"
+              width="100%"
+              height="260"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              style="border:0"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- Section 1: Mercosur Trade Policy -->
     <section class="section hidden space-y-8" data-section="1">
       <div class="space-y-4">
         <h2 class="text-3xl font-bold text-slate-900">How Mercosur Works</h2>
-        <p class="text-lg text-slate-700">Customs union: internal tariffs ≈ 0%, common external tariff ~10% with 480+ exceptions.</p>
+        <p class="text-lg text-slate-700">
+          Mercosur is a customs union with almost zero internal tariffs and a common external tariff around ten percent, with several hundred exceptions for sensitive products such as automobiles and sugar.
+        </p>
       </div>
       <div class="grid gap-4 sm:grid-cols-3 text-sm">
         <div class="rounded-lg border border-slate-300 bg-white p-6">
           <div class="text-3xl font-bold text-blue-700">0%</div>
-          <p class="mt-2 text-slate-700">Internal tariffs (mostly)</p>
+          <p class="mt-2 text-slate-700">Internal tariffs on most goods</p>
         </div>
         <div class="rounded-lg border border-slate-300 bg-white p-6">
-          <div class="text-3xl font-bold text-teal-700">~10%</div>
-          <p class="mt-2 text-slate-700">Common external tariff</p>
+          <div class="text-3xl font-bold text-teal-700">≈10%</div>
+          <p class="mt-2 text-slate-700">Common external tariff (CET)</p>
         </div>
         <div class="rounded-lg border border-slate-300 bg-white p-6">
           <div class="text-3xl font-bold text-emerald-700">480+</div>
-          <p class="mt-2 text-slate-700">Exceptions for sensitive sectors</p>
+          <p class="mt-2 text-slate-700">Listed exceptions for sensitive sectors</p>
         </div>
       </div>
       <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
-        <h3 class="text-lg font-semibold text-slate-900 mb-2">Average tariffs</h3>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">Average applied tariffs</h3>
         <div class="space-y-3 text-sm">
           <div class="flex items-center justify-between">
             <span class="font-medium text-slate-800">Mercosur</span>
-            <span class="text-blue-700">10.4%</span>
+            <span class="text-blue-700">≈10%</span>
           </div>
           <div class="w-full h-3 rounded bg-slate-100 overflow-hidden">
             <div class="h-full bg-gradient-to-r from-blue-600 to-cyan-500" style="width:86%"></div>
           </div>
           <div class="flex items-center justify-between">
             <span class="font-medium text-slate-800">United States</span>
-            <span class="text-blue-700">3.2%</span>
+            <span class="text-blue-700">≈3%</span>
           </div>
           <div class="w-full h-3 rounded bg-slate-100 overflow-hidden">
             <div class="h-full bg-slate-500" style="width:26%"></div>
           </div>
           <div class="flex items-center justify-between">
             <span class="font-medium text-slate-800">European Union</span>
-            <span class="text-blue-700">4.5%</span>
+            <span class="text-blue-700">≈4–5%</span>
           </div>
           <div class="w-full h-3 rounded bg-slate-100 overflow-hidden">
             <div class="h-full bg-slate-500" style="width:38%"></div>
           </div>
         </div>
-        <p class="text-xs text-slate-500 mt-3">Source: GTAP database (illustrative averages)</p>
+        <p class="text-xs text-slate-500 mt-3">
+          Source: GTAP data used in the paper. The common external tariff stays near ten percent and remains above the average tariffs that United States, European Union and China apply to Mercosur exports.
+        </p>
       </div>
     </section>
 
+    <!-- Section 2: Trade partners -->
     <section class="section hidden space-y-8" data-section="2">
       <div class="space-y-4">
         <h2 class="text-3xl font-bold text-slate-900">Who Trades with Whom?</h2>
-        <p class="text-lg text-slate-700">China rises to #1 partner for all members by 2017; USA/EU remain important but secondary.</p>
+        <p class="text-lg text-slate-700">
+          Over two decades, China becomes the main external partner for every member in both exports and imports, while United States and European Union remain important but secondary. This happens even with modest tariff changes, which means quantity responses are doing most of the work.
+        </p>
       </div>
       <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-sm">
-        <div class="rounded-lg border px-4 py-3 bg-blue-50 border-blue-200">Brazil: diversified manufacturing</div>
-        <div class="rounded-lg border px-4 py-3 bg-white">Argentina: ag + industry mix</div>
-        <div class="rounded-lg border px-4 py-3 bg-white">Uruguay: small, high-value ag</div>
-        <div class="rounded-lg border px-4 py-3 bg-white">Paraguay: relies on intra-bloc</div>
+        <div class="rounded-lg border px-4 py-3 bg-blue-50 border-blue-200">Brazil: diversified manufacturing with strong trade to China and United States</div>
+        <div class="rounded-lg border px-4 py-3 bg-white">Argentina: mix of agriculture and industry, also reorienting exports toward China</div>
+        <div class="rounded-lg border px-4 py-3 bg-white">Uruguay: small, high value agriculture, with balanced links to China, European Union and United States</div>
+        <div class="rounded-lg border px-4 py-3 bg-white">Paraguay: heavier reliance on intra bloc trade and regional neighbors</div>
       </div>
       <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
-        <h3 class="font-semibold text-slate-900 mb-3">Trade shares (% of extra-bloc trade)</h3>
-        <p class="text-sm text-slate-700">Between 2004 → 2017, China’s share climbs; USA share falls; EU steady.</p>
+        <h3 class="font-semibold text-slate-900 mb-3">Trade shares of main partners</h3>
+        <p class="text-sm text-slate-700">
+          The paper shows that between 2004 and 2017, China moves from a minor partner to the largest destination and source of extra bloc trade for all members, while the share of United States falls and European Union remains relatively stable.
+        </p>
         <div class="grid gap-3 sm:grid-cols-3 text-xs text-slate-700 mt-3">
-          <div class="p-3 bg-slate-50 rounded border">USA → ↓</div>
-          <div class="p-3 bg-slate-50 rounded border">China → ↑</div>
-          <div class="p-3 bg-slate-50 rounded border">EU → steady</div>
+          <div class="p-3 bg-slate-50 rounded border">United States share of extra bloc trade falls for all members</div>
+          <div class="p-3 bg-slate-50 rounded border">China share rises sharply in exports and imports</div>
+          <div class="p-3 bg-slate-50 rounded border">European Union share changes less but stays important</div>
         </div>
+        <p class="mt-3 text-xs text-slate-500">
+          These patterns come from the trade share figures for exports and imports with China, United States and European Union.
+        </p>
       </div>
     </section>
 
+    <!-- Section 3: Uruguay gains from staying -->
     <section class="section hidden space-y-8" data-section="3">
       <div class="space-y-4">
         <h2 class="text-3xl font-bold text-slate-900">Why Uruguay Gains from Staying</h2>
-        <p class="text-lg text-slate-700">Bloc negotiations with China: +0.18–0.46% welfare; solo deals ~0%.</p>
+        <p class="text-lg text-slate-700">
+          In the quantitative exercises, bloc negotiations with China raise Uruguay welfare between about 0.18 and 0.46 percentage points, while the gains from partial deviations where Uruguay negotiates alone are essentially zero on average across years.
+        </p>
+        <p class="text-sm text-slate-600">
+          The same pattern appears when the partner is United States: bloc deals deliver larger and more stable gains than going alone, once reciprocity and the common external tariff are taken into account.
+        </p>
       </div>
       <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
-        <h3 class="text-lg font-semibold text-slate-900 mb-3">Welfare gains (illustrative)</h3>
+        <h3 class="text-lg font-semibold text-slate-900 mb-3">Welfare gains for Uruguay (illustrative)</h3>
         <div class="space-y-3 text-sm">
           <div class="flex items-center justify-between">
-            <span class="font-medium text-slate-800">Bloc negotiation</span>
-            <span class="text-teal-700 font-semibold">+0.37%</span>
+            <span class="font-medium text-slate-800">Bloc negotiation with China</span>
+            <span class="text-teal-700 font-semibold">≈ +0.3–0.4%</span>
           </div>
           <div class="w-full h-3 rounded bg-slate-100 overflow-hidden">
-            <div class="h-full bg-teal-600" style="width:74%"></div>
+            <div class="h-full bg-teal-600" style="width:75%"></div>
           </div>
           <div class="flex items-center justify-between">
-            <span class="font-medium text-slate-800">Solo negotiation</span>
-            <span class="text-rose-700 font-semibold">0.00%</span>
+            <span class="font-medium text-slate-800">Partial negotiation (Uruguay alone)</span>
+            <span class="text-rose-700 font-semibold">≈ 0%</span>
           </div>
           <div class="w-full h-3 rounded bg-slate-100 overflow-hidden">
-            <div class="h-full bg-rose-500" style="width:5%"></div>
+            <div class="h-full bg-rose-500" style="width:8%"></div>
           </div>
         </div>
+        <p class="mt-3 text-xs text-slate-500">
+          Values based on the welfare deltas for reciprocal and full liberalization scenarios reported in the paper for Uruguay, especially in the Mercosur China experiments.
+        </p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2 text-sm">
         <div class="rounded-lg border border-slate-300 bg-white p-6">
-          <h3 class="font-semibold text-teal-900 mb-2">Uruguay + Mercosur</h3>
+          <h3 class="font-semibold text-teal-900 mb-2">Uruguay inside Mercosur</h3>
           <ul class="space-y-2 text-slate-700">
-            <li>✓ Bundled with Brazil → bigger market</li>
-            <li>✓ Better tariff concessions</li>
-            <li>✓ Credible leverage vs China</li>
+            <li>✓ Negotiates together with Brazil and Argentina, so market size is larger</li>
+            <li>✓ Receives better tariff cuts from partners when reciprocity uses the bloc as reference</li>
+            <li>✓ Gains in sectors where it has comparative advantage, such as meat and oil seeds</li>
           </ul>
         </div>
         <div class="rounded-lg border border-slate-300 bg-white p-6">
-          <h3 class="font-semibold text-burgundy-900 mb-2">Uruguay Alone</h3>
+          <h3 class="font-semibold text-red-900 mb-2">Uruguay alone</h3>
           <ul class="space-y-2 text-slate-700">
-            <li>✗ Limited bargaining power</li>
-            <li>✗ Take-it-or-leave-it terms</li>
-            <li>✗ Tiny welfare gains</li>
+            <li>✗ Much weaker bargaining position</li>
+            <li>✗ Harder to obtain deep cuts from large partners</li>
+            <li>✗ Welfare gains are tiny and close to zero in most counterfactuals</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- Section 4: Blocking dynamics -->
     <section class="section hidden space-y-8" data-section="4">
       <div class="space-y-4">
         <h2 class="text-3xl font-bold text-slate-900">Why Large Countries Block Deals</h2>
-        <p class="text-lg text-slate-700">Brazil/Argentina see small aggregate gains but concentrated sector losses → political pushback.</p>
+        <p class="text-lg text-slate-700">
+          For Brazil and Argentina, bloc negotiations with China produce small aggregate welfare gains but very large employment losses in a few manufacturing sectors. That sector concentration makes it politically attractive to delay or block external agreements.
+        </p>
       </div>
       <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
-        <h3 class="font-semibold text-slate-900 mb-3">Top losing sectors (MS–China)</h3>
+        <h3 class="font-semibold text-slate-900 mb-3">Largest sector losses under a Mercosur China deal</h3>
         <div class="space-y-2 text-sm">
-          <div class="flex items-center justify-between"><span>Apparel</span><span class="text-rose-700 font-semibold">-15%</span></div>
+          <div class="flex items-center justify-between"><span>Apparel (Brazil)</span><span class="text-rose-700 font-semibold">≈ −15% employment</span></div>
           <div class="w-full h-3 rounded bg-slate-100 overflow-hidden"><div class="h-full bg-rose-600" style="width:90%"></div></div>
-          <div class="flex items-center justify-between"><span>Textiles</span><span class="text-rose-700 font-semibold">-5.5%</span></div>
+          <div class="flex items-center justify-between"><span>Textiles (Brazil)</span><span class="text-rose-700 font-semibold">≈ −5.5% employment</span></div>
           <div class="w-full h-3 rounded bg-slate-100 overflow-hidden"><div class="h-full bg-rose-500" style="width:55%"></div></div>
-          <div class="flex items-center justify-between"><span>Leather</span><span class="text-rose-700 font-semibold">-3.4%</span></div>
+          <div class="flex items-center justify-between"><span>Leather (Brazil)</span><span class="text-rose-700 font-semibold">≈ −3.4% employment</span></div>
           <div class="w-full h-3 rounded bg-slate-100 overflow-hidden"><div class="h-full bg-rose-400" style="width:34%"></div></div>
         </div>
+        <p class="mt-3 text-xs text-slate-500">
+          These numbers are based on the table of labor share changes in the Mercosur China scenario, where apparel alone loses about fifteen percent of employment in Brazil and similar though smaller losses appear in Argentina.
+        </p>
       </div>
       <div class="rounded-lg border border-slate-300 bg-white p-6">
         <p class="text-sm text-slate-700">
-          Losses are concentrated (apparel, textiles, leather) and politically vocal. Gains are diffuse (consumers, agriculture). Result: vetoes and delays.
+          Losses are concentrated in a small group of politically vocal manufacturing sectors such as apparel, textiles and leather. Gains are more diffuse, spread across consumers and primary sectors such as meat, oil seeds and sugar. This asymmetry helps explain why large members often slow down external negotiations even when the bloc as a whole would obtain modest net gains.
         </p>
       </div>
     </section>
