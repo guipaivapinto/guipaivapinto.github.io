@@ -14,382 +14,466 @@
 <body class="min-h-screen">
   <header class="sticky top-0 z-50 border-b border-gray-200 bg-gradient-to-r from-red-900 via-red-800 to-red-900 text-white shadow-lg">
     <div class="mx-auto max-w-5xl px-6 py-6">
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div>
-          <h1 class="text-2xl font-bold">Guilherme Paiva Pinto</h1>
-          <p class="text-sm text-red-100">External Negotiations and Customs Union Stability (Job Market Paper)</p>
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div class="space-y-1">
+          <div class="flex items-center gap-3">
+            <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-medium tracking-wide uppercase">
+              Job Market Paper
+            </span>
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight sm:text-3xl">
+            External Negotiations and Customs Union Stability
+          </h1>
+          <p class="text-sm text-red-100/80">
+            Guilherme Paiva Pinto · Customs unions, reciprocity, and the Mercosur puzzle
+          </p>
         </div>
-        <div class="flex flex-wrap items-center gap-3 text-sm">
-          <a href="mailto:gppinto@iu.edu" class="inline-flex items-center gap-2 rounded-lg bg-red-900/20 px-4 py-2 font-medium text-white transition hover:bg-red-900/40">
-            <i data-lucide="mail" class="w-4 h-4"></i><span>Contact</span>
+        <nav class="flex items-center gap-3 text-sm">
+          <a href="https://guipaivapinto.github.io/docs/CV_Guilherme_Paiva_Pinto.pdf" class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 font-medium text-red-900 shadow hover:bg-red-50 transition">
+            <i data-lucide="file-text" class="h-4 w-4"></i>
+            CV
           </a>
-          <a href="https://www.dropbox.com/scl/fi/0dgvw2l3jr7zorrubr6hr/GPP_JMP_OCTOBER_V3.pdf?rlkey=xxxxxx&dl=0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 font-medium text-red-900 transition hover:bg-red-50">
-            <i data-lucide="file-text" class="w-4 h-4"></i><span>Download JMP (PDF)</span>
+          <a href="https://guipaivapinto.github.io/docs/GPP_JMP_OCTOBER_V3.pdf" class="inline-flex items-center gap-2 rounded-full border border-white/40 px-4 py-2 font-medium hover:bg-white/10 transition">
+            <i data-lucide="book-open" class="h-4 w-4"></i>
+            JMP
           </a>
-        </div>
-      </div>
-      <div class="mt-4 flex items-center gap-2 text-sm text-red-100">
-        <span id="section-counter">Section 1</span><span class="text-red-300">/</span><span>5</span>
+          <a href="mailto:guilherme.paiva-pinto@yale.edu" class="inline-flex items-center gap-2 rounded-full border border-white/40 px-4 py-2 font-medium hover:bg-white/10 transition">
+            <i data-lucide="mail" class="h-4 w-4"></i>
+            Contact
+          </a>
+        </nav>
       </div>
     </div>
   </header>
 
-  <div class="h-1 bg-gray-200">
-    <div id="progress" class="h-full bg-gradient-to-r from-blue-500 to-blue-500 transition-all duration-300" style="width:20%"></div>
-  </div>
-
-  <main class="mx-auto max-w-5xl px-6 py-10 space-y-10">
-    <!-- Sections -->
-    <section class="section space-y-8" data-section="0">
-      <div class="space-y-4 rounded-lg bg-white p-8 border border-slate-200 shadow-sm">
-        <h2 class="text-3xl font-bold text-slate-900">
-          A puzzle:
-          <span class="text-red-900">Why does Mercosur stay together?</span>
-        </h2>
-        <p class="text-lg leading-relaxed text-slate-700">
-          Since 1995 Mercosur has kept a common external tariff and an internal free trade area.
-          At the same time members routinely threaten to walk away. Uruguay openly explores
-          bilateral deals with China and the United States while Brazil and Argentina complain
-          about internal asymmetries and sectoral losses. External negotiations stall but the
-          customs union does not break.
-        </p>
-        <p class="text-lg leading-relaxed text-slate-700">
-          The job market paper behind this page asks a simple question: when a customs union
-          faces big external partners like China the United States and the European Union
-          who really gains from staying inside the bloc and who would rather negotiate alone.
-        </p>
+  <div class="mx-auto max-w-5xl px-6 pt-8">
+    <!-- Progress bar -->
+    <div class="mb-6 flex items-center gap-3">
+      <div class="flex flex-1 items-center gap-2">
+        <div class="h-1 flex-1 rounded-full bg-slate-200">
+          <div id="progress-bar" class="h-1 rounded-full bg-gradient-to-r from-red-600 to-blue-500 transition-all duration-300" style="width:20%"></div>
+        </div>
       </div>
+    </div>
 
-      <div class="grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-        <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm space-y-4">
-          <h3 class="text-lg font-semibold text-blue-900">What the paper does</h3>
-          <p class="text-sm text-slate-700">
-            The paper builds a quantitative trade model with external bargaining for Mercosur.
-            It uses sector level trade data from 2004 to 2017 and simulates counterfactual
-            negotiations with China the United States and the European Union. For each
-            scenario it compares outcomes when:
+    <main class="mx-auto max-w-5xl px-0 py-6 space-y-10">
+      <!-- Sections -->
+      <!-- Section 0: Motivation and puzzle -->
+      <section class="section space-y-8" data-section="0">
+        <div class="space-y-4 rounded-lg bg-white p-8 border border-slate-200 shadow-sm">
+          <h2 class="text-3xl font-bold text-slate-900">
+            A Puzzle:
+            <span class="text-red-900">
+              Why Does Mercosur Stay Together?
+            </span>
+          </h2>
+          <p class="text-lg leading-relaxed text-slate-700">
+            Since 1995, Mercosur has kept a common external tariff and an institutional rule that members negotiate trade agreements as a bloc. At the same time, small members repeatedly threaten exit, external negotiations stall, yet the bloc persists.
           </p>
-          <ul class="mt-3 space-y-2 text-slate-700 text-sm list-disc list-inside">
-            <li>Every member negotiates alone with the partner</li>
-            <li>Mercosur negotiates as a single bloc with a common external tariff</li>
-            <li>One member deviates while others keep the bloc arrangement</li>
-          </ul>
           <p class="text-sm text-slate-700">
-            This gives model based measures of gains and losses in real income and sectoral
-            profits for each country and lets us ask whether the union is internally stable
-            when external offers arrive.
+            The paper asks whether reciprocity based external negotiations together with sector level shocks can explain both the slow progress of new trade agreements and the surprising stability of the customs union.
           </p>
         </div>
 
-        <div class="rounded-lg border border-slate-300 bg-white p-4 shadow-sm space-y-3">
-          <h3 class="text-sm font-semibold text-slate-900">Mercosur in real politics</h3>
-          <p class="text-xs text-slate-700">
-            Uruguay frequently pushes for an independent deal with China while larger
-            neighbors worry about trade diversion. The clip below shows President
-            Luis Lacalle Pou pressing Mercosur partners on the China negotiation.
-          </p>
-          <div class="aspect-video w-full overflow-hidden rounded-md bg-black">
-            <iframe
-              class="w-full h-full"
-              src="https://www.youtube.com/embed/ZIYG8bFOSos"
-              title="Uruguay China and Mercosur"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-blue-900">
+              What we see
+            </h3>
+            <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+              <li>→ Uruguay publicly questions the rule that Mercosur must negotiate as a bloc</li>
+              <li>→ Uruguay floats China and United States bilateral deals</li>
+              <li>→ External talks with China, the United States and the European Union drag for many years</li>
+              <li>→ The bloc never actually breaks</li>
+            </ul>
           </div>
-          <p class="text-[0.7rem] text-slate-500">
-            Source: Public remarks by the President of Uruguay reported in regional news.
-          </p>
-        </div>
-      </div>
-
-      <div class="rounded-lg border-l-4 border-red-900 bg-white p-6 shadow-sm text-slate-700">
-        <strong class="text-red-900">Key message:</strong>
-        Small members like Uruguay tend to gain more in percentage of GDP when Mercosur
-        bargains as a bloc while large members gain less and face concentrated losses in
-        a few industries. This basic asymmetry already hints at why external talks stall
-        without the union dissolving.
-      </div>
-    </section>
-
-    <section class="section space-y-8" data-section="1">
-      <div class="space-y-4 rounded-lg bg-white p-8 border border-slate-200 shadow-sm">
-        <h2 class="text-3xl font-bold text-slate-900">Mercosur trade policy in practice</h2>
-        <p class="text-lg leading-relaxed text-slate-700">
-          Mercosur is more than a low tariff club. Members apply a common external tariff
-          to most products and commit not to sign independent free trade agreements that
-          change those external tariffs unilaterally. This makes any negotiation with
-          large partners such as the European Union China or the United States effectively
-          a bloc wide decision.
-        </p>
-        <p class="text-lg leading-relaxed text-slate-700">
-          The paper takes that institutional reality seriously. The counterfactuals always
-          respect reciprocity in trade policy and the no import subsidy constraint while
-          allowing for asymmetric sectoral tariffs across partners. Internal deviations from
-          the common external tariff are modeled explicitly so we can see how one country
-          leaving or bending the rule affects everyone else.
-        </p>
-      </div>
-
-      <div class="grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-        <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm space-y-3">
-          <h3 class="text-lg font-semibold text-blue-900">External negotiations that shape the debate</h3>
-          <ul class="mt-2 space-y-2 text-sm text-slate-700 list-disc list-inside">
-            <li>Long running talks between the European Union and Mercosur</li>
-            <li>Uruguay exploring bilateral agreements with China and the United States</li>
-            <li>Brazil and Argentina reacting to potential losses in sensitive industries</li>
-          </ul>
-          <p class="text-sm text-slate-700">
-            In the model the European Union China and the United States each face the
-            choice of bargaining with Mercosur as a whole or with individual members.
-            The customs union constraint means that a deal with one member can upset the
-            internal balance and trigger exit threats by others.
-          </p>
+          <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-teal-800">
+              Why it matters
+            </h3>
+            <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+              <li>→ Shapes supply chains for about two hundred eighty million people</li>
+              <li>→ Stability parallels other regional agreements that look fragile on paper</li>
+              <li>→ Sector shocks drive political pressure and change who wants external deals</li>
+            </ul>
+          </div>
         </div>
 
+        <div class="rounded-lg border-l-4 border-red-900 bg-white p-6 shadow-sm text-slate-700">
+          <strong class="text-red-900">
+            Key insight:
+          </strong>
+          Small members gain bargaining power when they stay inside the customs union, while large members fear concentrated manufacturing losses from ambitious external deals. The same forces that make external agreements hard to sign also help the bloc remain intact.
+        </div>
+      </section>
+
+      <!-- Section 1: Mercosur trade policy and exemptions -->
+      <section class="section hidden space-y-8" data-section="1">
         <div class="space-y-4">
-          <div class="rounded-lg border border-slate-300 bg-white p-4 shadow-sm space-y-3">
-            <h3 class="text-sm font-semibold text-slate-900">European Union and Mercosur</h3>
-            <p class="text-xs text-slate-700">
-              High profile negotiations with the European Union capture how environmental
-              and sectoral concerns in Brazil and Europe can delay a deal even when average
-              tariffs would fall.
-            </p>
-            <div class="aspect-video w-full overflow-hidden rounded-md bg-black">
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/vMaeAnQywCU"
-                title="European Union Mercosur trade debate"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
+          <h2 class="text-3xl font-bold text-slate-900">
+            How Mercosur Works
+          </h2>
+          <p class="text-lg text-slate-700">
+            Customs union: internal tariffs are close to zero, common external tariff around ten percent with many product level exemptions.
+          </p>
+          <p class="text-sm text-slate-700">
+            Recent reforms expand the lists of exemptions to the common external tariff. Brazil plans to move from about one hundred to one hundred fifty tariff lines by 2028, Argentina mirrors this change, Uruguay from roughly two hundred twenty five to two hundred seventy five lines by 2029, and Paraguay from about six hundred forty nine to six hundred ninety nine lines by 2030. The model uses effective applied tariffs so that these exemptions are reflected in the counterfactuals.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-3 text-sm">
+          <div class="rounded-lg border border-slate-300 bg-white p-6">
+            <div class="text-3xl font-bold text-blue-700">
+              0%
             </div>
-            <p class="text-[0.7rem] text-slate-500">
-              Source: Television coverage of French President Emmanuel Macron commenting on the European Union Mercosur deal.
+            <p class="mt-2 text-slate-700">
+              Internal tariffs on most goods
+            </p>
+            <p class="mt-1 text-xs text-slate-500">
+              With exceptions like automobiles and sugar that keep specific regimes.
             </p>
           </div>
-
-          <div class="rounded-lg border border-slate-300 bg-white p-4 shadow-sm space-y-3">
-            <h3 class="text-sm font-semibold text-slate-900">Another view from summit coverage</h3>
-            <p class="text-xs text-slate-700">
-              This clip comes from public summit coverage and illustrates the political tone
-              of recent Mercosur debates.
-            </p>
-            <div class="aspect-video w-full overflow-hidden rounded-md bg-black">
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/dcnmjPZMAqo"
-                title="Mercosur summit coverage"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
+          <div class="rounded-lg border border-slate-300 bg-white p-6">
+            <div class="text-3xl font-bold text-red-700">
+              ~10%
             </div>
-            <p class="text-[0.7rem] text-slate-500">
-              Source: YouTube broadcast of regional summit coverage.
+            <p class="mt-2 text-slate-700">
+              Common external tariff on average
+            </p>
+            <p class="mt-1 text-xs text-slate-500">
+              Defined at the bloc level, with important variation across sectors.
+            </p>
+          </div>
+          <div class="rounded-lg border border-slate-300 bg-white p-6">
+            <div class="text-3xl font-bold text-amber-700">
+              480+
+            </div>
+            <p class="mt-2 text-slate-700">
+              Exempted tariff lines
+            </p>
+            <p class="mt-1 text-xs text-slate-500">
+              Countries make growing use of exemptions to adapt the common external tariff to domestic political pressure.
             </p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section space-y-8" data-section="2">
-      <div class="space-y-4 rounded-lg bg-white p-8 border border-slate-200 shadow-sm">
-        <h2 class="text-3xl font-bold text-slate-900">Partners and trade patterns</h2>
-        <p class="text-lg leading-relaxed text-slate-700">
-          The starting point for the quantitative exercise is detailed bilateral trade data.
-          The paper observes flows between Mercosur members and major partners from 2004
-          to 2017 at the sector level and reconstructs the pattern of protection across
-          agriculture manufacturing and services.
-        </p>
-        <p class="text-lg leading-relaxed text-slate-700">
-          Over this period China becomes a central buyer for South American exports while
-          the European Union and the United States remain key destinations for higher
-          value manufactures. Within Mercosur Brazil is the main market for neighbors
-          industrial goods while Argentina and Uruguay specialize in different baskets
-          of agricultural and light manufacturing products.
-        </p>
-      </div>
-
-      <div class="grid gap-4 md:grid-cols-3">
-        <div class="rounded-lg border border-slate-300 bg-white p-4 shadow-sm">
-          <h3 class="text-sm font-semibold text-slate-900">China</h3>
-          <p class="mt-2 text-sm text-slate-700">
-            Strong growth in demand for soy meat and resource based products makes China
-            an especially attractive partner for Uruguay and Brazil and raises the stakes
-            of any China Mercosur deal.
-          </p>
+        <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold text-slate-900 mb-3">
+            Why this is a good laboratory
+          </h3>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li>→ Common rule: external agreements must be negotiated as a bloc</li>
+            <li>→ Extra bloc partners are large and diverse: China, United States, European Union</li>
+            <li>→ Many exemptions create heterogeneous protection inside the union</li>
+            <li>→ Rich policy history: stalled deals, threats of exit, and partial sector exemptions</li>
+          </ul>
         </div>
-        <div class="rounded-lg border border-slate-300 bg-white p-4 shadow-sm">
-          <h3 class="text-sm font-semibold text-slate-900">United States</h3>
-          <p class="mt-2 text-sm text-slate-700">
-            The United States matters both as a buyer of manufactures and as a reference
-            point for earlier negotiations such as the aborted United States Uruguay deal
-            in the mid two thousands that motivates several counterfactuals.
-          </p>
+
+        <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold text-slate-900 mb-3">
+            Short videos with the politics in action
+          </h3>
+          <div class="grid gap-4 md:grid-cols-3 text-xs">
+            <a href="https://www.youtube.com/shorts/ZIYG8bFOSos" target="_blank" class="block rounded-lg border p-3 hover:bg-slate-50 transition">
+              <div class="font-semibold mb-1">Presidential remarks on Mercosur unity</div>
+              <p class="text-slate-600">
+                Short clip with leaders discussing the future of the bloc and external deals.
+              </p>
+            </a>
+            <a href="https://www.youtube.com/watch?v=dcnmjPZMAqo" target="_blank" class="block rounded-lg border p-3 hover:bg-slate-50 transition">
+              <div class="font-semibold mb-1">Debate on Uruguay and China</div>
+              <p class="text-slate-600">
+                Discussion of Uruguay attempts to open a bilateral path with China while remaining in Mercosur.
+              </p>
+            </a>
+            <a href="https://www.youtube.com/watch?v=vMaeAnQywCU" target="_blank" class="block rounded-lg border p-3 hover:bg-slate-50 transition">
+              <div class="font-semibold mb-1">Mercosur summit excerpts</div>
+              <p class="text-slate-600">
+                Excerpts from a Mercosur summit where external negotiations and internal rules are central topics.
+              </p>
+            </a>
+          </div>
         </div>
-        <div class="rounded-lg border border-slate-300 bg-white p-4 shadow-sm">
-          <h3 class="text-sm font-semibold text-slate-900">European Union</h3>
-          <p class="mt-2 text-sm text-slate-700">
-            The European Union combines relatively low external tariffs in many sectors with
-            political concerns about agriculture and deforestation. In the model this shows
-            up as scope for mutually beneficial cuts that are still hard to implement.
-          </p>
-        </div>
-      </div>
+      </section>
 
-      <div class="rounded-lg border border-dashed border-slate-300 bg-slate-50 p-4 text-sm text-slate-700">
-        Charts in the full interactive version display how the share of exports to each
-        partner evolves over time and how initial tariffs differ across sectors. The static
-        page here keeps the narrative but omits those interactive plots.
-      </div>
-    </section>
-
-    <section class="section space-y-8" data-section="3">
-      <div class="space-y-4 rounded-lg bg-white p-8 border border-slate-200 shadow-sm">
-        <h2 class="text-3xl font-bold text-slate-900">Why countries like Uruguay gain from staying</h2>
-        <p class="text-lg leading-relaxed text-slate-700">
-          The counterfactuals show that when Mercosur negotiates jointly with China or the
-          United States the smallest member Uruguay tends to gain more in percentage of
-          GDP than Brazil or Argentina. Those gains come both from better access to the
-          external partner and from continued preferential access to the large neighbors
-          markets.
-        </p>
-        <p class="text-lg leading-relaxed text-slate-700">
-          Sector level results reveal especially strong increases in profits and employment
-          in meat dairy and some manufacturing activities when Uruguay participates in bloc
-          negotiations instead of going alone. In the joint China and United States scenarios
-          these sectors account for most of the labor reallocation toward expanding export
-          opportunities.
-        </p>
-      </div>
-
-      <div class="grid gap-4 md:grid-cols-2">
-        <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm space-y-2">
-          <h3 class="text-sm font-semibold text-slate-900">Counterfactual thought experiment</h3>
-          <p class="text-sm text-slate-700">
-            Imagine Uruguay signs an independent free trade agreement with China while the
-            rest of Mercosur keeps the common external tariff. The model tracks how tariffs
-            change across all partners and sectors and recomputes trade flows production and
-            wages in every country.
+      <!-- Section 2: Partners and trade patterns -->
+      <section class="section hidden space-y-8" data-section="2">
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold text-slate-900">
+            Who Trades with Whom?
+          </h2>
+          <p class="text-lg text-slate-700">
+            China rises to the main trading partner for all members by 2017, while the United States and the European Union remain important but secondary.
           </p>
           <p class="text-sm text-slate-700">
-            Even in that favorable scenario Uruguay still values access to Brazilian and
-            Argentine markets. The paper shows that joint bargaining often delivers larger
-            aggregate gains than the most optimistic unilateral deviation once the full
-            general equilibrium response is taken into account.
+            Using GTAP eleven data from 2004 to 2017, the share of China in extra bloc trade rises steadily for every member and overtakes the United States and the European Union by the end of the period. Brazil and Uruguay show the largest proportional increases, Paraguay keeps a stronger focus on intra bloc commerce, and Uruguay maintains a balanced split across the three partners.
           </p>
         </div>
-        <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm space-y-2">
-          <h3 class="text-sm font-semibold text-slate-900">Link back to the political debate</h3>
-          <p class="text-sm text-slate-700">
-            This helps interpret repeated exit threats by Uruguay. The country can plausibly
-            gain in some scenarios by stepping outside the common rule yet the quantitative
-            evidence suggests that remaining in the bloc and pushing for serious joint
-            negotiations with large partners may generate larger and more resilient gains.
-          </p>
-        </div>
-      </div>
-    </section>
 
-    <section class="section space-y-8" data-section="4">
-      <div class="space-y-4 rounded-lg bg-white p-8 border border-slate-200 shadow-sm">
-        <h2 class="text-3xl font-bold text-slate-900">Why large members block external negotiations</h2>
-        <p class="text-lg leading-relaxed text-slate-700">
-          For Brazil and to a lesser extent Argentina the same counterfactuals look very
-          different. Average welfare changes from bloc negotiations with China and the
-          United States are modest relative to GDP while losses are heavily concentrated
-          in a few manufacturing industries such as apparel textiles leather products and
-          some machinery.
-        </p>
-        <p class="text-lg leading-relaxed text-slate-700">
-          The model quantifies those sectoral losses and shows that workers and firms in
-          import competing manufacturing lose far more than the aggregate numbers suggest.
-          This helps explain why governments that benefit slightly in the aggregate may
-          still face intense lobbying against deep external liberalization and why Mercosur
-          can stay intact while large negotiations repeatedly stall.
-        </p>
-      </div>
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-sm">
+          <div class="rounded-lg border px-4 py-3 bg-blue-50 border-blue-200">
+            Brazil: diversified manufacturing
+          </div>
+          <div class="rounded-lg border px-4 py-3 bg-white">
+            Argentina: agriculture and industry mix
+          </div>
+          <div class="rounded-lg border px-4 py-3 bg-white">
+            Uruguay: small, high value agriculture and services
+          </div>
+          <div class="rounded-lg border px-4 py-3 bg-white">
+            Paraguay: relies more on intra bloc trade
+          </div>
+        </div>
 
-      <div class="grid gap-4 md:grid-cols-2">
-        <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm space-y-2">
-          <h3 class="text-sm font-semibold text-slate-900">Distributional tension inside the bloc</h3>
+        <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold text-slate-900 mb-3">
+            Trade shares for extra bloc trade (qualitative summary)
+          </h3>
           <p class="text-sm text-slate-700">
-            Within Brazil and Argentina export oriented agriculture and resource sectors
-            often gain from lower partner tariffs while urban manufacturing clusters lose.
-            The paper uses industry level data to show how those conflicting interests map
-            into measurable changes in output profits and employment by sector.
+            Between 2004 and 2017, China share climbs for exports and imports of all members, United States share falls especially for exports, and the European Union declines slowly but stays relevant, particularly for Uruguay.
+          </p>
+          <div class="grid gap-3 sm:grid-cols-3 text-xs text-slate-700 mt-3">
+            <div class="p-3 bg-slate-50 rounded border">
+              United States: declining share in exports, still important for imports
+            </div>
+            <div class="p-3 bg-slate-50 rounded border">
+              China: from marginal partner to main extra bloc market
+            </div>
+            <div class="p-3 bg-slate-50 rounded border">
+              European Union: gradual decline, but key destination for Uruguay
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Uruguay gains from staying -->
+      <section class="section hidden space-y-8" data-section="3">
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold text-slate-900">
+            Why Uruguay Gains from Staying
+          </h2>
+          <p class="text-lg text-slate-700">
+            Quantitative simulations in the paper show that when Uruguay negotiates as part of Mercosur, its welfare gains from reciprocal deals with China and the United States are on the order of a few tenths of one percent of consumption, clearly larger than the very small gains it would get from similar bilateral moves alone once reciprocity and partner responses are taken into account.
+          </p>
+          <p class="text-sm text-slate-700">
+            These gains come mainly from better access for meat, oilseeds, and other primary exports. The model also shows that job losses in Uruguay are concentrated in light manufacturing sectors that represent a smaller share of total production, which makes the overall political cost of participation in the customs union more manageable.
           </p>
         </div>
-        <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm space-y-2">
-          <h3 class="text-sm font-semibold text-slate-900">Takeaway for customs union stability</h3>
-          <p class="text-sm text-slate-700">
-            Putting all scenarios together the paper argues that customs unions can be
-            internally stable even when they are external negotiation stumbling blocks.
-            Small members gain a lot from joint deals and have little incentive to leave
-            while large members tolerate the union but use their veto power to protect
-            politically sensitive sectors from rapid liberalization.
+
+        <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-slate-900 mb-3">
+            Welfare gains for Uruguay in the counterfactuals
+          </h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-medium text-slate-800">
+                Mercosur China deal, Uruguay inside the bloc
+              </span>
+              <span class="text-emerald-700">
+                Welfare gains around 0.2 to 0.5 percent
+              </span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="font-medium text-slate-800">
+                Mercosur United States deal, Uruguay inside the bloc
+              </span>
+              <span class="text-emerald-700">
+                Welfare gains around 0.1 to 0.6 percent in different years
+              </span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="font-medium text-slate-800">
+                Uruguay alone with China or United States
+              </span>
+              <span class="text-slate-700">
+                Gains close to zero once reciprocity conditions and partner reactions are enforced
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2 text-sm">
+          <div class="rounded-lg border border-slate-300 bg-white p-6">
+            <h3 class="font-semibold text-emerald-900 mb-2">
+              Why bloc bargaining helps Uruguay
+            </h3>
+            <ul class="space-y-2 text-slate-700">
+              <li>✓ Larger joint market makes reciprocity constraints less binding for Uruguay</li>
+              <li>✓ Better terms for meat, oilseeds, and other primary exports</li>
+              <li>✓ Adverse effects fall on small manufacturing sectors, which have lower production shares</li>
+            </ul>
+          </div>
+          <div class="rounded-lg border border-slate-300 bg-white p-6">
+            <h3 class="font-semibold text-burgundy-900 mb-2">
+              Why unilateral deviations are less attractive
+            </h3>
+            <ul class="space-y-2 text-slate-700">
+              <li>✓ Bilateral deals without the bloc trigger smaller partner concessions</li>
+              <li>✓ Reciprocity conditions restrict tariff cuts when Uruguay negotiates alone</li>
+              <li>✓ Once the European Union Mercosur agreement is taken as background, the additional gains from unilateral Uruguay deals fall further, as the paper shows for the period around 2017</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Why Brazil and Argentina block external deals -->
+      <section class="section hidden space-y-8" data-section="4">
+        <div class="space-y-4">
+          <h2 class="text-3xl font-bold text-slate-900">
+            Why Large Countries Block Deals
+          </h2>
+          <p class="text-lg text-slate-700">
+            For Brazil and Argentina, the same external deals generate modest aggregate welfare gains but very sharp losses in a few manufacturing industries, which helps explain persistent political resistance to deep external liberalization.
           </p>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <footer class="border-t border-gray-200 bg-white">
-    <div class="mx-auto max-w-5xl px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <button id="prev" class="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-700 hover:bg-gray-100 disabled:opacity-50">
-        <i data-lucide="chevron-left" class="w-4 h-4"></i>Previous
+        <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
+          <h3 class="font-semibold text-slate-900 mb-3">
+            Concentrated sector losses in the Mercosur China scenario
+          </h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center justify-between">
+              <span>
+                Argentina: wearing apparel and textiles
+              </span>
+              <span class="text-rose-700 font-semibold">
+                Large falls in sector employment shares
+              </span>
+            </div>
+            <div class="w-full h-3 rounded bg-slate-100 overflow-hidden">
+              <div class="h-full bg-rose-500" style="width:80%"></div>
+            </div>
+
+            <div class="flex items-center justify-between mt-3">
+              <span>
+                Brazil: apparel and other manufactures
+              </span>
+              <span class="text-rose-700 font-semibold">
+                Heavy employment losses in a few sectors
+              </span>
+            </div>
+            <div class="w-full h-3 rounded bg-slate-100 overflow-hidden">
+              <div class="h-full bg-rose-400" style="width:65%"></div>
+            </div>
+
+            <div class="flex items-center justify-between mt-3">
+              <span>
+                Uruguay: light manufactures
+              </span>
+              <span class="text-amber-700 font-semibold">
+                Losses in smaller manufacturing sectors
+              </span>
+            </div>
+            <div class="w-full h-3 rounded bg-slate-100 overflow-hidden">
+              <div class="h-full bg-amber-400" style="width:30%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-lg border border-slate-300 bg-white p-6">
+          <p class="text-sm text-slate-700">
+            In the Mercosur China scenario that the paper highlights, clothing and other labor intensive manufactures in Brazil and Argentina lose a significant share of employment. For example, clothing in Brazil can lose around fifteen percent of its jobs and about half a percentage point of its share in total employment, while similar magnitudes appear in textiles and other manufactures. These concentrated losses contrast with diffuse gains for consumers and primary exporters, making it easier for threatened sectors to organize blocking coalitions that delay or veto external agreements.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Navigation buttons -->
+    <div class="mt-8 flex items-center justify-between border-t border-slate-200 pt-4">
+      <button id="prev-btn" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed">
+        <i data-lucide="arrow-left" class="h-4 w-4"></i>
+        Previous
       </button>
       <div class="flex items-center gap-2">
-        <button class="dot h-2 w-2 rounded-full bg-gray-300 transition-all" data-jump="0"></button>
-        <button class="dot h-2 w-2 rounded-full bg-gray-300 transition-all" data-jump="1"></button>
-        <button class="dot h-2 w-2 rounded-full bg-gray-300 transition-all" data-jump="2"></button>
-        <button class="dot h-2 w-2 rounded-full bg-gray-300 transition-all" data-jump="3"></button>
-        <button class="dot h-2 w-2 rounded-full bg-gray-300 transition-all" data-jump="4"></button>
+        <span class="text-xs text-slate-500">
+          Step
+        </span>
+        <div class="flex items-center gap-1">
+          <span class="dot h-1.5 w-4 rounded-full bg-red-700"></span>
+          <span class="dot h-1.5 w-1.5 rounded-full bg-red-200"></span>
+          <span class="dot h-1.5 w-1.5 rounded-full bg-red-200"></span>
+          <span class="dot h-1.5 w-1.5 rounded-full bg-red-200"></span>
+          <span class="dot h-1.5 w-1.5 rounded-full bg-red-200"></span>
+        </div>
       </div>
-      <button id="next" class="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-700 hover:bg-gray-100 disabled:opacity-50">
-        Next<i data-lucide="chevron-right" class="w-4 h-4"></i>
+      <button id="next-btn" class="inline-flex items-center gap-2 rounded-full bg-red-900 px-4 py-2 text-sm font-medium text-white hover:bg-red-800">
+        Next
+        <i data-lucide="arrow-right" class="h-4 w-4"></i>
       </button>
     </div>
-  </footer>
+
+    <div class="mt-8 mb-10 rounded-lg bg-slate-900 text-slate-100 p-6 text-sm space-y-2">
+      <p>
+        This page is a simplified interactive companion to the job market paper
+        <span class="font-semibold">“External Negotiations and Customs Union Stability”</span>.
+      </p>
+      <p>
+        The full paper develops a customs union model with reciprocity based bargaining, calibrates it to GTAP data for Mercosur and its main partners, and uses it to simulate counterfactual external negotiations such as Mercosur China and Mercosur United States, both at the bloc level and with unilateral deviations. The goal is to explain the puzzle of why Mercosur remains stable, despite repeated threats of exit, rising use of tariff exemptions, and long standing external negotiations that rarely reach implementation.
+      </p>
+      <p>
+        For more details, see the full paper and online appendix.
+      </p>
+    </div>
+  </div>
 
   <script>
-    const sections = Array.from(document.querySelectorAll('.section'));
-    const counter = document.getElementById('section-counter');
-    const progress = document.getElementById('progress');
-    const dots = Array.from(document.querySelectorAll('.dot'));
+    const sections = document.querySelectorAll('.section');
+    const dots = document.querySelectorAll('.dot');
+    const progressBar = document.getElementById('progress-bar');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
 
     let current = 0;
 
-    function render(index) {
-      sections.forEach((s, i) => {
-        s.style.display = i === index ? 'block' : 'none';
+    function updateView() {
+      sections.forEach((sec, i) => {
+        if (i === current) {
+          sec.classList.remove('hidden');
+        } else {
+          sec.classList.add('hidden');
+        }
       });
 
-      counter.textContent = `Section ${index + 1}`;
-      progress.style.width = `${((index + 1) / sections.length) * 100}%`;
-
-      dots.forEach((d, i) => {
-        d.classList.toggle('active', i === index);
-        d.classList.toggle('bg-blue-500', i === index);
-        d.classList.toggle('bg-gray-300', i !== index);
+      dots.forEach((dot, i) => {
+        if (i === current) {
+          dot.classList.add('active');
+          dot.classList.remove('bg-red-200');
+          dot.classList.add('bg-red-700');
+        } else {
+          dot.classList.remove('active');
+          dot.classList.remove('bg-red-700');
+          dot.classList.add('bg-red-200');
+        }
       });
+
+      const progress = ((current + 1) / sections.length) * 100;
+      progressBar.style.width = progress + '%';
+
+      prevBtn.disabled = current === 0;
+      nextBtn.textContent = current === sections.length - 1 ? 'Back to start' : 'Next';
     }
 
-    document.getElementById('next').onclick = () => {
-      current = (current + 1) % sections.length;
-      render(current);
-    };
-    document.getElementById('prev').onclick = () => {
-      current = (current - 1 + sections.length) % sections.length;
-      render(current);
-    };
-    dots.forEach((d, i) => d.onclick = () => { current = i; render(current); });
+    prevBtn.addEventListener('click', () => {
+      if (current > 0) {
+        current -= 1;
+      }
+      updateView();
+    });
 
-    render(0);
-    lucide.createIcons();
+    nextBtn.addEventListener('click', () => {
+      if (current < sections.length - 1) {
+        current += 1;
+      } else {
+        current = 0;
+      }
+      updateView();
+    });
+
+    updateView();
+
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
   </script>
 </body>
 </html>
