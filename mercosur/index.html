@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercosur Customs Union Explainer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { background: #f8fafc; }
+    .dot.active { width: 2rem; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <header class="sticky top-0 z-50 border-b border-gray-200 bg-gradient-to-r from-red-900 via-red-800 to-red-900 text-white shadow-lg">
+    <div class="mx-auto max-w-5xl px-6 py-6">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h1 class="text-2xl font-bold">Mercosur Customs Union</h1>
+          <p class="text-sm text-red-100">External Negotiations &amp; Stability</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 text-sm">
+          <a href="https://guipaivapinto.github.io/" class="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 font-medium text-red-900 transition hover:bg-red-50">
+            <i data-lucide="file-text" class="w-4 h-4"></i><span>Full JMP</span>
+          </a>
+          <a href="mailto:gppinto@iu.edu" class="inline-flex items-center gap-2 rounded-lg border border-white bg-red-900/20 px-4 py-2 font-medium text-white transition hover:bg-red-900/40">
+            <i data-lucide="mail" class="w-4 h-4"></i><span>Contact</span>
+          </a>
+        </div>
+      </div>
+      <div class="mt-4 flex items-center gap-2 text-sm text-red-100">
+        <span id="section-counter">Section 1</span><span class="text-red-300">/</span><span>5</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="h-1 bg-gray-200">
+    <div id="progress" class="h-full bg-gradient-to-r from-blue-600 to-blue-500 transition-all duration-300" style="width:20%"></div>
+  </div>
+
+  <main class="mx-auto max-w-5xl px-6 py-10 space-y-10">
+    <!-- Sections -->
+    <section class="section space-y-8" data-section="0">
+      <div class="space-y-4 rounded-lg bg-white p-8 border border-slate-200 shadow-sm">
+        <h2 class="text-3xl font-bold text-slate-900">A Puzzle: <span class="text-red-900">Why Does Mercosur Stay Together?</span></h2>
+        <p class="text-lg leading-relaxed text-slate-700">
+          Since 1995, Mercosur has kept a common external tariff and an internal free-trade area. Uruguay threatens exit, external negotiations stall, yet the bloc persists.
+        </p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-blue-900">What we see</h3>
+          <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+            <li>→ Uruguay floats China/USA bilateral deals</li>
+            <li>→ External talks drag for years</li>
+            <li>→ The bloc never actually breaks</li>
+          </ul>
+        </div>
+        <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-teal-800">Why it matters</h3>
+          <ul class="mt-3 space-y-2 text-slate-700 text-sm">
+            <li>→ Shapes supply chains for 280M people</li>
+            <li>→ Stability parallels other regional blocs</li>
+            <li>→ Sector shocks drive political pressure</li>
+          </ul>
+        </div>
+      </div>
+      <div class="rounded-lg border-l-4 border-red-900 bg-white p-6 shadow-sm text-slate-700">
+        <strong class="text-red-900">Key insight:</strong> Small members gain bargaining power in the bloc; large members face concentrated manufacturing losses, so they stall external deals.
+      </div>
+    </section>
+
+    <section class="section hidden space-y-8" data-section="1">
+      <div class="space-y-4">
+        <h2 class="text-3xl font-bold text-slate-900">How Mercosur Works</h2>
+        <p class="text-lg text-slate-700">Customs union: internal tariffs ≈ 0%, common external tariff ~10% with 480+ exceptions.</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-3 text-sm">
+        <div class="rounded-lg border border-slate-300 bg-white p-6">
+          <div class="text-3xl font-bold text-blue-700">0%</div>
+          <p class="mt-2 text-slate-700">Internal tariffs (mostly)</p>
+        </div>
+        <div class="rounded-lg border border-slate-300 bg-white p-6">
+          <div class="text-3xl font-bold text-teal-700">~10%</div>
+          <p class="mt-2 text-slate-700">Common external tariff</p>
+        </div>
+        <div class="rounded-lg border border-slate-300 bg-white p-6">
+          <div class="text-3xl font-bold text-emerald-700">480+</div>
+          <p class="mt-2 text-slate-700">Exceptions for sensitive sectors</p>
+        </div>
+      </div>
+      <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">Average tariffs</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex items-center justify-between">
+            <span class="font-medium text-slate-800">Mercosur</span>
+            <span class="text-blue-700">10.4%</span>
+          </div>
+          <div class="w-full h-3 rounded bg-slate-100 overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-blue-600 to-cyan-500" style="width:86%"></div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="font-medium text-slate-800">United States</span>
+            <span class="text-blue-700">3.2%</span>
+          </div>
+          <div class="w-full h-3 rounded bg-slate-100 overflow-hidden">
+            <div class="h-full bg-slate-500" style="width:26%"></div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="font-medium text-slate-800">European Union</span>
+            <span class="text-blue-700">4.5%</span>
+          </div>
+          <div class="w-full h-3 rounded bg-slate-100 overflow-hidden">
+            <div class="h-full bg-slate-500" style="width:38%"></div>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 mt-3">Source: GTAP database (illustrative averages)</p>
+      </div>
+    </section>
+
+    <section class="section hidden space-y-8" data-section="2">
+      <div class="space-y-4">
+        <h2 class="text-3xl font-bold text-slate-900">Who Trades with Whom?</h2>
+        <p class="text-lg text-slate-700">China rises to #1 partner for all members by 2017; USA/EU remain important but secondary.</p>
+      </div>
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-sm">
+        <div class="rounded-lg border px-4 py-3 bg-blue-50 border-blue-200">Brazil: diversified manufacturing</div>
+        <div class="rounded-lg border px-4 py-3 bg-white">Argentina: ag + industry mix</div>
+        <div class="rounded-lg border px-4 py-3 bg-white">Uruguay: small, high-value ag</div>
+        <div class="rounded-lg border px-4 py-3 bg-white">Paraguay: relies on intra-bloc</div>
+      </div>
+      <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
+        <h3 class="font-semibold text-slate-900 mb-3">Trade shares (% of extra-bloc trade)</h3>
+        <p class="text-sm text-slate-700">Between 2004 → 2017, China’s share climbs; USA share falls; EU steady.</p>
+        <div class="grid gap-3 sm:grid-cols-3 text-xs text-slate-700 mt-3">
+          <div class="p-3 bg-slate-50 rounded border">USA → ↓</div>
+          <div class="p-3 bg-slate-50 rounded border">China → ↑</div>
+          <div class="p-3 bg-slate-50 rounded border">EU → steady</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden space-y-8" data-section="3">
+      <div class="space-y-4">
+        <h2 class="text-3xl font-bold text-slate-900">Why Uruguay Gains from Staying</h2>
+        <p class="text-lg text-slate-700">Bloc negotiations with China: +0.18–0.46% welfare; solo deals ~0%.</p>
+      </div>
+      <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
+        <h3 class="text-lg font-semibold text-slate-900 mb-3">Welfare gains (illustrative)</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex items-center justify-between">
+            <span class="font-medium text-slate-800">Bloc negotiation</span>
+            <span class="text-teal-700 font-semibold">+0.37%</span>
+          </div>
+          <div class="w-full h-3 rounded bg-slate-100 overflow-hidden">
+            <div class="h-full bg-teal-600" style="width:74%"></div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="font-medium text-slate-800">Solo negotiation</span>
+            <span class="text-rose-700 font-semibold">0.00%</span>
+          </div>
+          <div class="w-full h-3 rounded bg-slate-100 overflow-hidden">
+            <div class="h-full bg-rose-500" style="width:5%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 text-sm">
+        <div class="rounded-lg border border-slate-300 bg-white p-6">
+          <h3 class="font-semibold text-teal-900 mb-2">Uruguay + Mercosur</h3>
+          <ul class="space-y-2 text-slate-700">
+            <li>✓ Bundled with Brazil → bigger market</li>
+            <li>✓ Better tariff concessions</li>
+            <li>✓ Credible leverage vs China</li>
+          </ul>
+        </div>
+        <div class="rounded-lg border border-slate-300 bg-white p-6">
+          <h3 class="font-semibold text-burgundy-900 mb-2">Uruguay Alone</h3>
+          <ul class="space-y-2 text-slate-700">
+            <li>✗ Limited bargaining power</li>
+            <li>✗ Take-it-or-leave-it terms</li>
+            <li>✗ Tiny welfare gains</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hidden space-y-8" data-section="4">
+      <div class="space-y-4">
+        <h2 class="text-3xl font-bold text-slate-900">Why Large Countries Block Deals</h2>
+        <p class="text-lg text-slate-700">Brazil/Argentina see small aggregate gains but concentrated sector losses → political pushback.</p>
+      </div>
+      <div class="rounded-lg border border-slate-300 bg-white p-6 shadow-sm">
+        <h3 class="font-semibold text-slate-900 mb-3">Top losing sectors (MS–China)</h3>
+        <div class="space-y-2 text-sm">
+          <div class="flex items-center justify-between"><span>Apparel</span><span class="text-rose-700 font-semibold">-15%</span></div>
+          <div class="w-full h-3 rounded bg-slate-100 overflow-hidden"><div class="h-full bg-rose-600" style="width:90%"></div></div>
+          <div class="flex items-center justify-between"><span>Textiles</span><span class="text-rose-700 font-semibold">-5.5%</span></div>
+          <div class="w-full h-3 rounded bg-slate-100 overflow-hidden"><div class="h-full bg-rose-500" style="width:55%"></div></div>
+          <div class="flex items-center justify-between"><span>Leather</span><span class="text-rose-700 font-semibold">-3.4%</span></div>
+          <div class="w-full h-3 rounded bg-slate-100 overflow-hidden"><div class="h-full bg-rose-400" style="width:34%"></div></div>
+        </div>
+      </div>
+      <div class="rounded-lg border border-slate-300 bg-white p-6">
+        <p class="text-sm text-slate-700">
+          Losses are concentrated (apparel, textiles, leather) and politically vocal. Gains are diffuse (consumers, agriculture). Result: vetoes and delays.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-200 bg-white">
+    <div class="mx-auto max-w-5xl px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <button id="prev" class="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700 hover:bg-gray-100 disabled:opacity-50">
+        <i data-lucide="chevron-left" class="w-4 h-4"></i>Previous
+      </button>
+      <div class="flex items-center gap-2">
+        <button class="dot h-2 w-2 rounded-full bg-gray-300 transition-all" data-jump="0"></button>
+        <button class="dot h-2 w-2 rounded-full bg-gray-300 transition-all" data-jump="1"></button>
+        <button class="dot h-2 w-2 rounded-full bg-gray-300 transition-all" data-jump="2"></button>
+        <button class="dot h-2 w-2 rounded-full bg-gray-300 transition-all" data-jump="3"></button>
+        <button class="dot h-2 w-2 rounded-full bg-gray-300 transition-all" data-jump="4"></button>
+      </div>
+      <button id="next" class="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-gray-700 hover:bg-gray-100">
+        Next<i data-lucide="chevron-right" class="w-4 h-4"></i>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    const sections = Array.from(document.querySelectorAll('.section'));
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    const progress = document.getElementById('progress');
+    const counter = document.getElementById('section-counter');
+    let current = 0;
+
+    function render(index) {
+      sections.forEach((s, i) => s.classList.toggle('hidden', i !== index));
+      dots.forEach((d, i) => d.classList.toggle('active', i === index));
+      progress.style.width = `${((index + 1) / sections.length) * 100}%`;
+      counter.textContent = `Section ${index + 1}`;
+    }
+
+    document.getElementById('next').onclick = () => {
+      current = (current + 1) % sections.length;
+      render(current);
+    };
+    document.getElementById('prev').onclick = () => {
+      current = (current - 1 + sections.length) % sections.length;
+      render(current);
+    };
+    dots.forEach((d, i) => d.onclick = () => { current = i; render(current); });
+
+    render(0);
+    lucide.createIcons();
+  </script>
+</body>
+</html>
