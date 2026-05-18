@@ -99,11 +99,6 @@ export default function HomePage() {
               Prior to my doctoral studies, I completed my [previous degree] at [previous institution] in
               [year]. I have experience in [relevant experience, research methods, policy work, etc.].
             </p>
-            <p className="text-gray-700 leading-relaxed">
-              I am currently on the academic job market for the [Year-Year] cycle and will be available for
-              interviews at the ASSA meetings in [Location, Month Year].
-            </p>
-
             {/* Download my JMP button */}
             <div className="mt-6">
               <Button asChild>
@@ -169,42 +164,6 @@ export default function HomePage() {
         </div>
       </CardContent>
 
-      {/* Quick explainer before the video */}
-      <div className="mt-8">
-        <h4 className="text-lg font-semibold mb-2">
-          Research Behind My Job Market Paper
-        </h4>
-        <p className="text-gray-700 mb-4">
-          The Notebook&nbsp;LM generated a short video that explains the core ideas behind my JMP.
-        </p>
-
-        {/* Responsive 16:9 iframe container */}
-        <div
-          className="relative w-full max-w-4xl rounded-lg overflow-hidden shadow"
-          style={{ paddingTop: "56.25%" }}
-        >
-          <iframe
-            src="/Mercosur_s_Stumbling_Bloc%20(1).mp4"
-            title="JMP explainer video"
-            className="absolute inset-0 w-full h-full border-0"
-            allow="autoplay; encrypted-media; picture-in-picture"
-          />
-        </div>
-
-        {/* Fallback direct link in case iframe behaves oddly */}
-        <p className="text-sm text-gray-500 mt-3">
-          If the video does not play inline, you can{" "}
-          <a
-            href="/Mercosur_s_Stumbling_Bloc%20(1).mp4"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 underline"
-          >
-            open it in a new tab
-          </a>
-          .
-        </p>
-      </div>
     </Card>
 
     {/* Interactive Mercosur explainer */}
@@ -250,38 +209,31 @@ export default function HomePage() {
       </CardContent>
     </Card>
 
-    {/* Working Papers */}
+    {/* Peer-Reviewed Papers */}
     <Card>
       <CardHeader>
-        <CardTitle>Working Papers</CardTitle>
+        <CardTitle>Peer-Reviewed Papers</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-6">
           <div className="border-l-4 border-gray-300 pl-6">
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">"[Working Paper Title 1]"</h4>
-            <p className="text-sm text-gray-600 mb-2">[Co-authors if any]</p>
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              Politics and Public Banks: BNDES Loans to Local Governments in Brazil
+            </h4>
+            <p className="text-sm text-gray-600 mb-2">Economía LACEA Journal (2026, Vol. 1)</p>
+            <p className="text-sm text-gray-600 mb-2">
+              Guilherme Paiva Pinto, Mauricio S. Bugarin, and Rodrigo Schneider
+            </p>
             <p className="text-gray-700 mb-3">
-              [Brief description of the paper, research question, and main findings]
+              This study advances a quantitative political economy analysis of development banking within federative
+              systems, focusing on Brazil's National Bank for Economic and Social Development (BNDES).
             </p>
             <div className="flex gap-2">
-              <Button size="sm" variant="outline">
-                Draft
-              </Button>
-              <Button size="sm" variant="outline">
-                Slides
-              </Button>
-            </div>
-          </div>
-
-          <div className="border-l-4 border-gray-300 pl-6">
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">"[Working Paper Title 2]"</h4>
-            <p className="text-sm text-gray-600 mb-2">[Co-authors if any]</p>
-            <p className="text-gray-700 mb-3">
-              [Brief description of the paper, research question, and main findings]
-            </p>
-            <div className="flex gap-2">
-              <Button size="sm" variant="outline">
-                Draft
+              <Button size="sm" variant="outline" asChild>
+                <Link href="https://economia.lse.ac.uk/articles/10.31389/eco.519" target="_blank">
+                  <FileText className="w-4 h-4 mr-2" />
+                  Read the Paper
+                </Link>
               </Button>
             </div>
           </div>
@@ -295,16 +247,29 @@ export default function HomePage() {
         <CardTitle>Work in Progress</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="space-y-4">
-          <div>
-            <h4 className="font-semibold text-gray-900">"[Project Title 1]"</h4>
-            <p className="text-sm text-gray-600">[Co-authors if any]</p>
-            <p className="text-gray-700 text-sm mt-1">[Brief description of the project]</p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-gray-900">"[Project Title 2]"</h4>
-            <p className="text-sm text-gray-600">[Co-authors if any]</p>
-            <p className="text-gray-700 text-sm mt-1">[Brief description of the project]</p>
+        <div className="space-y-6">
+          <div className="border-l-4 border-gray-300 pl-6">
+            <h4 className="font-semibold text-gray-900">
+              Tariff Cuts, External Shocks, and Strategic Inputs: The EU-Mercosur Agreement in a Changing World
+            </h4>
+            <p className="text-sm text-gray-600">Third paper • Work in progress</p>
+            <p className="text-gray-700 text-sm mt-1 mb-3">
+              This paper studies whether the world economy changed in ways that made the long-delayed EU-Mercosur
+              tariff bargain easier to defend. I code Annex 2-A, the product-level tariff schedule, and evaluate it
+              across benchmark economies from 2007 to 2022 in a six-region, 49-sector quantitative trade model.
+            </p>
+            <p className="text-gray-700 text-sm mt-1 mb-3">
+              The tariff component generates small aggregate gains, so the main result is incidence: manufacturing
+              losses in Argentina and Brazil remain concentrated, EU agriculture remains politically exposed, and
+              external tariff-risk and strategic-input scenarios help explain why the agreement became economically
+              more relevant despite modest tariff-only effects.
+            </p>
+            <Button size="sm" variant="outline" asChild>
+              <Link href="mailto:gppinto@iu.edu?subject=Draft%20request%3A%20EU-Mercosur%20paper">
+                <Mail className="w-4 h-4 mr-2" />
+                Request Draft
+              </Link>
+            </Button>
           </div>
         </div>
       </CardContent>
@@ -674,7 +639,7 @@ export default function HomePage() {
               </Link>
             </div>
             <p className="text-xs text-gray-500 mt-4">
-              Last updated: {new Date().toLocaleDateString()} • On the job market [Academic Year]
+              Last updated: {new Date().toLocaleDateString()}
             </p>
           </div>
         </div>
