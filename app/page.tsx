@@ -36,7 +36,7 @@ export default function HomePage() {
                 </Link>
               </Button>
               <Button size="sm" asChild>
-                <Link href="/cv.pdf" target="_blank">
+                <Link href="/Guilherme_Paiva_Pinto_CV.pdf" target="_blank">
                   <FileText className="w-4 h-4 mr-2" />
                   Download CV
                 </Link>
@@ -486,7 +486,7 @@ export default function HomePage() {
               <CardContent>
                 <div className="text-center mb-8">
                   <Button asChild size="lg">
-                    <Link href="/cv.pdf" target="_blank">
+                    <Link href="/Guilherme_Paiva_Pinto_CV.pdf" target="_blank">
                       <FileText className="w-5 h-5 mr-2" />
                       Download Complete CV (PDF)
                     </Link>
