@@ -1,0 +1,3 @@
+condition,productivity_index,interpretation
+Without AI,100,Normalized baseline
+With AI,115,Baseline times 1.15; published estimated effect

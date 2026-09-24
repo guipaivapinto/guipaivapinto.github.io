@@ -1,0 +1,131 @@
+code,year,value,country
+KOR,1990,8.4,South Korea
+KOR,1991,7.81,South Korea
+KOR,1992,7.71,South Korea
+KOR,1993,7.54,South Korea
+KOR,1994,7.7,South Korea
+KOR,1995,7.11,South Korea
+KOR,1996,6.82,South Korea
+KOR,1997,10.25,South Korea
+KOR,1998,14.67,South Korea
+KOR,1999,16.75,South Korea
+KOR,2000,17.11,South Korea
+KOR,2001,17.7,South Korea
+KOR,2002,17.55,South Korea
+KOR,2003,20.45,South Korea
+KOR,2004,23.25,South Korea
+KOR,2005,26.96,South Korea
+KOR,2006,29.27,South Korea
+KOR,2007,28.65,South Korea
+KOR,2008,28.16,South Korea
+KOR,2009,31.38,South Korea
+KOR,2010,30.83,South Korea
+KOR,2011,31.51,South Korea
+KOR,2012,32.13,South Korea
+KOR,2013,33.76,South Korea
+KOR,2014,35.88,South Korea
+KOR,2015,37.89,South Korea
+CHN,1990,6.95,China
+CHN,1991,7.43,China
+CHN,1992,4.98,China
+CHN,1993,6.71,China
+CHN,1994,6.14,China
+CHN,1995,21.45,China
+CHN,1996,21.26,China
+CHN,1997,20.45,China
+CHN,1998,20.5,China
+CHN,1999,21.69,China
+CHN,2000,22.81,China
+CHN,2001,24.38,China
+CHN,2002,25.71,China
+CHN,2003,26.57,China
+CHN,2004,26.17,China
+CHN,2005,26.1,China
+CHN,2006,25.38,China
+CHN,2007,29.04,China
+CHN,2008,27,China
+CHN,2009,32.56,China
+CHN,2010,33.09,China
+CHN,2011,33.09,China
+CHN,2012,34.02,China
+CHN,2013,36.93,China
+CHN,2014,39.83,China
+CHN,2015,42.92,China
+JPN,1990,67.04,Japan
+JPN,1991,66.49,Japan
+JPN,1992,71.22,Japan
+JPN,1993,77.27,Japan
+JPN,1994,86.22,Japan
+JPN,1995,95.07,Japan
+JPN,1996,102.29,Japan
+JPN,1997,109.1,Japan
+JPN,1998,121.63,Japan
+JPN,1999,135.61,Japan
+JPN,2000,143.78,Japan
+JPN,2001,153.63,Japan
+JPN,2002,163.99,Japan
+JPN,2003,169.57,Japan
+JPN,2004,180.66,Japan
+JPN,2005,186.44,Japan
+JPN,2006,186,Japan
+JPN,2007,183.01,Japan
+JPN,2008,191.81,Japan
+JPN,2009,210.25,Japan
+JPN,2010,215.82,Japan
+JPN,2011,231.63,Japan
+JPN,2012,238.01,Japan
+JPN,2013,244.48,Japan
+JPN,2014,249.11,Japan
+JPN,2015,247.98,Japan
+BRA,1990,65.71,Brazil
+BRA,1991,65.74,Brazil
+BRA,1992,83.96,Brazil
+BRA,1993,80.26,Brazil
+BRA,1994,39.52,Brazil
+BRA,1995,36.56,Brazil
+BRA,1996,44.15,Brazil
+BRA,1997,46.48,Brazil
+BRA,1998,59.89,Brazil
+BRA,1999,73.9,Brazil
+BRA,2000,68.46,Brazil
+BRA,2001,70.05,Brazil
+BRA,2002,78.8,Brazil
+BRA,2003,73.82,Brazil
+BRA,2004,70.08,Brazil
+BRA,2005,68.59,Brazil
+BRA,2006,65.85,Brazil
+BRA,2007,63.74,Brazil
+BRA,2008,61.87,Brazil
+BRA,2009,64.94,Brazil
+BRA,2010,63.04,Brazil
+BRA,2011,61.24,Brazil
+BRA,2012,62.31,Brazil
+BRA,2013,60.36,Brazil
+BRA,2014,63.31,Brazil
+BRA,2015,73.7,Brazil
+USA,1990,61.99,United States
+USA,1991,66.37,United States
+USA,1992,68.61,United States
+USA,1993,70.19,United States
+USA,1994,69.39,United States
+USA,1995,68.8,United States
+USA,1996,68.03,United States
+USA,1997,65.62,United States
+USA,1998,62.47,United States
+USA,1999,58.88,United States
+USA,2000,53.03,United States
+USA,2001,53.02,United States
+USA,2002,55.38,United States
+USA,2003,58.52,United States
+USA,2004,65.49,United States
+USA,2005,64.89,United States
+USA,2006,63.64,United States
+USA,2007,64.01,United States
+USA,2008,72.85,United States
+USA,2009,86.03,United States
+USA,2010,94.73,United States
+USA,2011,98.99,United States
+USA,2012,102.5,United States
+USA,2013,104.62,United States
+USA,2014,104.61,United States
+USA,2015,105.15,United States

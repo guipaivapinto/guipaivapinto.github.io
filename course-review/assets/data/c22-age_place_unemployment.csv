@@ -1,0 +1,13 @@
+place,geography,year,age,rate,lower,upper,flag,source,url
+Germany,Country,2024,20-24,6.0,,,,Eurostat lfsa_urgan,https://ec.europa.eu/eurostat/databrowser/view/lfsa_urgan/default/table?lang=en
+Spain,Country,2024,20-24,23.4,,,d,Eurostat lfsa_urgan,https://ec.europa.eu/eurostat/databrowser/view/lfsa_urgan/default/table?lang=en
+France,Country,2024,20-24,16.3,,,bd,Eurostat lfsa_urgan,https://ec.europa.eu/eurostat/databrowser/view/lfsa_urgan/default/table?lang=en
+Germany,Country,2024,25-54,3.4,,,,Eurostat lfsa_urgan,https://ec.europa.eu/eurostat/databrowser/view/lfsa_urgan/default/table?lang=en
+Spain,Country,2024,25-54,10.1,,,d,Eurostat lfsa_urgan,https://ec.europa.eu/eurostat/databrowser/view/lfsa_urgan/default/table?lang=en
+France,Country,2024,25-54,6.4,,,bd,Eurostat lfsa_urgan,https://ec.europa.eu/eurostat/databrowser/view/lfsa_urgan/default/table?lang=en
+Michigan,U.S. state,2024,20-24,8.7,6.4,11.0,,BLS 2024 annual state age tables,https://www.bls.gov/lau/table14full24.htm
+Ohio,U.S. state,2024,20-24,7.7,5.7,9.7,,BLS 2024 annual state age tables,https://www.bls.gov/lau/table14full24.htm
+Georgia,U.S. state,2024,20-24,8.1,5.8,10.4,,BLS 2024 annual state age tables,https://www.bls.gov/lau/table14full24.htm
+Michigan,U.S. state,2024,25-54,3.7,3.1,4.3,,BLS 2024 annual state age tables,https://www.bls.gov/lau/table14afull24.htm
+Ohio,U.S. state,2024,25-54,3.7,3.1,4.3,,BLS 2024 annual state age tables,https://www.bls.gov/lau/table14afull24.htm
+Georgia,U.S. state,2024,25-54,2.8,2.3,3.3,,BLS 2024 annual state age tables,https://www.bls.gov/lau/table14afull24.htm

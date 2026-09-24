@@ -1,0 +1,6 @@
+month,measure,value,units,adjustment,source_table
+2025-12,population,274816,Thousands of people,Not seasonally adjusted,BLS A-1
+2025-12,labor_force,170723,Thousands of people,Not seasonally adjusted,BLS A-1
+2025-12,employed,163720,Thousands of people,Not seasonally adjusted,BLS A-1
+2025-12,unemployed,7003,Thousands of people,Not seasonally adjusted,BLS A-1
+2025-12,not_in_labor_force,104094,Thousands of people,Not seasonally adjusted,BLS A-1

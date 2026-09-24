@@ -1,0 +1,4 @@
+outcome,estimate,standard_error,unit,year,exposure,population,source
+Manufacturing in original region,-1.19,0.5,percentage points,2019,"one standard deviation higher Chinese import exposure, 2000–2007",U.S. manufacturing workers in 2000 who remain ages 18–64,"Autor et al., Places versus People, Table A.17"
+Other sectors in original region,2.49,0.42,percentage points,2019,"one standard deviation higher Chinese import exposure, 2000–2007",U.S. manufacturing workers in 2000 who remain ages 18–64,"Autor et al., Places versus People, Table A.17"
+Employment in another region,-1.63,0.64,percentage points,2019,"one standard deviation higher Chinese import exposure, 2000–2007",U.S. manufacturing workers in 2000 who remain ages 18–64,"Autor et al., Places versus People, Table A.17"

@@ -1,0 +1,6 @@
+country,code,working_age_change_percent,projected_gdp_per_person_growth_percent,historical_gdp_per_worker_growth_percent,productivity_reference_period,population_period,growth_period,population_age_range,population_scenario,growth_scenario,population_cell,growth_cell
+South Korea,KOR,-46.71653,1.637102,2.062123,2007-2019,2023-2060,2024-2060,20-64,UN WPP 2024 medium,OECD baseline,g2-3!C24,g2-7!D54
+Japan,JPN,-30.94853,0.1976087,0.2355054,2006-2019,2023-2060,2024-2060,20-64,UN WPP 2024 medium,OECD baseline,g2-3!C31,g2-7!D37
+Italy,ITA,-34.05239,-0.6747196,-0.309662,2006-2019,2023-2060,2024-2060,20-64,UN WPP 2024 medium,OECD baseline,g2-3!C28,g2-7!D38
+Germany,DEU,-22.68052,0.2703277,0.5266213,2006-2019,2023-2060,2024-2060,20-64,UN WPP 2024 medium,OECD baseline,g2-3!C38,g2-7!D53
+United States,USA,6.191335,1.085747,1.109625,2006-2019,2023-2060,2024-2060,20-64,UN WPP 2024 medium,OECD baseline,g2-3!C58,g2-7!D25
