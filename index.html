@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guilherme Paiva Pinto - Economics PhD Candidate</title>
+    <meta name="description" content="Guilherme Paiva Pinto is an economist at Oxford College of Emory University working on international trade, political economy, and public finance.">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <title>Guilherme Paiva Pinto | Economist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <style>
@@ -13,19 +13,54 @@
 
         :root {
             color-scheme: light;
+            --navy: #18354a;
+            --navy-deep: #102838;
+            --terracotta: #ad543d;
+            --teal: #2f6f68;
+            --paper: #fffdf8;
+            --sand: #f4efe6;
+            --mist: #e9efed;
+            --ink: #17262f;
+            --body-copy: #3f5058;
+            --muted: #66747a;
+            --line: #d9d2c5;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #f4f6fb;
-            color: #1f2933;
+            background: var(--sand);
+            color: var(--ink);
             min-height: 100vh;
         }
 
         .hero {
-      background: #7a0019;
-      color: #f8fafc;
-    }
+            background:
+                radial-gradient(circle at 18% 20%, rgba(255,255,255,.12), transparent 24rem),
+                linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 60%, #285b63 100%);
+            color: #fffdf8;
+            border-bottom: 5px solid var(--terracotta);
+        }
+
+        .eyebrow {
+            color: #e9c4b7;
+            letter-spacing: .14em;
+        }
+
+        .bg-white { background-color: var(--paper) !important; }
+        .bg-gray-50 { background-color: var(--sand) !important; }
+        .bg-gray-100 { background-color: var(--mist) !important; }
+        .bg-gray-700, .bg-gray-900 { background-color: var(--navy) !important; }
+        .text-gray-900 { color: var(--ink) !important; }
+        .text-gray-700 { color: var(--body-copy) !important; }
+        .text-gray-600, .text-gray-500 { color: var(--muted) !important; }
+        .border, .border-b, .border-t { border-color: var(--line) !important; }
+
+        .accent-button { background: var(--terracotta); }
+        .accent-button:hover { background: #914431; }
+        .secondary-button { background: var(--teal); }
+        .secondary-button:hover { background: #285f59; }
+        .paper-card { border-left: 4px solid var(--terracotta); }
+        .paper-card.secondary { border-left-color: var(--teal); }
     
 
         .tab-button {
@@ -35,9 +70,16 @@
         }
 
         .tab-button.active {
-            border-bottom-color: #1d4ed8;
-            color: #1d4ed8;
+            border-bottom-color: var(--terracotta);
+            color: var(--terracotta);
             font-weight: 600;
+        }
+
+        .tab-button:focus-visible,
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid rgba(47, 111, 104, .35);
+            outline-offset: 3px;
         }
 
         .tab-content {
@@ -49,7 +91,7 @@
         }
         .contact-section {
             position: relative;
-            background-image: linear-gradient(rgba(11, 26, 47, 0.25), rgba(11, 26, 47, 0.45)), url('fortaleza-lighthouse.jpg');
+            background-image: linear-gradient(rgba(16, 40, 56, 0.28), rgba(16, 40, 56, 0.58)), url('fortaleza-lighthouse.jpg');
             background-size: cover;
             background-position: center 35%;
             padding: 2px;
@@ -60,15 +102,18 @@
     <!-- Hero -->
     <header class="hero">
         <div class="max-w-5xl mx-auto px-6 py-16 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Guilherme Paiva Pinto</h1>
-            <p class="text-lg md:text-xl text-blue-100 leading-relaxed mb-8">
-                    Economics PhD candidate - Indiana University Bloomington 
-                • Applied Economics • International Trade • Political Economy
+            <p class="eyebrow text-xs font-semibold uppercase mb-4">Economist · Teacher · Researcher</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-5">Guilherme Paiva Pinto</h1>
+            <p class="text-lg md:text-xl text-white/90 leading-relaxed mb-2">
+                Postdoctoral Teaching Fellow in Economics
+            </p>
+            <p class="text-base text-white/75 leading-relaxed mb-8">
+                Oxford College of Emory University · International Trade · Political Economy · Public Finance
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="mailto:gppinto@iu.edu" class="inline-flex items-center px-6 py-3 bg-white/10 border border-white/40 rounded-full text-sm font-semibold hover:bg-white/20 transition-colors">
+                <a href="mailto:gpaivap@emory.edu" class="inline-flex items-center px-6 py-3 bg-white/10 border border-white/40 rounded-full text-sm font-semibold hover:bg-white/20 transition-colors">
                     <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
-                    gppinto@iu.edu
+                    gpaivap@emory.edu
                 </a>
                 <a href="/Guilherme_Paiva_Pinto_CV.pdf"
                    target="_blank" rel="noopener noreferrer"
@@ -77,12 +122,13 @@
                     View CV
                 </a>
                 <a
-                    href="https://www.dropbox.com/scl/fi/0dgvw2l3jr7zorr1eqsay/GPP_JMP_OCTOBER_V3.pdf?rlkey=0t9h8mnv6audsojyeo21ye0nk&st=m8vb61mk&dl=0"
+                    href="/research/external-negotiations-customs-union-stability.pdf"
                     target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center px-6 py-3 bg-white text-red-900 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors"
+                    class="inline-flex items-center px-6 py-3 bg-white rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors"
+                    style="color:var(--navy)"
                 >
                     <i data-lucide="book-open" class="w-4 h-4 mr-2"></i>
-                    Job Market Paper
+                    Primary Working Paper
                 </a>
             </div>
         </div>
@@ -126,15 +172,15 @@
                                 class="w-48 h-48 object-cover rounded-lg mx-auto mb-4 shadow-lg border-4 border-white bg-gray-200"
                             />
                             <h3 class="font-semibold text-lg mb-2">Guilherme Paiva Pinto</h3>
-                            <p class="text-gray-600 text-sm mb-4">PhD Candidate in Economics</p>
+                            <p class="text-gray-600 text-sm mb-4">Postdoctoral Teaching Fellow in Economics</p>
                             <div class="space-y-3 text-sm">
                                 <div class="flex items-center gap-2 justify-center">
                                     <i data-lucide="mail" class="w-4 h-4 text-gray-500"></i>
-                                    <span>gppinto@iu.edu</span>
+                                    <a href="mailto:gpaivap@emory.edu" class="hover:underline">gpaivap@emory.edu</a>
                                 </div>
                                 <div class="flex items-center gap-2 justify-center">
                                     <i data-lucide="map-pin" class="w-4 h-4 text-gray-500"></i>
-                                    <span>Bloomington, IN</span>
+                                    <span>Oxford, GA</span>
                                 </div>
                                 <div class="flex items-center gap-2 justify-center">
                                     <i data-lucide="linkedin" class="w-4 h-4 text-gray-500"></i>
@@ -151,22 +197,23 @@
                     <div class="lg:col-span-2 flex flex-col justify-center">
                         <div class="prose prose-lg max-w-none">
                             <p class="text-gray-700 leading-relaxed mb-6">
-                                I am a PhD candidate in Economics at <strong>Indiana University</strong>, specializing in
-                                <strong>Applied Economics with focus on International Trade and Political Economy</strong>.
-                                My current main research focuses on the dynamics of trade agreements, customs union stability,
-                                and policy coordination across emerging economies, particularly in Latin America. I also work at
-                                the intersection between Public Finance and Political Economy, with special focus on public banks,
-                                budgetary processes and social expenditure. Currently, I am also a Graduate Assistant at the Tobias Center
-                                for Innovation in International Development.
+                                I am a <strong>Postdoctoral Teaching Fellow in Economics at Oxford College of Emory University</strong>.
+                                I earned my PhD in Economics from Indiana University in 2026. My research studies how trade agreements,
+                                customs-union rules, and domestic political incentives shape policy choices and the distribution of gains
+                                and losses, with a particular focus on Mercosur and Latin America.
+                            </p>
+                            <p class="text-gray-700 leading-relaxed mb-6">
+                                My broader work connects international trade with political economy and public finance, including research
+                                on development banking, budget institutions, and social expenditure. In the classroom, I bring these policy
+                                settings into introductory and upper-level economics courses to help students connect models with evidence.
                             </p>
                             <div class="bg-gray-50 rounded-lg p-6 mt-8">
                                 <h4 class="font-semibold text-gray-900 mb-3">Research Interests</h4>
-                                <ul class="text-gray-700 space-y-1">
-                                    <li>• International Trade Theory and Policy</li>
-                                    <li>• Political Economy</li>
-                                    <li>• Latin American Economics</li>
-                                    <li>• Public Finance</li>
-                                    <li>• Trade Agreement Negotiations</li>
+                                <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-gray-700">
+                                    <li>International Trade &amp; Trade Policy</li>
+                                    <li>Political Economy</li>
+                                    <li>Latin American Economics</li>
+                                    <li>Public Finance &amp; Development</li>
                                 </ul>
                             </div>
                         </div>
@@ -179,43 +226,42 @@
         <div id="research" class="tab-content">
             <div class="space-y-8">
                 <div class="bg-white rounded-xl shadow-sm border p-8">
+                    <p class="eyebrow text-xs font-semibold uppercase mb-3" style="color:var(--terracotta)">Mercosur research</p>
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
                         <div class="flex items-center gap-4">
                             <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center flex-shrink-0">
                                 <i data-lucide="star" class="w-6 h-6 text-white"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-bold text-gray-900 mb-1">Job Market Paper</h3>
-                                <p class="text-gray-600">Primary research contribution</p>
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">Primary Working Paper</h3>
+                                <p class="text-gray-600">Updated September 2026</p>
                             </div>
                         </div>
                         <a
-                            href="https://www.dropbox.com/scl/fi/0dgvw2l3jr7zorr1eqsay/GPP_JMP_OCTOBER_V3.pdf?rlkey=0t9h8mnv6audsojyeo21ye0nk&st=m8vb61mk&dl=0"
+                            href="/research/external-negotiations-customs-union-stability.pdf"
                             target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center rounded-md font-semibold text-white px-5 py-3 text-sm shadow transition transform hover:-translate-y-[1px]"
-                            style="background-color:#DC143C"
+                            class="accent-button inline-flex items-center rounded-md font-semibold text-white px-5 py-3 text-sm shadow transition transform hover:-translate-y-[1px]"
                         >
                             <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
-                            Download Job Market Paper
+                            Read Paper
                         </a>
                     </div>
 
-                    <div class="bg-gray-50 rounded-lg p-6">
+                    <div class="paper-card bg-gray-50 rounded-lg p-6">
                         <h4 class="text-lg font-semibold text-gray-900 mb-1">
                             External Negotiations and Customs Union Stability
                         </h4>
-                        <p class="text-sm text-gray-600 mb-4">Guilherme Paiva Pinto • Job Market Paper</p>
+                        <p class="text-sm text-gray-600 mb-4">Working paper · International trade and political economy</p>
                         <p class="text-gray-700 leading-relaxed mb-4">
-                            Persistent exit threats challenge the stability of customs unions, yet withdrawals are rare. This paper applies a structural
-                            model to study internal stability under external trade pressures within Mercosur, the largest free trade agreement in South America.
-                            The framework incorporates external bargaining, asymmetric tariffs, and is calibrated with sectoral trade data from 2004–2017,
-                            using counterfactual negotiations with the United States, China, and the European Union.
+                            Why can a customs union remain intact while repeatedly struggling to approve major external agreements?
+                            I separate two margins that are often conflated: the value of membership relative to a unilateral outside option,
+                            and the approval of a proposed bloc agreement relative to the status quo. I study these margins in a structural
+                            model with reciprocal external bargaining and asymmetric applied tariffs, calibrated to five benchmark years from 2004 to 2017.
                         </p>
                         <p class="text-gray-700 leading-relaxed mb-4">
-                            I document gains and losses from scenarios of single-country or bloc negotiations under each setup. Results show that smaller
-                            members gain more from bloc negotiations in GDP terms; although larger members also gain, they face concentrated industry losses,
-                            helping explain why the bloc stumbles in large negotiations. Benefits from joint negotiation vary widely, with small countries
-                            gaining the most while others experience limited improvements.
+                            In the focal China and United States exercises, Uruguay gains more by bargaining through Mercosur than by bargaining alone,
+                            while Brazil and Argentina obtain smaller or negative aggregate effects and face concentrated sectoral losses. The results show
+                            how bloc bargaining can make membership valuable while unanimity and uneven incidence create approval gridlock.
                         </p>
                     </div>
                 </div>
@@ -234,17 +280,15 @@
                         </div>
                         <a
                             href="/mercosur"
-                            class="inline-flex items-center rounded-md font-semibold text-white px-5 py-3 text-sm shadow transition transform hover:-translate-y-[1px]"
-                            style="background-color:#1d4ed8"
+                            class="secondary-button inline-flex items-center rounded-md font-semibold text-white px-5 py-3 text-sm shadow transition transform hover:-translate-y-[1px]"
                         >
                             <i data-lucide="arrow-up-right" class="w-5 h-5 mr-2"></i>
                             Open /mercosur
                         </a>
                     </div>
                     <p class="text-gray-700 leading-relaxed mb-5">
-                        Explore the interactive walkthrough of the Mercosur research: motivation, trade policy, partner dynamics,
-                        and why small members gain while large members block negotiations. Check on
-                        <strong>/mercosur</strong>.
+                        Explore the research question, Mercosur’s trade-policy rules, partner dynamics, and the mechanism through
+                        which bloc bargaining value can coexist with approval gridlock.
                     </p>
                     <div class="relative w-full rounded-lg overflow-hidden border bg-gray-50" style="padding-top: 56.25%;">
                         <iframe
@@ -273,11 +317,10 @@
                                 </div>
                             </div>
                             <p class="text-sm text-gray-600 font-medium mb-2">
-                                Guilherme Paiva Pinto (Indiana University, USA), Mauricio S. Bugarin (Universidade de Brasília, Brazil),
-                                Rodrigo Schneider (Skidmore College, US)
+                                Guilherme Paiva Pinto, Mauricio S. Bugarin, and Rodrigo Schneider
                             </p>
                             <p class="text-sm text-gray-600 font-medium mb-3">
-                                Conference presentations (forthcoming/accepted): Brazilian Econometric Society Meeting (SBE 2025),
+                                Selected presentations: Brazilian Econometric Society Meeting (SBE 2025),
                                 Econometric Society European Winter Meeting (EWMES 2025), Latin American Law and Economics (LAWLE 2024)
                             </p>
                             <p class="text-gray-700 leading-relaxed mb-4">
@@ -308,10 +351,24 @@
                 </div>
 
                 <div class="bg-white rounded-xl shadow-sm border p-8">
-                    <h3 class="text-xl font-bold text-gray-900 mb-6">Work in Progress</h3>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                        <div>
+                            <p class="eyebrow text-xs font-semibold uppercase mb-3" style="color:var(--teal)">Mercosur research</p>
+                            <h3 class="text-xl font-bold text-gray-900">EU–Mercosur Working Paper</h3>
+                            <p class="text-gray-600">Current draft</p>
+                        </div>
+                        <a
+                            href="/research/eu-mercosur-agreement-changing-world.pdf"
+                            target="_blank" rel="noopener noreferrer"
+                            class="secondary-button inline-flex items-center rounded-md font-semibold text-white px-5 py-3 text-sm shadow transition transform hover:-translate-y-[1px]"
+                        >
+                            <i data-lucide="file-text" class="w-5 h-5 mr-2"></i>
+                            Read Paper
+                        </a>
+                    </div>
 
                     <div class="space-y-8">
-                        <div class="border rounded-lg p-6">
+                        <div class="paper-card secondary bg-gray-50 border rounded-lg p-6">
                             <div class="flex items-start gap-4 mb-4">
                                 <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center flex-shrink-0">
                                     <i data-lucide="landmark" class="w-6 h-6 text-white"></i>
@@ -320,20 +377,20 @@
                                     <h4 class="text-lg font-semibold text-gray-900">
                                         Tariff Cuts, External Shocks, and Strategic Inputs: The EU-Mercosur Agreement in a Changing World
                                     </h4>
-                                    <p class="text-gray-600">Third paper • Work in progress</p>
+                                    <p class="text-gray-600">Working paper · Quantitative trade</p>
                                 </div>
                             </div>
                             <p class="text-gray-700 leading-relaxed mb-4">
-                                This paper studies whether the world economy changed in ways that made the long-delayed
-                                EU-Mercosur tariff bargain easier to defend. I code Annex 2-A, the product-level tariff
-                                schedule, and evaluate it across benchmark economies from 2007 to 2022 in a six-region,
-                                49-sector quantitative trade model.
+                                After more than two decades of negotiations, the EU–Mercosur agreements were signed in January 2026
+                                and the interim trade agreement began provisional application in May 2026. This paper asks how the
+                                economic effects of the same goods-tariff schedule changed during that delay. I code Annex 2-A and
+                                evaluate it in 2007, 2011, 2014, 2017, and 2022 using a six-region, 49-sector quantitative trade model.
                             </p>
                             <p class="text-gray-700 leading-relaxed mb-4">
-                                The tariff component generates small aggregate gains, so the main result is incidence:
-                                manufacturing losses in Argentina and Brazil remain concentrated, EU agriculture remains
-                                politically exposed, and external tariff-risk and strategic-input scenarios help explain
-                                why the agreement became economically more relevant despite modest tariff-only effects.
+                                Tariff-only aggregate effects are small. The central result is sectoral exposure:
+                                manufacturing losses in Argentina and Brazil remain concentrated, EU agriculture remains politically
+                                exposed, and imports shift toward the European Union. U.S. tariff-risk and rare-earth scenarios show
+                                that external insurance and strategic inputs can matter more than the legal tariff component alone.
                             </p>
                             <div class="flex flex-wrap gap-3 text-sm mb-5">
                                 <span class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-md">International Trade</span>
@@ -341,13 +398,6 @@
                                 <span class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-md">Strategic Inputs</span>
                                 <span class="inline-flex items-center px-3 py-1 bg-gray-100 text-gray-700 rounded-md">EU-Mercosur</span>
                             </div>
-                            <a
-                                href="mailto:gppinto@iu.edu?subject=Draft%20request%3A%20EU-Mercosur%20paper"
-                                class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded text-sm font-medium hover:bg-gray-800 transition-colors"
-                            >
-                                <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
-                                Request Draft
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -359,18 +409,47 @@
             <div class="bg-white rounded-xl shadow-sm border p-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-10 text-center">Teaching Experience</h2>
 
-                <div class="bg-gray-50 rounded-lg p-8 mb-10 text-center">
-                    <div class="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="award" class="w-8 h-8 text-white"></i>
+                <div class="grid md:grid-cols-2 gap-6 mb-10">
+                    <div class="bg-gray-50 rounded-lg p-7">
+                        <div class="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mb-4">
+                            <i data-lucide="school" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <p class="eyebrow text-xs font-semibold uppercase mb-2" style="color:var(--terracotta)">Current appointment</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Oxford College of Emory University</h3>
+                        <p class="text-gray-600">Postdoctoral Teaching Fellow in Economics · 2026–present</p>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">W. Phillip Saunders Award</h3>
-                    <p class="text-gray-600">Outstanding Introductory Economics Associate Instructor, Indiana University</p>
+                    <div class="bg-gray-50 rounded-lg p-7">
+                        <div class="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mb-4">
+                            <i data-lucide="award" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <p class="eyebrow text-xs font-semibold uppercase mb-2" style="color:var(--teal)">Teaching recognition</p>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">W. Phillip Saunders Award</h3>
+                        <p class="text-gray-600">Outstanding Introductory Economics Associate Instructor, Indiana University</p>
+                    </div>
+                </div>
+
+                <div class="bg-white border rounded-lg p-8 mb-8 shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">How I Teach Economics</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        I organize class around a repeatable sequence: begin with a concrete question, make assumptions explicit,
+                        derive the model’s implications, compare those implications with data and graphs, and then discuss trade-offs,
+                        limitations, and policy. This structure helps students see economic models as tools for disciplined reasoning
+                        rather than answers to memorize.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        My courses use frequent low-stakes practice—including short problem drills, polls, graph interpretation,
+                        and brief writing—alongside presentations and structured debates. These activities give students early feedback
+                        and repeated practice turning evidence into clear, testable economic arguments.
+                    </p>
                 </div>
 
                 <div class="bg-white border rounded-lg p-8 mb-8 shadow-sm">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-                        <h3 class="text-xl font-bold text-gray-900">Associate Instructor</h3>
-                        <a href="mailto:gppinto@iu.edu?subject=Syllabus Request" class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded text-sm hover:bg-gray-800 transition-colors">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Indiana University</h3>
+                            <p class="text-gray-600 text-sm mt-1">Instructor of record · Classes of approximately 30–75 students</p>
+                        </div>
+                        <a href="mailto:gpaivap@emory.edu?subject=Syllabus Request" class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded text-sm hover:bg-gray-800 transition-colors">
                             <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
                             Request Syllabus
                         </a>
@@ -460,15 +539,16 @@
                 </div>
 
                 <div class="bg-white border rounded-lg p-8 shadow-sm">
-                    <h3 class="text-xl font-bold text-gray-900 mb-6">Teaching Philosophy</h3>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Teaching Materials</h3>
                     <div class="prose max-w-none">
                         <p class="text-gray-700 leading-relaxed mb-4">
-                            I’m happy to share my teaching philosophy upon request.
+                            Available materials include syllabi, sample slides, student evaluations, a data-storytelling assignment,
+                            and an international-economics presentation and debate assignment.
                         </p>
-                        <a href="mailto:gppinto@iu.edu?subject=Teaching%20Philosophy%20Request"
+                        <a href="mailto:gpaivap@emory.edu?subject=Teaching%20Materials%20Request"
                            class="inline-flex items-center px-4 py-2 bg-gray-900 text-white rounded text-sm hover:bg-gray-800 transition-colors">
                             <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
-                            Request Teaching Philosophy
+                            Request Teaching Materials
                         </a>
                     </div>
                 </div>
@@ -487,7 +567,7 @@
                                 <i data-lucide="mail" class="w-6 h-6 text-white"></i>
                             </div>
                             <h4 class="font-semibold text-gray-900 mb-1">Email</h4>
-                            <p class="text-gray-600">gppinto@iu.edu</p>
+                            <p class="text-gray-600">gpaivap@emory.edu</p>
                         </div>
 
                         <div class="text-center">
@@ -495,7 +575,7 @@
                                 <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
                             </div>
                             <h4 class="font-semibold text-gray-900 mb-1">Location</h4>
-                            <p class="text-gray-600">Bloomington, Indiana, USA</p>
+                            <p class="text-gray-600">Oxford, Georgia, USA</p>
                         </div>
 
                         <div class="text-center">
@@ -508,7 +588,7 @@
                     </div>
 
                     <div class="flex flex-wrap gap-4 justify-center">
-                        <a href="mailto:gppinto@iu.edu" class="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded font-medium hover:bg-gray-800 transition-colors">
+                        <a href="mailto:gpaivap@emory.edu" class="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded font-medium hover:bg-gray-800 transition-colors">
                             <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
                             Send Email
                         </a>
@@ -534,9 +614,9 @@
     <!-- Footer -->
     <footer class="bg-white border-t mt-16">
         <div class="max-w-5xl mx-auto px-6 py-10 text-center">
-            <p class="text-gray-600 mb-2">Guilherme Paiva Pinto • PhD Candidate in Economics • Indiana University, Bloomington</p>
+            <p class="text-gray-600 mb-2">Guilherme Paiva Pinto • Postdoctoral Teaching Fellow in Economics • Oxford College of Emory University</p>
             <p class="text-sm text-gray-500">
-                Last updated: <span id="current-date"></span>
+                Last updated: September 2026
             </p>
         </div>
     </footer>
@@ -546,11 +626,6 @@
             window.lucide.createIcons();
         }
 
-        const currentDateElement = document.getElementById('current-date');
-        if (currentDateElement) {
-            currentDateElement.textContent = new Date().toLocaleDateString();
-        }
-
         function scrollToMainTop() {
             const main = document.querySelector('main');
             if (!main) return;
@@ -558,7 +633,7 @@
             window.scrollTo({ top: Math.max(y, 0), behavior: 'smooth' });
         }
 
-        function showTab(tabName) {
+        function showTab(tabName, shouldScroll = true) {
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             const target = document.getElementById(tabName);
             if (target) {
@@ -568,13 +643,14 @@
             document.querySelectorAll('.tab-button').forEach(button => {
                 const isActive = button.dataset.tabTarget === tabName;
                 button.classList.toggle('active', isActive);
+                button.setAttribute('aria-selected', String(isActive));
             });
 
-            scrollToMainTop();
+            if (shouldScroll) scrollToMainTop();
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            showTab('about');
+            showTab('about', false);
         });
     </script>
 </body>
