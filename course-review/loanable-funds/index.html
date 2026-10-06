@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Loanable funds: rates and investment | Principles of Macroeconomics</title>
+  <style>
+    :root{color-scheme:light;--navy:#13334d;--blue:#0869a6;--gold:#946800;--paper:#f3f6f8;--line:#d7e0e7;--green:#17603b;--red:#9b3030}
+    *{box-sizing:border-box}body{margin:0;color:#172b3a;background:var(--paper);font:17px/1.55 Arial,Helvetica,sans-serif}
+    main{max-width:1020px;margin:auto;padding:28px 24px 40px}h1{font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.15;margin:6px 0 12px;color:var(--navy)}h2{font-size:1.35rem;line-height:1.3;margin:0 0 12px}h3{font-size:1.08rem;margin:0 0 6px}p{margin:8px 0 16px}.eyebrow{font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:#40596d}
+    section{margin:22px 0;padding:24px;background:white;border:1px solid var(--line);border-radius:12px}.two{display:grid;grid-template-columns:1fr 1fr;gap:26px}.controls{display:grid;gap:16px}.control label{display:flex;justify-content:space-between;gap:12px;font-weight:700}output{font-variant-numeric:tabular-nums}input[type=range]{width:100%;accent-color:var(--blue);min-height:32px;margin:6px 0 0}.limits{display:flex;justify-content:space-between;font-size:.85rem;color:#536678}
+    button,select{font:inherit;min-height:44px;border:1px solid #7791a5;border-radius:6px;background:white;color:var(--navy);padding:8px 12px;cursor:pointer}button:hover{background:#eaf3f9}button[aria-pressed=true]{background:var(--navy);color:white}button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #b47c00;outline-offset:4px}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}select{width:100%;margin:8px 0 12px}
+    .result{padding:16px;background:#edf4f9;border-left:4px solid var(--blue);border-radius:4px}.number{font-size:2rem;line-height:1.2;font-weight:700;color:var(--navy)}.formula{font-family:Georgia,serif;font-size:1.15rem}.note{font-size:.9rem;color:#435a6d}.good{color:var(--green)}.bad{color:var(--red)}.neutral{color:#58491f}.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.project{border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:7px;padding:14px}.project p{margin:6px 0}.status{font-weight:700}.chart{display:block;width:100%;height:auto;margin:14px 0 4px}svg text{font-family:Arial,Helvetica,sans-serif;fill:#253f53;font-size:16px}.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:.9rem}.key:before{content:"";display:inline-block;width:24px;border-top:3px solid var(--blue);vertical-align:middle;margin-right:6px}.key.supply:before{border-color:var(--gold)}.key.base:before{border-color:#718390;border-top-style:dashed}.feedback{min-height:1.6em;margin:8px 0;font-weight:700}details{margin-top:16px}summary{cursor:pointer;font-weight:700}table{border-collapse:collapse;width:100%;font-size:.92rem}caption{text-align:left;margin:10px 0;font-weight:700}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line)}.answer-group{display:flex;flex-wrap:wrap;gap:8px}.footer{font-size:.85rem;color:#4b6375}.hidden,[hidden]{display:none!important}
+    @media(max-width:680px){main{padding:18px 14px 30px}section{padding:18px 14px}.two{grid-template-columns:1fr;gap:18px}.projects{grid-template-columns:1fr}.number{font-size:1.7rem}body{font-size:16px}}
+    @media print{body{background:white}main{max-width:none}section{break-inside:avoid}button,input,select,.limits{display:none}.two{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Chapter 10 · Principles of Macroeconomics</div>
+    <h1>Interest rates, investment, and loanable funds</h1>
+    <p>Is a dollar next year worth a dollar today? Change the rates below, then connect one firm's decision to the market for loanable funds.</p>
+    <p class="note">All examples are hypothetical. Dollars are measured in constant purchasing power, and rates are annual real rates. Cash flows are assumed certain to isolate the role of interest rates.</p>
+  </header>
+  <noscript><section><h2>JavaScript is needed for the controls</h2><p>At 5%, $1,000 received next year is worth $952.38 today. A machine costing $900 has a net present value of $52.38. Lower real interest rates make more investment projects worthwhile, increasing the quantity of loanable funds demanded.</p></section></noscript>
+
+  <section aria-labelledby="pv-heading">
+    <h2 id="pv-heading">1. Compare money today and money later</h2>
+    <p>At 10%, $100 today grows to $110 in one year. That means $110 next year and $100 today have the same value at that rate.</p>
+    <div class="two">
+      <div>
+        <p>A machine costs <strong>$900 today</strong> and pays <strong>$1,000 once</strong> at the end of the selected period. What is that payment worth today?</p>
+        <div class="controls">
+          <div class="control"><label for="discount-rate">Discount rate <output id="discount-output" for="discount-rate">5%</output></label><input id="discount-rate" type="range" min="0" max="20" step="0.5" value="5"><div class="limits"><span>0%</span><span>20%</span></div></div>
+          <div class="control"><label for="years">Years until payment <output id="years-output" for="years">1 year</output></label><input id="years" type="range" min="1" max="10" step="1" value="1"><div class="limits"><span>1 year</span><span>10 years</span></div></div>
+        </div>
+        <div class="buttons"><button type="button" id="pv-five">Try 5% for 1 year</button><button type="button" id="pv-fifteen">Try 15% for 1 year</button></div>
+        <p class="note">Try both rates. The future payment is unchanged; its value today changes.</p>
+      </div>
+      <div class="result" aria-live="polite" aria-atomic="true">
+        <h3>Present value of the payment</h3>
+        <div class="number" id="pv-value">$952.38</div>
+        <p class="formula">PV = FV / (1 + r)<sup>n</sup></p>
+        <p id="pv-calculation">$1,000 / (1.05)¹ = $952.38</p>
+        <p id="npv-calculation">Net present value = $952.38 − $900 = $52.38</p>
+        <p class="status good" id="pv-decision">Invest: the payment's present value exceeds the cost.</p>
+        <p class="note">FV = future payment; r = rate written as a decimal; n = years. A positive NPV adds value. A zero NPV is break-even.</p>
+      </div>
+    </div>
+    <details><summary>Check the opportunity cost</summary><p>The machine's discount rate represents the return available on a comparable alternative. Using the firm's own savings does not make capital free. In actual decisions, the discount rate must also reflect risk and financing conditions. Match nominal cash flows with nominal rates, or real cash flows with real rates.</p></details>
+  </section>
+
+  <section aria-labelledby="demand-heading">
+    <h2 id="demand-heading">2. Why does demand for loanable funds slope downward?</h2>
+    <p>Each project uses $100 for one year. Compare its return with the real cost of borrowing. Lower the rate from 10% to 5%: which project becomes worthwhile?</p>
+    <div class="control"><label for="loan-rate">Real borrowing rate <output id="loan-output" for="loan-rate">5%</output></label><input id="loan-rate" type="range" min="0" max="15" step="0.5" value="5"><div class="limits"><span>0%</span><span>15%</span></div></div>
+    <div class="buttons"><button type="button" data-rate="10">Set 10%</button><button type="button" data-rate="5">Set 5%</button></div>
+    <div class="projects" id="projects" aria-live="polite" aria-atomic="true"></div>
+    <p class="result" id="project-summary" aria-live="polite"></p>
+    <p><strong>A lower real interest rate makes more projects worth undertaking.</strong> Firms want more funds for investment. This is a movement along demand, not a shift of demand.</p>
+    <p class="note">These three projects illustrate the decision rule. The smooth market curve below represents many different firms and projects, not the literal sum of these three examples.</p>
+  </section>
+
+  <section aria-labelledby="market-heading">
+    <h2 id="market-heading">3. Move along a curve—or shift it?</h2>
+    <div class="buttons" role="group" aria-label="Graph mode"><button type="button" id="movement-mode" aria-pressed="true">Movement along demand</button><button type="button" id="shift-mode" aria-pressed="false">Market shifts</button></div>
+    <div id="movement-instructions"><p>Change the borrowing rate here or in the project examples above. The point moves on the <strong>same demand curve</strong>. This shows quantity demanded at a chosen rate, not necessarily a market equilibrium.</p><div class="control"><label for="graph-rate">Real borrowing rate <output id="graph-output" for="graph-rate">5%</output></label><input id="graph-rate" type="range" min="0" max="15" step="0.5" value="5"><div class="limits"><span>0%</span><span>15%</span></div></div></div>
+    <div id="shift-controls" hidden>
+      <label for="scenario"><strong>Choose a change in the market</strong></label>
+      <select id="scenario">
+        <option value="baseline">No shift: starting equilibrium</option>
+        <option value="saving-up">More private saving: supply shifts right</option>
+        <option value="saving-down">Larger government deficit: supply shifts left</option>
+        <option value="demand-up">Better expected project returns: demand shifts right</option>
+        <option value="demand-down">Worse expected project returns: demand shifts left</option>
+      </select>
+      <p class="note">Closed-economy model: supply is national saving; demand is investment. For the deficit example, hold private saving fixed. Do not also shift demand for government borrowing under this convention.</p>
+    </div>
+    <svg id="market-chart" class="chart" viewBox="0 0 640 400" role="img" aria-labelledby="chart-title chart-desc"><title id="chart-title">Demand for loanable funds</title><desc id="chart-desc">A lower real interest rate increases the quantity of loanable funds demanded.</desc><g id="chart-content"></g></svg>
+    <div class="legend"><span class="key">D: investment demand</span><span id="supply-key" class="key supply" hidden>S: national saving</span><span id="base-key" class="key base" hidden>Starting curves</span></div>
+    <p id="market-result" class="result" aria-live="polite" aria-atomic="true"></p>
+    <details><summary>Read the graph values and model</summary><p class="note">Illustrative model, not observed data: Q<sub>D</sub> = 140 − 8r + demand shift; Q<sub>S</sub> = 20 + 8r + supply shift. Here r is in percentage points. Each selected shift changes its intercept by 32 units. Quantity is measured in hypothetical units of funds per year.</p><table><caption>Current graph values</caption><thead><tr><th scope="col">Measure</th><th scope="col">Value</th></tr></thead><tbody><tr><th scope="row">Real interest rate</th><td id="table-rate"></td></tr><tr><th scope="row">Quantity demanded</th><td id="table-demand"></td></tr><tr id="supply-row" hidden><th scope="row">Quantity supplied</th><td id="table-supply"></td></tr></tbody></table></details>
+    <h3 style="margin-top:24px">Quick check</h3>
+    <p>If the real interest rate falls while expected project returns are unchanged, what happens?</p>
+    <div class="answer-group" role="group" aria-label="Quick check answers"><button type="button" data-answer="movement">Quantity demanded rises along D</button><button type="button" data-answer="shift">D shifts right</button></div>
+    <p id="check-feedback" class="feedback" role="status"></p>
+    <div class="buttons"><button type="button" id="reset">Reset the activity</button></div>
+  </section>
+  <footer class="footer">Course activity prepared for Guilherme Paiva Pinto's Principles of Macroeconomics class. Original diagrams and illustrative calculations. No student names, grades, or responses are collected or saved.</footer>
+</main>
+<script>
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const money = value => (value < 0 ? '−' : '') + '$' + Math.abs(value).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+  const percent = value => Number(value).toLocaleString('en-US', {maximumFractionDigits:1}) + '%';
+  let mode = 'movement';
+  function updatePV(){
+    const rate = Number($('discount-rate').value), years = Number($('years').value);
+    const pv = 1000 / Math.pow(1 + rate / 100, years), npv = pv - 900;
+    $('discount-output').textContent = percent(rate);
+    $('years-output').textContent = years + (years === 1 ? ' year' : ' years');
+    $('discount-rate').setAttribute('aria-valuetext', percent(rate));
+    $('years').setAttribute('aria-valuetext', $('years-output').textContent);
+    $('pv-value').textContent = money(pv);
+    $('pv-calculation').textContent = '$1,000 / (' + (1 + rate / 100).toFixed(3).replace(/0+$/, '').replace(/\.$/, '') + ')^' + years + ' = ' + money(pv);
+    $('npv-calculation').textContent = 'Net present value = ' + money(pv) + ' − $900 = ' + money(npv);
+    $('pv-decision').textContent = npv > 0.00001 ? "Invest: the payment's present value exceeds the cost." : npv < -0.00001 ? "Do not invest: the payment's present value is below the cost." : 'Break-even: present value equals the cost.';
+    $('pv-decision').className = 'status ' + (npv > 0.00001 ? 'good' : npv < -0.00001 ? 'bad' : 'neutral');
+  }
+  function updateProjects(){
+    const rate = Number($('loan-rate').value);
+    $('loan-output').textContent = percent(rate);
+    $('loan-rate').setAttribute('aria-valuetext', percent(rate));
+    $('graph-rate').value = rate;
+    $('graph-output').textContent = percent(rate);
+    $('graph-rate').setAttribute('aria-valuetext', percent(rate));
+    let accepted = 0;
+    $('projects').replaceChildren(...[4,8,12].map((ret, i) => {
+      const margin = ret - rate;
+      if (margin > 0) accepted++;
+      const card = document.createElement('article');
+      card.className = 'project';
+      const heading = document.createElement('h3'); heading.textContent = 'Project ' + String.fromCharCode(65 + i);
+      const returns = document.createElement('p'); returns.textContent = 'Return: ' + percent(ret) + ' ($' + ret + ' on $100)';
+      const cost = document.createElement('p'); cost.textContent = 'Interest cost: ' + money(rate);
+      const net = document.createElement('p'); net.textContent = 'Return − interest cost: ' + money(margin);
+      const status = document.createElement('p'); status.className = 'status ' + (margin > 0 ? 'good' : margin < 0 ? 'bad' : 'neutral');
+      status.textContent = margin > 0 ? 'Worth financing' : margin < 0 ? 'Not worth financing' : 'Break-even';
+      card.append(heading, returns, cost, net, status); return card;
+    }));
+    $('project-summary').textContent = 'At ' + percent(rate) + ', ' + accepted + ' of the 3 projects earn more than the borrowing rate. Repaying the $100 principal leaves the return minus the interest cost shown above.';
+    updateMarket();
+  }
+  const scenarios = {
+    baseline:{s:0,d:0,text:'Starting equilibrium: national saving equals investment.'},
+    'saving-up':{s:32,d:0,text:'More national saving shifts S right: the equilibrium real rate falls and investment rises.'},
+    'saving-down':{s:-32,d:0,text:'A larger government deficit reduces national saving and shifts S left: the real rate rises and investment falls.'},
+    'demand-up':{s:0,d:32,text:'Better expected project returns shift D right: the real rate and investment both rise.'},
+    'demand-down':{s:0,d:-32,text:'Worse expected project returns shift D left: the real rate and investment both fall.'}
+  };
+  function updateMarket(){
+    const shift = scenarios[$('scenario').value];
+    const isShift = mode === 'shift';
+    const rate = isShift ? (120 + shift.d - shift.s) / 16 : Number($('loan-rate').value);
+    const demand = 140 + (isShift ? shift.d : 0) - 8 * rate;
+    const supply = 20 + shift.s + 8 * rate;
+    const x = q => 70 + q / 180 * 520, y = r => 330 - r / 15 * 270;
+    const node = (tag, attrs, txt) => {const n=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,v);if(txt!==undefined)n.textContent=txt;return n;};
+    const g = $('chart-content'); g.replaceChildren();
+    const line = (x1,y1,x2,y2,color,width=2,dash='') => g.append(node('line',{x1,y1,x2,y2,stroke:color,'stroke-width':width,...(dash?{'stroke-dasharray':dash}:{})}));
+    const text = (tx,ty,t,attrs={}) => g.append(node('text',{x:tx,y:ty,...attrs},t));
+    for(const r of [0,5,10,15]){line(70,y(r),590,y(r),'#e1e7ec',1);text(58,y(r)+5,r+'%',{'text-anchor':'end'});}
+    for(const q of [0,40,80,120,160])text(x(q),352,q,{'text-anchor':'middle'});
+    line(70,48,70,330,'#253f53');line(70,330,600,330,'#253f53');
+    text(70,25,'Real interest rate');text(330,383,'Loanable funds (units per year)',{'text-anchor':'middle'});
+    const curve = (intercept,slope,color,dash='') => {
+      let low=0,high=15;
+      if(slope>0){low=Math.max(low,-intercept/slope);high=Math.min(high,(180-intercept)/slope);}
+      else{low=Math.max(low,(180-intercept)/slope);high=Math.min(high,-intercept/slope);}
+      line(x(intercept+slope*low),y(low),x(intercept+slope*high),y(high),color,3,dash);
+    };
+    if(isShift && $('scenario').value!=='baseline'){curve(140,-8,'#718390','6 5');curve(20,8,'#718390','6 5');}
+    curve(140+(isShift?shift.d:0),-8,'#0869a6');
+    text(x(140+(isShift?shift.d:0)-8)+8,y(1)+5,'D',{'font-weight':'bold',style:'fill:#0869a6'});
+    if(isShift){curve(20+shift.s,8,'#946800');text(x(20+shift.s+8*14)+8,y(14)+5,'S',{'font-weight':'bold',style:'fill:#946800'});}
+    line(70,y(rate),x(demand),y(rate),'#526778',1.5,'4 4');line(x(demand),y(rate),x(demand),330,'#526778',1.5,'4 4');
+    g.append(node('circle',{cx:x(demand),cy:y(rate),r:7,fill:'#b34d00',stroke:'white','stroke-width':2}));
+    const annotationY = rate >= 13 ? y(rate)+28 : y(rate)-14;
+    text(x(demand)+10,annotationY,(isShift?'E: ':'')+percent(rate)+', '+demand.toFixed(0)+' units',{'font-weight':'bold'});
+    const desc = isShift ? shift.text + ' Rate: '+percent(rate)+'. Saving and investment: '+demand+' units per year. Starting rate: 7.5%; starting quantity: 80 units.' : 'On the same demand curve, a real interest rate of '+percent(rate)+' corresponds to '+demand+' units demanded per year.';
+    $('chart-title').textContent = isShift ? 'Loanable funds market equilibrium' : 'Movement along demand for loanable funds';
+    $('chart-desc').textContent = desc;
+    $('market-result').textContent = isShift ? desc : desc + ' Lower the rate to move down and right; raise it to move up and left.';
+    $('table-rate').textContent = percent(rate);$('table-demand').textContent = demand.toFixed(0)+' units per year';$('table-supply').textContent = supply.toFixed(0)+' units per year';
+    $('supply-row').hidden=!isShift;$('supply-key').hidden=!isShift;$('base-key').hidden=!isShift||$('scenario').value==='baseline';
+  }
+  function setMode(value){mode=value;$('movement-mode').setAttribute('aria-pressed',String(value==='movement'));$('shift-mode').setAttribute('aria-pressed',String(value==='shift'));$('movement-instructions').hidden=value!=='movement';$('shift-controls').hidden=value!=='shift';updateMarket();}
+  $('discount-rate').addEventListener('input',updatePV);$('years').addEventListener('input',updatePV);
+  for(const [id,rate] of [['pv-five',5],['pv-fifteen',15]])$(id).addEventListener('click',()=>{$('discount-rate').value=rate;$('years').value=1;updatePV();});
+  $('loan-rate').addEventListener('input',updateProjects);
+  $('graph-rate').addEventListener('input',()=>{$('loan-rate').value=$('graph-rate').value;updateProjects();});
+  document.querySelectorAll('[data-rate]').forEach(button=>button.addEventListener('click',()=>{$('loan-rate').value=button.dataset.rate;setMode('movement');updateProjects();}));
+  $('movement-mode').addEventListener('click',()=>setMode('movement'));$('shift-mode').addEventListener('click',()=>setMode('shift'));$('scenario').addEventListener('change',updateMarket);
+  document.querySelectorAll('[data-answer]').forEach(button=>button.addEventListener('click',()=>{$('check-feedback').textContent=button.dataset.answer==='movement'?'Correct. The rate changes, so quantity demanded changes along the existing curve.':'Try again. Demand shifts when something other than the real interest rate changes, such as expected project returns.';}));
+  $('reset').addEventListener('click',()=>{$('discount-rate').value=5;$('years').value=1;$('loan-rate').value=5;$('scenario').value='baseline';$('check-feedback').textContent='';setMode('movement');updatePV();updateProjects();});
+  updatePV();updateProjects();
+</script>
+</body>
+</html>
