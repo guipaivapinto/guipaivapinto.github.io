@@ -13,7 +13,8 @@
     section{margin:22px 0;padding:24px;background:white;border:1px solid var(--line);border-radius:12px}.two{display:grid;grid-template-columns:1fr 1fr;gap:26px}.controls{display:grid;gap:16px}.control label{display:flex;justify-content:space-between;gap:12px;font-weight:700}output{font-variant-numeric:tabular-nums}input[type=range]{width:100%;accent-color:var(--blue);min-height:32px;margin:6px 0 0}.limits{display:flex;justify-content:space-between;font-size:.85rem;color:#536678}
     button,select{font:inherit;min-height:44px;border:1px solid #7791a5;border-radius:6px;background:white;color:var(--navy);padding:8px 12px;cursor:pointer}button:hover{background:#eaf3f9}button[aria-pressed=true]{background:var(--navy);color:white}button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #b47c00;outline-offset:4px}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}select{width:100%;margin:8px 0 12px}
     .result{padding:16px;background:#edf4f9;border-left:4px solid var(--blue);border-radius:4px}.number{font-size:2rem;line-height:1.2;font-weight:700;color:var(--navy)}.formula{font-family:Georgia,serif;font-size:1.15rem}.note{font-size:.9rem;color:#435a6d}.good{color:var(--green)}.bad{color:var(--red)}.neutral{color:#58491f}.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.project{border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:7px;padding:14px}.project p{margin:6px 0}.status{font-weight:700}.chart{display:block;width:100%;height:auto;margin:14px 0 4px}svg text{font-family:Arial,Helvetica,sans-serif;fill:#253f53;font-size:16px}.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:.9rem}.key:before{content:"";display:inline-block;width:24px;border-top:3px solid var(--blue);vertical-align:middle;margin-right:6px}.key.supply:before{border-color:var(--gold)}.key.base:before{border-color:#718390;border-top-style:dashed}.feedback{min-height:1.6em;margin:8px 0;font-weight:700}details{margin-top:16px}summary{cursor:pointer;font-weight:700}table{border-collapse:collapse;width:100%;font-size:.92rem}caption{text-align:left;margin:10px 0;font-weight:700}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line)}.answer-group{display:flex;flex-wrap:wrap;gap:8px}.footer{font-size:.85rem;color:#4b6375}.hidden,[hidden]{display:none!important}
-    @media(max-width:680px){main{padding:18px 14px 30px}section{padding:18px 14px}.two{grid-template-columns:1fr;gap:18px}.projects{grid-template-columns:1fr}.number{font-size:1.7rem}body{font-size:16px}}
+    .pv-controls{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.pv-formula{font-size:1.6rem;margin-bottom:4px}.pv-result{margin:18px 0 8px}.pv-result p{margin:8px 0 0}.pv-legend span{display:inline-flex;align-items:center;gap:6px}.pv-legend i{display:inline-block;width:24px;border-top:3px solid var(--blue)}.pv-legend .low{border-color:#17603b;border-top-style:dashed}.pv-legend .medium{border-color:#946800;border-top-style:dotted}.pv-legend .high{border-color:#744c9b;border-top-style:dashed}.application-heading{margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+    @media(max-width:680px){main{padding:18px 14px 30px}section{padding:18px 14px}.two{grid-template-columns:1fr;gap:18px}.projects,.pv-controls{grid-template-columns:1fr}.pv-controls{gap:12px}.number{font-size:1.7rem}body{font-size:16px}}
     @media print{body{background:white}main{max-width:none}section{break-inside:avoid}button,input,select,.limits{display:none}.two{grid-template-columns:1fr 1fr}}
   </style>
 </head>
@@ -28,7 +29,22 @@
   <noscript><section><h2>JavaScript is needed for the controls</h2><p>At 5%, $1,000 received next year is worth $952.38 today. A machine costing $900 has a net present value of $52.38. Lower real interest rates make more investment projects worthwhile, increasing the quantity of loanable funds demanded.</p></section></noscript>
 
   <section aria-labelledby="pv-heading">
-    <h2 id="pv-heading">1. Compare money today and money later</h2>
+    <h2 id="pv-heading">1. Present Value: What Is Future Money Worth Today?</h2>
+    <p>Suppose you will receive $1,000 in the future. Change the amount, interest rate, and years to see what that payment is worth today.</p>
+    <p class="formula pv-formula">PV = FV / (1 + r)<sup>n</sup></p>
+    <p class="note">FV = future value · r = annual interest rate as a decimal · n = years until payment</p>
+    <div class="controls pv-controls">
+      <div class="control"><label for="pv-future">Future value <output id="pv-future-output" for="pv-future">$1,000.00</output></label><input id="pv-future" type="range" min="100" max="10000" step="100" value="1000"><div class="limits"><span>$100</span><span>$10,000</span></div></div>
+      <div class="control"><label for="pv-interest">Interest rate <output id="pv-interest-output" for="pv-interest">5%</output></label><input id="pv-interest" type="range" min="0" max="20" step="1" value="5"><div class="limits"><span>0%</span><span>20%</span></div></div>
+      <div class="control"><label for="pv-time">Years in the future <output id="pv-time-output" for="pv-time">5 years</output></label><input id="pv-time" type="range" min="1" max="30" step="1" value="5"><div class="limits"><span>1 year</span><span>30 years</span></div></div>
+    </div>
+    <div class="result pv-result" aria-live="polite" aria-atomic="true"><h3>Present Value Today</h3><div class="number" id="pv-graph-value">$783.53</div><p id="pv-graph-calculation">PV = $1,000.00 / (1.05)^5 = $783.53</p></div>
+    <div class="buttons"><button type="button" id="pv-compare" aria-pressed="false">Compare Interest Rates</button></div>
+    <svg id="pv-chart" class="chart" viewBox="0 0 640 400" role="img" aria-labelledby="pv-chart-title pv-chart-desc"><title id="pv-chart-title">Present value over 0 to 30 years</title><desc id="pv-chart-desc">At a 5% rate, $1,000 received in 5 years is worth $783.53 today.</desc><g id="pv-chart-content"></g></svg>
+    <div class="legend pv-legend" id="pv-legend"><span id="pv-selected-key"><i></i><span id="pv-selected-label">Selected rate: 5%</span></span><span class="pv-comparison-key" hidden><i class="low"></i>2% (dashed)</span><span class="pv-comparison-key" hidden><i class="medium"></i>5% (dotted)</span><span class="pv-comparison-key" hidden><i class="high"></i>10% (long dash)</span></div>
+    <p class="result" id="pv-takeaway" aria-live="polite" aria-atomic="true"><strong>Key idea:</strong> With a positive interest rate, more time means lower present value. At a given future year, a higher rate means lower present value.</p>
+    <details><summary>Read values without the graph</summary><table><caption>Present value at the selected interest rate</caption><thead><tr><th scope="col">Years in the future</th><th scope="col">Present value today</th></tr></thead><tbody id="pv-values-table"></tbody></table><p class="note">Year 0 means payment today, so PV equals FV. At 0% interest, PV equals FV at every year. The payment amount is the same across years; this graph compares alternative payment dates, not a stream of annual payments.</p></details>
+    <h3 class="application-heading">Apply it to an investment decision</h3>
     <p>At 10%, $100 today grows to $110 in one year. That means $110 next year and $100 today have the same value at that rate.</p>
     <div class="two">
       <div>
@@ -97,6 +113,50 @@
   const money = value => (value < 0 ? '−' : '') + '$' + Math.abs(value).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
   const percent = value => Number(value).toLocaleString('en-US', {maximumFractionDigits:1}) + '%';
   let mode = 'movement';
+  let comparePV = false;
+  function updatePVGraph(){
+    const future = Number($('pv-future').value), rate = Number($('pv-interest').value), year = Number($('pv-time').value);
+    const valueAt = (n, r=rate) => future / Math.pow(1 + r / 100, n);
+    const selected = valueAt(year);
+    $('pv-future-output').textContent = money(future);$('pv-interest-output').textContent = percent(rate);$('pv-time-output').textContent = year + (year===1?' year':' years');
+    for(const [id,label] of [['pv-future',money(future)],['pv-interest',percent(rate)],['pv-time',$('pv-time-output').textContent]])$(id).setAttribute('aria-valuetext',label);
+    $('pv-graph-value').textContent = money(selected);
+    $('pv-graph-calculation').textContent = 'PV = '+money(future)+' / ('+(1+rate/100).toFixed(2)+')^'+year+' = '+money(selected);
+    const x = n => 80 + n / 30 * 520, y = v => 320 - v / future * 260;
+    const g = $('pv-chart-content');g.replaceChildren();
+    const node = (tag,attrs,txt) => {const n=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,v);if(txt!==undefined)n.textContent=txt;return n;};
+    const line = (x1,y1,x2,y2,color,width=1,dash='') => g.append(node('line',{x1,y1,x2,y2,stroke:color,'stroke-width':width,...(dash?{'stroke-dasharray':dash}:{})}));
+    const text = (tx,ty,t,attrs={}) => g.append(node('text',{x:tx,y:ty,...attrs},t));
+    text(16,25,'Present Value Today ($)');
+    for(const fraction of [0,.25,.5,.75,1]){line(80,y(future*fraction),600,y(future*fraction),'#e1e7ec');text(68,y(future*fraction)+5,'$'+(future*fraction).toLocaleString('en-US', {maximumFractionDigits:0}),{'text-anchor':'end'});}
+    line(80,48,80,320,'#253f53',2);line(80,320,610,320,'#253f53',2);
+    for(const n of [0,5,10,15,20,25,30])text(x(n),345,n,{'text-anchor':'middle'});
+    text(340,380,'Years in the Future',{'text-anchor':'middle'});
+    const drawCurve = (r,color,dash='') => {
+      const values = Array.from({length:31},(_,n)=>valueAt(n,r));
+      const points = values.map((v,n)=>x(n)+','+y(v)).join(' ');
+      g.append(node('polyline',{points,fill:'none',stroke:color,'stroke-width':3,'data-pv-rate':r,'data-values':JSON.stringify(values),...(dash?{'stroke-dasharray':dash}:{})}));
+    };
+    const comparison = [{rate:2,color:'#17603b',dash:'7 5'},{rate:5,color:'#946800',dash:'2 5'},{rate:10,color:'#744c9b',dash:'12 5'}];
+    if(comparePV)comparison.forEach(item=>drawCurve(item.rate,item.color,item.dash));
+    if(!comparePV || !comparison.some(item=>item.rate===rate))drawCurve(rate,'#0869a6');
+    const pointColor = comparePV ? comparison.find(item=>item.rate===rate)?.color || '#0869a6' : '#0869a6';
+    line(x(year),y(selected),x(year),320,'#526778',1.5,'4 4');
+    line(80,y(selected),x(year),y(selected),'#526778',1.5,'4 4');
+    const labelX = year>20 ? x(year)-184 : x(year)+12;
+    const labelY = Math.max(65, Math.min(265,y(selected)-55));
+    g.append(node('rect',{x:labelX,y:labelY,width:172,height:48,rx:5,fill:'white',stroke:'#d7e0e7'}));
+    text(labelX+10,labelY+19,'Year '+year+' · '+percent(rate),{'font-weight':'bold'});
+    text(labelX+10,labelY+39,'PV = '+money(selected),{'font-weight':'bold'});
+    g.append(node('circle',{id:'pv-selected-point',cx:x(year),cy:y(selected),r:7,fill:pointColor,stroke:'white','stroke-width':2,'data-year':year,'data-value':selected}));
+    $('pv-selected-label').textContent = 'Selected rate: '+percent(rate);
+    $('pv-selected-key').hidden = comparePV && comparison.some(item=>item.rate===rate);
+    document.querySelectorAll('.pv-comparison-key').forEach(key=>key.hidden=!comparePV);
+    $('pv-compare').setAttribute('aria-pressed',String(comparePV));
+    $('pv-chart-desc').textContent = money(future)+' received in '+year+' years is worth '+money(selected)+' today at '+percent(rate)+'. The graph covers years 0 through 30. '+(rate===0?'At zero interest the selected curve is flat.':'At this positive interest rate, the selected curve falls as years increase.')+(comparePV?' Comparison curves show 2%, 5%, and 10%; all start at '+money(future)+' in year 0.':'');
+    $('pv-takeaway').textContent = rate===0 ? 'Key idea: At 0% interest, present value equals '+money(future)+' at every year. With a positive rate, waiting longer reduces present value; a higher rate reduces it further at any given future year.' : 'Key idea: The same '+money(future)+' payment is worth '+money(selected)+' today when it arrives in '+year+' years at '+percent(rate)+'. More time → lower present value. Higher interest rate → lower present value at a given future year.';
+    $('pv-values-table').replaceChildren(...[...new Set([0,1,5,10,20,30,year])].sort((a,b)=>a-b).map(n=>{const row=document.createElement('tr'),time=document.createElement('th'),value=document.createElement('td');time.scope='row';time.textContent=n+(n===1?' year':' years')+(n===year?' (selected)':'');value.textContent=money(valueAt(n));row.append(time,value);return row;}));
+  }
   function updatePV(){
     const rate = Number($('discount-rate').value), years = Number($('years').value);
     const pv = 1000 / Math.pow(1 + rate / 100, years), npv = pv - 900;
@@ -179,14 +239,16 @@
   }
   function setMode(value){mode=value;$('movement-mode').setAttribute('aria-pressed',String(value==='movement'));$('shift-mode').setAttribute('aria-pressed',String(value==='shift'));$('movement-instructions').hidden=value!=='movement';$('shift-controls').hidden=value!=='shift';updateMarket();}
   $('discount-rate').addEventListener('input',updatePV);$('years').addEventListener('input',updatePV);
+  for(const id of ['pv-future','pv-interest','pv-time'])$(id).addEventListener('input',updatePVGraph);
+  $('pv-compare').addEventListener('click',()=>{comparePV=!comparePV;updatePVGraph();});
   for(const [id,rate] of [['pv-five',5],['pv-fifteen',15]])$(id).addEventListener('click',()=>{$('discount-rate').value=rate;$('years').value=1;updatePV();});
   $('loan-rate').addEventListener('input',updateProjects);
   $('graph-rate').addEventListener('input',()=>{$('loan-rate').value=$('graph-rate').value;updateProjects();});
   document.querySelectorAll('[data-rate]').forEach(button=>button.addEventListener('click',()=>{$('loan-rate').value=button.dataset.rate;setMode('movement');updateProjects();}));
   $('movement-mode').addEventListener('click',()=>setMode('movement'));$('shift-mode').addEventListener('click',()=>setMode('shift'));$('scenario').addEventListener('change',updateMarket);
   document.querySelectorAll('[data-answer]').forEach(button=>button.addEventListener('click',()=>{$('check-feedback').textContent=button.dataset.answer==='movement'?'Correct. The rate changes, so quantity demanded changes along the existing curve.':'Try again. Demand shifts when something other than the real interest rate changes, such as expected project returns.';}));
-  $('reset').addEventListener('click',()=>{$('discount-rate').value=5;$('years').value=1;$('loan-rate').value=5;$('scenario').value='baseline';$('check-feedback').textContent='';setMode('movement');updatePV();updateProjects();});
-  updatePV();updateProjects();
+  $('reset').addEventListener('click',()=>{$('pv-future').value=1000;$('pv-interest').value=5;$('pv-time').value=5;comparePV=false;updatePVGraph();$('discount-rate').value=5;$('years').value=1;$('loan-rate').value=5;$('scenario').value='baseline';$('check-feedback').textContent='';setMode('movement');updatePV();updateProjects();});
+  updatePVGraph();updatePV();updateProjects();
 </script>
 </body>
 </html>
