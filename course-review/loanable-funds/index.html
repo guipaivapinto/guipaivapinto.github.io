@@ -14,6 +14,8 @@
     button,select{font:inherit;min-height:44px;border:1px solid #7791a5;border-radius:6px;background:white;color:var(--navy);padding:8px 12px;cursor:pointer}button:hover{background:#eaf3f9}button[aria-pressed=true]{background:var(--navy);color:white}button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #b47c00;outline-offset:4px}.buttons{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}select{width:100%;margin:8px 0 12px}
     .result{padding:16px;background:#edf4f9;border-left:4px solid var(--blue);border-radius:4px}.number{font-size:2rem;line-height:1.2;font-weight:700;color:var(--navy)}.formula{font-family:Georgia,serif;font-size:1.15rem}.note{font-size:.9rem;color:#435a6d}.good{color:var(--green)}.bad{color:var(--red)}.neutral{color:#58491f}.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.project{border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:7px;padding:14px}.project p{margin:6px 0}.status{font-weight:700}.chart{display:block;width:100%;height:auto;margin:14px 0 4px}svg text{font-family:Arial,Helvetica,sans-serif;fill:#253f53;font-size:16px}.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:.9rem}.key:before{content:"";display:inline-block;width:24px;border-top:3px solid var(--blue);vertical-align:middle;margin-right:6px}.key.supply:before{border-color:var(--gold)}.key.base:before{border-color:#718390;border-top-style:dashed}.feedback{min-height:1.6em;margin:8px 0;font-weight:700}details{margin-top:16px}summary{cursor:pointer;font-weight:700}table{border-collapse:collapse;width:100%;font-size:.92rem}caption{text-align:left;margin:10px 0;font-weight:700}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line)}.answer-group{display:flex;flex-wrap:wrap;gap:8px}.footer{font-size:.85rem;color:#4b6375}.hidden,[hidden]{display:none!important}
     .pv-controls{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.pv-formula{font-size:1.6rem;margin-bottom:4px}.pv-result{margin:18px 0 8px}.pv-result p{margin:8px 0 0}.pv-legend span{display:inline-flex;align-items:center;gap:6px}.pv-legend i{display:inline-block;width:24px;border-top:3px solid var(--blue)}.pv-legend .low{border-color:#17603b;border-top-style:dashed}.pv-legend .medium{border-color:#946800;border-top-style:dotted}.pv-legend .high{border-color:#744c9b;border-top-style:dashed}.application-heading{margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+    .pv-bars{margin:18px 0;padding:14px 16px;border:1px solid var(--line);border-radius:7px}.bar-label{display:flex;justify-content:space-between;gap:12px;font-size:.95rem;margin:8px 0 4px}.bar-track{height:22px;background:#e7edf2;border-radius:4px;overflow:hidden}.bar-fill{height:100%;background:var(--blue);transition:width 240ms linear}.bar-fill.future{background:var(--gold)}.pv-bars p{margin:10px 0 0}.pv-controls-tip{margin-bottom:8px}
+    @media(prefers-reduced-motion:reduce){.bar-fill{transition:none}}
     @media(max-width:680px){main{padding:18px 14px 30px}section{padding:18px 14px}.two{grid-template-columns:1fr;gap:18px}.projects,.pv-controls{grid-template-columns:1fr}.pv-controls{gap:12px}.number{font-size:1.7rem}body{font-size:16px}}
     @media print{body{background:white}main{max-width:none}section{break-inside:avoid}button,input,select,.limits{display:none}.two{grid-template-columns:1fr 1fr}}
   </style>
@@ -33,12 +35,18 @@
     <p>Suppose you will receive $1,000 in the future. Change the amount, interest rate, and years to see what that payment is worth today.</p>
     <p class="formula pv-formula">PV = FV / (1 + r)<sup>n</sup></p>
     <p class="note">FV = future value · r = annual interest rate as a decimal · n = years until payment</p>
+    <p class="note pv-controls-tip"><strong>Drag the sliders:</strong> years moves the point along the curve; the interest rate changes the curve. Watch the present-value bar shrink or grow.</p>
     <div class="controls pv-controls">
       <div class="control"><label for="pv-future">Future value <output id="pv-future-output" for="pv-future">$1,000.00</output></label><input id="pv-future" type="range" min="100" max="10000" step="100" value="1000"><div class="limits"><span>$100</span><span>$10,000</span></div></div>
       <div class="control"><label for="pv-interest">Interest rate <output id="pv-interest-output" for="pv-interest">5%</output></label><input id="pv-interest" type="range" min="0" max="20" step="1" value="5"><div class="limits"><span>0%</span><span>20%</span></div></div>
       <div class="control"><label for="pv-time">Years in the future <output id="pv-time-output" for="pv-time">5 years</output></label><input id="pv-time" type="range" min="1" max="30" step="1" value="5"><div class="limits"><span>1 year</span><span>30 years</span></div></div>
     </div>
     <div class="result pv-result" aria-live="polite" aria-atomic="true"><h3>Present Value Today</h3><div class="number" id="pv-graph-value">$783.53</div><p id="pv-graph-calculation">PV = $1,000.00 / (1.05)^5 = $783.53</p></div>
+    <div class="pv-bars" id="pv-bars" role="img" aria-label="Future payment: $1,000.00. Present value today: $783.53, or 78.35% of the future payment.">
+      <div class="bar-label"><span>Future payment</span><strong id="fv-bar-value">$1,000.00</strong></div><div class="bar-track"><div class="bar-fill future" id="fv-bar" style="width:100%;"></div></div>
+      <div class="bar-label"><span>Present value today</span><strong id="pv-bar-value">$783.53</strong></div><div class="bar-track"><div class="bar-fill" id="pv-bar" style="width:78.35%;"></div></div>
+      <p class="note" id="pv-bar-explanation">Today’s value is 78.35% of the future payment. Both bars use the same scale: the future payment fills the full width.</p>
+    </div>
     <div class="buttons"><button type="button" id="pv-compare" aria-pressed="false">Compare Interest Rates</button></div>
     <svg id="pv-chart" class="chart" viewBox="0 0 640 400" role="img" aria-labelledby="pv-chart-title pv-chart-desc"><title id="pv-chart-title">Present value over 0 to 30 years</title><desc id="pv-chart-desc">At a 5% rate, $1,000 received in 5 years is worth $783.53 today.</desc><g id="pv-chart-content"></g></svg>
     <div class="legend pv-legend" id="pv-legend"><span id="pv-selected-key"><i></i><span id="pv-selected-label">Selected rate: 5%</span></span><span class="pv-comparison-key" hidden><i class="low"></i>2% (dashed)</span><span class="pv-comparison-key" hidden><i class="medium"></i>5% (dotted)</span><span class="pv-comparison-key" hidden><i class="high"></i>10% (long dash)</span></div>
@@ -118,13 +126,28 @@
     const future = Number($('pv-future').value), rate = Number($('pv-interest').value), year = Number($('pv-time').value);
     const valueAt = (n, r=rate) => future / Math.pow(1 + r / 100, n);
     const selected = valueAt(year);
+    const share = selected / future * 100;
+    $('fv-bar-value').textContent = money(future);$('pv-bar-value').textContent = money(selected);$('pv-bar').style.width = share+'%';
+    $('pv-bars').setAttribute('aria-label','Future payment: '+money(future)+'. Present value today: '+money(selected)+', or '+share.toFixed(2)+'% of the future payment.');
+    $('pv-bar-explanation').textContent = 'Today’s value is '+share.toFixed(2)+'% of the future payment. Both bars use the same scale: the future payment fills the full width.';
     $('pv-future-output').textContent = money(future);$('pv-interest-output').textContent = percent(rate);$('pv-time-output').textContent = year + (year===1?' year':' years');
     for(const [id,label] of [['pv-future',money(future)],['pv-interest',percent(rate)],['pv-time',$('pv-time-output').textContent]])$(id).setAttribute('aria-valuetext',label);
     $('pv-graph-value').textContent = money(selected);
     $('pv-graph-calculation').textContent = 'PV = '+money(future)+' / ('+(1+rate/100).toFixed(2)+')^'+year+' = '+money(selected);
     const x = n => 80 + n / 30 * 520, y = v => 320 - v / future * 260;
-    const g = $('pv-chart-content');g.replaceChildren();
+    const g = $('pv-chart-content');
+    const previousCurves = new Map([...g.querySelectorAll('polyline')].map(curve=>[curve.dataset.pvRate,Array.from({length:curve.animatedPoints.numberOfItems},(_,i)=>{const point=curve.animatedPoints.getItem(i);return point.x+','+point.y;}).join(' ')]));
+    const previousSelected = g.querySelector('polyline[data-selected="true"]');
+    const previousSelectedPoints = previousSelected ? previousCurves.get(previousSelected.dataset.pvRate) : null;
+    const previousPoint = $('pv-selected-point');
+    const previousPosition = previousPoint ? {x:previousPoint.cx.animVal.value,y:previousPoint.cy.animVal.value} : null;
+    g.replaceChildren();
     const node = (tag,attrs,txt) => {const n=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,v);if(txt!==undefined)n.textContent=txt;return n;};
+    const animate = (element,attribute,from,to) => {
+      if(from===null || from===undefined || String(from)===String(to) || matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+      const motion=node('animate',{attributeName:attribute,from,to,dur:'0.24s',begin:'indefinite',fill:'remove'});
+      element.append(motion);motion.beginElement();
+    };
     const line = (x1,y1,x2,y2,color,width=1,dash='') => g.append(node('line',{x1,y1,x2,y2,stroke:color,'stroke-width':width,...(dash?{'stroke-dasharray':dash}:{})}));
     const text = (tx,ty,t,attrs={}) => g.append(node('text',{x:tx,y:ty,...attrs},t));
     text(16,25,'Present Value Today ($)');
@@ -135,7 +158,9 @@
     const drawCurve = (r,color,dash='') => {
       const values = Array.from({length:31},(_,n)=>valueAt(n,r));
       const points = values.map((v,n)=>x(n)+','+y(v)).join(' ');
-      g.append(node('polyline',{points,fill:'none',stroke:color,'stroke-width':3,'data-pv-rate':r,'data-values':JSON.stringify(values),...(dash?{'stroke-dasharray':dash}:{})}));
+      const curve=node('polyline',{points,fill:'none',stroke:color,'stroke-width':3,'data-pv-rate':r,'data-selected':String(r===rate),'data-values':JSON.stringify(values),...(dash?{'stroke-dasharray':dash}:{})});
+      g.append(curve);
+      animate(curve,'points',r===rate ? previousSelectedPoints : previousCurves.get(String(r)),points);
     };
     const comparison = [{rate:2,color:'#17603b',dash:'7 5'},{rate:5,color:'#946800',dash:'2 5'},{rate:10,color:'#744c9b',dash:'12 5'}];
     if(comparePV)comparison.forEach(item=>drawCurve(item.rate,item.color,item.dash));
@@ -148,7 +173,9 @@
     g.append(node('rect',{x:labelX,y:labelY,width:172,height:48,rx:5,fill:'white',stroke:'#d7e0e7'}));
     text(labelX+10,labelY+19,'Year '+year+' · '+percent(rate),{'font-weight':'bold'});
     text(labelX+10,labelY+39,'PV = '+money(selected),{'font-weight':'bold'});
-    g.append(node('circle',{id:'pv-selected-point',cx:x(year),cy:y(selected),r:7,fill:pointColor,stroke:'white','stroke-width':2,'data-year':year,'data-value':selected}));
+    const point=node('circle',{id:'pv-selected-point',cx:x(year),cy:y(selected),r:7,fill:pointColor,stroke:'white','stroke-width':2,'data-year':year,'data-value':selected});
+    g.append(point);
+    animate(point,'cx',previousPosition?.x,x(year));animate(point,'cy',previousPosition?.y,y(selected));
     $('pv-selected-label').textContent = 'Selected rate: '+percent(rate);
     $('pv-selected-key').hidden = comparePV && comparison.some(item=>item.rate===rate);
     document.querySelectorAll('.pv-comparison-key').forEach(key=>key.hidden=!comparePV);
