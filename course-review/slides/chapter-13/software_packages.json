@@ -40,24 +40,6 @@
     ]
   },
   {
-    "name": "@iconify-json/carbon",
-    "version": "1.2.28",
-    "license": "Apache-2.0",
-    "noticeFiles": []
-  },
-  {
-    "name": "@iconify-json/ph",
-    "version": "1.2.2",
-    "license": "MIT",
-    "noticeFiles": []
-  },
-  {
-    "name": "@iconify-json/svg-spinners",
-    "version": "1.2.4",
-    "license": "MIT",
-    "noticeFiles": []
-  },
-  {
     "name": "@shikijs/magic-move",
     "version": "4.5.0",
     "license": "MIT",
@@ -456,5 +438,23 @@
     "noticeFiles": [
       "LICENSE"
     ]
+  },
+  {
+    "name": "@iconify-json/carbon",
+    "version": "1.2.28",
+    "license": "Apache-2.0",
+    "noticeFiles": []
+  },
+  {
+    "name": "@iconify-json/ph",
+    "version": "1.2.2",
+    "license": "MIT",
+    "noticeFiles": []
+  },
+  {
+    "name": "@iconify-json/svg-spinners",
+    "version": "1.2.4",
+    "license": "MIT",
+    "noticeFiles": []
   }
 ]
