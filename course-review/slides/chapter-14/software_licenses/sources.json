@@ -1,0 +1,48 @@
+[
+  {
+    "file": "carbon-Apache-2.0.txt",
+    "url": "https://raw.githubusercontent.com/carbon-design-system/carbon/main/LICENSE",
+    "retrieved": "2026-10-19",
+    "sha256": "037b3e9eaff51477b270e9082f54b99175e4dd893548654f00995045b68294b8"
+  },
+  {
+    "file": "phosphor-MIT.txt",
+    "url": "https://raw.githubusercontent.com/phosphor-icons/core/main/LICENSE",
+    "retrieved": "2026-10-19",
+    "sha256": "b5b1f1da112d18ea2147decfd48ddc1bf2b5aeb6c265381579340e95b15a2bb2"
+  },
+  {
+    "file": "svg-spinners-MIT.txt",
+    "url": "https://raw.githubusercontent.com/n3r4zzurr0/svg-spinners/main/LICENSE",
+    "retrieved": "2026-10-19",
+    "sha256": "712f8f614e9a23cc754a21d72ea443f1166077e4ee0e6c3b6f9fa576a6d37254"
+  },
+  {
+    "file": "polybooljs-MIT.txt",
+    "url": "https://registry.npmjs.org/polybooljs/-/polybooljs-1.2.2.tgz",
+    "archive_member": "package/LICENSE",
+    "retrieved": "2026-10-19",
+    "sha256": "6a3969e97bc3b992c17bfdcd6fcabd9b5688650cc0078235d512c014e86b716e"
+  },
+  {
+    "file": "object-assign-MIT.txt",
+    "url": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz",
+    "archive_member": "package/license",
+    "retrieved": "2026-10-19",
+    "sha256": "6fb9754611c20f6649f68805e8c990e83261f29316e29de9e6cedae607b8634c"
+  },
+  {
+    "file": "fix-webm-duration-MIT.txt",
+    "url": "https://raw.githubusercontent.com/yusitnikov/fix-webm-duration/master/LICENSE",
+    "retrieved": "2026-10-19",
+    "sha256": "32313800857cae0018a1c233717ead61a1ab70788b99da7bed2d37d125494ec8"
+  },
+  {
+    "file": "native-promise-only-MIT.txt",
+    "url": "https://getify.mit-license.org/",
+    "retrieved": "2026-10-19",
+    "retrieval": "Verified browser text; standalone HTTP client received 403. License terms and original v0.8.1 attribution preserved in plain text.",
+    "scope": "Current MIT terms at the authoritative URL linked by bundled native-promise-only v0.8.1; year 2026 is not presented as a version-pinned historical license.",
+    "sha256": "c7b4f999f626fe7fed6e1570d66e3a3d198bd0a94bae9055e7057893177bc7dd"
+  }
+]
