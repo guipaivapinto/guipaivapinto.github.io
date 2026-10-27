@@ -5,6 +5,116 @@ The following installed packages contributed modules to this build; icon-set met
 
 
 ========================================
+@iconify-json/carbon 1.2.28
+Declared license: Apache-2.0
+
+Icon-set metadata:
+{
+	"prefix": "carbon",
+	"name": "Carbon",
+	"total": 2631,
+	"version": "11.89.0",
+	"author": {
+		"name": "IBM",
+		"url": "https://github.com/carbon-design-system/carbon/tree/main/packages/icons"
+	},
+	"license": {
+		"title": "Apache 2.0",
+		"spdx": "Apache-2.0"
+	},
+	"samples": [
+		"user-certification",
+		"humidity",
+		"edit-off",
+		"flag-filled",
+		"binding-01",
+		"mac-option"
+	],
+	"height": 32,
+	"displayHeight": 16,
+	"category": "UI 16px / 32px",
+	"tags": [
+		"Precise Shapes",
+		"Has Padding"
+	],
+	"palette": false
+}
+
+
+========================================
+@iconify-json/ph 1.2.2
+Declared license: MIT
+
+Icon-set metadata:
+{
+	"prefix": "ph",
+	"name": "Phosphor",
+	"total": 9072,
+	"version": "2.1.1",
+	"author": {
+		"name": "Phosphor Icons",
+		"url": "https://github.com/phosphor-icons/core"
+	},
+	"license": {
+		"title": "MIT",
+		"spdx": "MIT",
+		"url": "https://github.com/phosphor-icons/core/blob/main/LICENSE"
+	},
+	"samples": [
+		"folder-open-duotone",
+		"check-square-offset-thin",
+		"pencil-line-fill",
+		"check-thin",
+		"browser-duotone",
+		"thermometer-simple-fill"
+	],
+	"height": 24,
+	"category": "UI Other / Mixed Grid",
+	"tags": [
+		"Has Padding"
+	],
+	"palette": false
+}
+
+
+========================================
+@iconify-json/svg-spinners 1.2.4
+Declared license: MIT
+
+Icon-set metadata:
+{
+	"prefix": "svg-spinners",
+	"name": "SVG Spinners",
+	"total": 46,
+	"author": {
+		"name": "Utkarsh Verma",
+		"url": "https://github.com/n3r4zzurr0/svg-spinners"
+	},
+	"license": {
+		"title": "MIT",
+		"spdx": "MIT",
+		"url": "https://github.com/n3r4zzurr0/svg-spinners/blob/main/LICENSE"
+	},
+	"samples": [
+		"tadpole",
+		"pulse",
+		"3-dots-rotate",
+		"90-ring",
+		"clock",
+		"bars-fade"
+	],
+	"height": 24,
+	"category": "UI 24px",
+	"tags": [
+		"Precise Shapes",
+		"Has Padding",
+		"Contains Animations"
+	],
+	"palette": false
+}
+
+
+========================================
 @antfu/utils 9.3.0
 Declared license: MIT
 
@@ -1895,114 +2005,4 @@ INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
 OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
 TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
 THIS SOFTWARE.
-
-
-========================================
-@iconify-json/carbon 1.2.28
-Declared license: Apache-2.0
-
-Icon-set metadata:
-{
-	"prefix": "carbon",
-	"name": "Carbon",
-	"total": 2631,
-	"version": "11.89.0",
-	"author": {
-		"name": "IBM",
-		"url": "https://github.com/carbon-design-system/carbon/tree/main/packages/icons"
-	},
-	"license": {
-		"title": "Apache 2.0",
-		"spdx": "Apache-2.0"
-	},
-	"samples": [
-		"user-certification",
-		"humidity",
-		"edit-off",
-		"flag-filled",
-		"binding-01",
-		"mac-option"
-	],
-	"height": 32,
-	"displayHeight": 16,
-	"category": "UI 16px / 32px",
-	"tags": [
-		"Precise Shapes",
-		"Has Padding"
-	],
-	"palette": false
-}
-
-
-========================================
-@iconify-json/ph 1.2.2
-Declared license: MIT
-
-Icon-set metadata:
-{
-	"prefix": "ph",
-	"name": "Phosphor",
-	"total": 9072,
-	"version": "2.1.1",
-	"author": {
-		"name": "Phosphor Icons",
-		"url": "https://github.com/phosphor-icons/core"
-	},
-	"license": {
-		"title": "MIT",
-		"spdx": "MIT",
-		"url": "https://github.com/phosphor-icons/core/blob/main/LICENSE"
-	},
-	"samples": [
-		"folder-open-duotone",
-		"check-square-offset-thin",
-		"pencil-line-fill",
-		"check-thin",
-		"browser-duotone",
-		"thermometer-simple-fill"
-	],
-	"height": 24,
-	"category": "UI Other / Mixed Grid",
-	"tags": [
-		"Has Padding"
-	],
-	"palette": false
-}
-
-
-========================================
-@iconify-json/svg-spinners 1.2.4
-Declared license: MIT
-
-Icon-set metadata:
-{
-	"prefix": "svg-spinners",
-	"name": "SVG Spinners",
-	"total": 46,
-	"author": {
-		"name": "Utkarsh Verma",
-		"url": "https://github.com/n3r4zzurr0/svg-spinners"
-	},
-	"license": {
-		"title": "MIT",
-		"spdx": "MIT",
-		"url": "https://github.com/n3r4zzurr0/svg-spinners/blob/main/LICENSE"
-	},
-	"samples": [
-		"tadpole",
-		"pulse",
-		"3-dots-rotate",
-		"90-ring",
-		"clock",
-		"bars-fade"
-	],
-	"height": 24,
-	"category": "UI 24px",
-	"tags": [
-		"Precise Shapes",
-		"Has Padding",
-		"Contains Animations"
-	],
-	"palette": false
-}
 
