@@ -96,6 +96,13 @@
             background-position: center 35%;
             padding: 2px;
         }
+        .research-nav { position: relative; }
+        .research-nav summary { cursor: pointer; list-style: none; }
+        .research-nav summary::-webkit-details-marker { display: none; }
+        .research-menu { position: absolute; top: 100%; left: 0; min-width: 240px; padding: 8px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 10px 28px rgba(16,40,56,.15); }
+        .research-menu a, .research-menu button { display: block; width: 100%; padding: 12px; text-align: left; font: inherit; font-size: 14px; color: var(--ink); border-radius: 5px; white-space: nowrap; }
+        .research-menu a:hover, .research-menu button:hover { background: var(--mist); }
+        @media (max-width: 480px) { .research-menu { left: 50%; transform: translateX(-50%); } }
     </style>
 </head>
 <body>
@@ -141,10 +148,16 @@
                     <i data-lucide="user" class="w-4 h-4"></i>
                     About
                 </button>
-                <button data-tab-target="research" onclick="showTab('research')" class="tab-button py-4 flex items-center gap-2">
-                    <i data-lucide="book-open" class="w-4 h-4"></i>
-                    Research
-                </button>
+                <details class="research-nav">
+                    <summary data-tab-target="research" class="tab-button py-4 flex items-center gap-2">
+                        <i data-lucide="book-open" class="w-4 h-4"></i>
+                        Research <span aria-hidden="true">▾</span>
+                    </summary>
+                    <div class="research-menu">
+                        <button type="button" onclick="showTab('research')">Research overview</button>
+                        <a href="/brazil-2026-us/">Brazil 2026 · U.S. voting</a>
+                    </div>
+                </details>
                 <button data-tab-target="teaching" onclick="showTab('teaching')" class="tab-button py-4 flex items-center gap-2">
                     <i data-lucide="graduation-cap" class="w-4 h-4"></i>
                     Teaching
@@ -599,6 +612,7 @@
         }
 
         function showTab(tabName, shouldScroll = true) {
+            document.querySelectorAll('.research-nav[open]').forEach(menu => menu.removeAttribute('open'));
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             const target = document.getElementById(tabName);
             if (target) {
@@ -614,9 +628,20 @@
             if (shouldScroll) scrollToMainTop();
         }
 
+        document.addEventListener('click', event => {
+            document.querySelectorAll('.research-nav[open]').forEach(menu => {
+                if (!menu.contains(event.target)) menu.removeAttribute('open');
+            });
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') document.querySelectorAll('.research-nav[open]').forEach(menu => {
+                menu.removeAttribute('open'); menu.querySelector('summary').focus();
+            });
+        });
         document.addEventListener('DOMContentLoaded', () => {
             showTab('about', false);
         });
     </script>
 </body>
 </html>
+
