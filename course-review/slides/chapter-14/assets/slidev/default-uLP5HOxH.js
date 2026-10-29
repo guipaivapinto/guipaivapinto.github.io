@@ -1,0 +1,1 @@
+import{L as e,P as t,g as n}from"../modules/unplugin-icons-Dzmj2Qjc.js";import{lt as r}from"../index-SqQZdSaj.js";var i={},a={class:`slidev-layout default`};function o(r,i){return t(),n(`div`,a,[e(r.$slots,`default`)])}var s=r(i,[[`render`,o]]);export{s as t};
