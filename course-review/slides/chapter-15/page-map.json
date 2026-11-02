@@ -1,0 +1,221 @@
+{
+  "part1": [
+    {
+      "id": "cover1",
+      "title": "Monetary Policy",
+      "stages": 1
+    },
+    {
+      "id": "opening",
+      "title": "Two FOMC Decisions",
+      "stages": 2
+    },
+    {
+      "id": "roadmap1",
+      "title": "Learning Objectives",
+      "stages": 1
+    },
+    {
+      "id": "sectionA",
+      "title": "15.1 Demand for Money",
+      "stages": 1
+    },
+    {
+      "id": "pollstart",
+      "title": "Money for Bills or Money for a Return?",
+      "stages": 1
+    },
+    {
+      "id": "return",
+      "title": "The Opportunity Cost of Holding Money",
+      "stages": 3
+    },
+    {
+      "id": "classcurve",
+      "title": "From Choices to Money Demand",
+      "stages": 3
+    },
+    {
+      "id": "mdcurve",
+      "title": "The Demand for Money",
+      "stages": 3
+    },
+    {
+      "id": "mdshifts",
+      "title": "Shifts in Money Demand",
+      "stages": 5
+    },
+    {
+      "id": "sectionB",
+      "title": "15.2 Money and Interest Rates",
+      "stages": 1
+    },
+    {
+      "id": "ffr",
+      "title": "The Federal Funds Rate",
+      "stages": 3
+    },
+    {
+      "id": "fedchain",
+      "title": "From a Fed Purchase to Money Supply",
+      "stages": 4
+    },
+    {
+      "id": "msexpand",
+      "title": "Expansionary Monetary Policy",
+      "stages": 4
+    },
+    {
+      "id": "mscontract",
+      "title": "Contractionary Monetary Policy",
+      "stages": 4
+    },
+    {
+      "id": "excessmoney",
+      "title": "Why a High Rate Does Not Persist",
+      "stages": 4
+    },
+    {
+      "id": "moneyshortage",
+      "title": "Why a Low Rate Does Not Persist",
+      "stages": 4
+    },
+    {
+      "id": "mssummary",
+      "title": "Money-Market Effects",
+      "stages": 1
+    },
+    {
+      "id": "longrates",
+      "title": "Long-Term Interest Rates across Countries",
+      "stages": 3
+    },
+    {
+      "id": "pollreturn",
+      "title": "One Year or Two Years?",
+      "stages": 3
+    },
+    {
+      "id": "termrates",
+      "title": "Why Maturity Matters",
+      "stages": 3
+    },
+    {
+      "id": "sectionC",
+      "title": "15.3 Monetary Policy and Aggregate Demand",
+      "stages": 1
+    },
+    {
+      "id": "policychoice",
+      "title": "Fiscal and Monetary Policy",
+      "stages": 2
+    },
+    {
+      "id": "transmission",
+      "title": "From Interest Rates to Aggregate Demand",
+      "stages": 4
+    },
+    {
+      "id": "adexpand",
+      "title": "Expansionary Policy and Aggregate Demand",
+      "stages": 4
+    },
+    {
+      "id": "adcontract",
+      "title": "Contractionary Policy and Aggregate Demand",
+      "stages": 4
+    },
+    {
+      "id": "check1",
+      "title": "Check the Three Objectives",
+      "stages": 4
+    }
+  ],
+  "part2": [
+    {
+      "id": "cover2",
+      "title": "Monetary Policy in Practice",
+      "stages": 1
+    },
+    {
+      "id": "roadmap2",
+      "title": "Learning Objectives",
+      "stages": 1
+    },
+    {
+      "id": "dualmandate",
+      "title": "Choosing a Policy Response",
+      "stages": 3
+    },
+    {
+      "id": "outputgap",
+      "title": "Measuring the Output Gap",
+      "stages": 3
+    },
+    {
+      "id": "practicegapnegative",
+      "title": "Responding to a Negative Output Gap",
+      "stages": 4
+    },
+    {
+      "id": "practicegappositive",
+      "title": "Responding to a Positive Output Gap",
+      "stages": 4
+    },
+    {
+      "id": "supplytradeoff",
+      "title": "When Output and Inflation Disagree",
+      "stages": 3
+    },
+    {
+      "id": "taylor",
+      "title": "A Standard Taylor Rule",
+      "stages": 3
+    },
+    {
+      "id": "taylorexample",
+      "title": "Calculating a Policy-Rate Benchmark",
+      "stages": 4
+    },
+    {
+      "id": "taylorprinciple",
+      "title": "Why the Rule Responds to Inflation",
+      "stages": 3
+    },
+    {
+      "id": "targeting",
+      "title": "Inflation Targeting",
+      "stages": 3
+    },
+    {
+      "id": "fomcreturn",
+      "title": "The September 2024 Decision",
+      "stages": 2
+    },
+    {
+      "id": "comparison",
+      "title": "Taylor Rule and Inflation Targeting",
+      "stages": 1
+    },
+    {
+      "id": "limits",
+      "title": "Why Policymakers Use Judgment",
+      "stages": 3
+    },
+    {
+      "id": "taylorcheck",
+      "title": "Try the Rule",
+      "stages": 3
+    },
+    {
+      "id": "policybrief",
+      "title": "Write a Conditional Policy Recommendation",
+      "stages": 4
+    },
+    {
+      "id": "close2",
+      "title": "Policy Reasoning",
+      "stages": 4
+    }
+  ]
+}
