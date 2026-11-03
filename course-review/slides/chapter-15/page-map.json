@@ -9,185 +9,161 @@
     {
       "slide": 2,
       "id": "opening",
-      "title": "Case A: March 15, 2020",
-      "stages": 3
+      "title": "FOMC Decisions: Five Episodes",
+      "stages": 1
     },
     {
       "slide": 3,
-      "id": "opening2021",
-      "title": "Case B: November 3, 2021",
-      "stages": 3
-    },
-    {
-      "slide": 4,
-      "id": "opening2022",
-      "title": "Case C: June 15, 2022",
-      "stages": 3
-    },
-    {
-      "slide": 5,
-      "id": "opening2023",
-      "title": "Case D: November 1, 2023",
-      "stages": 3
-    },
-    {
-      "slide": 6,
-      "id": "opening2024",
-      "title": "Case E: September 18, 2024",
-      "stages": 3
-    },
-    {
-      "slide": 7,
       "id": "roadmap1",
       "title": "Learning Objectives",
       "stages": 1
     },
     {
-      "slide": 8,
+      "slide": 4,
       "id": "sectionA",
       "title": "15.1 Demand for Money",
       "stages": 1
     },
     {
-      "slide": 9,
+      "slide": 5,
       "id": "pollstart",
       "title": "Money or Bonds",
       "stages": 1
     },
     {
-      "slide": 10,
+      "slide": 6,
       "id": "return",
       "title": "The Opportunity Cost of Holding Money",
       "stages": 3
     },
     {
-      "slide": 11,
+      "slide": 7,
       "id": "classcurve",
       "title": "Money Demand: P1\u2013P3",
       "stages": 3
     },
     {
-      "slide": 12,
+      "slide": 8,
       "id": "mdshifts",
       "title": "Shifts in Money Demand",
       "stages": 5
     },
     {
-      "slide": 13,
+      "slide": 9,
       "id": "moneydemandcheck",
       "title": "Money Demand Checkpoint",
       "stages": 3
     },
     {
-      "slide": 14,
+      "slide": 10,
       "id": "sectionB",
       "title": "15.2 Money and Interest Rates",
       "stages": 1
     },
     {
-      "slide": 15,
+      "slide": 11,
       "id": "ffr",
       "title": "The Federal Funds Rate",
       "stages": 3
     },
     {
-      "slide": 16,
+      "slide": 12,
       "id": "fedchain",
       "title": "A Fed Bond Purchase",
       "stages": 4
     },
     {
-      "slide": 17,
+      "slide": 13,
       "id": "msexpand",
       "title": "Expansionary Monetary Policy",
       "stages": 4
     },
     {
-      "slide": 18,
+      "slide": 14,
       "id": "mscontract",
       "title": "Contractionary Monetary Policy",
       "stages": 4
     },
     {
-      "slide": 19,
+      "slide": 15,
       "id": "excessmoney",
       "title": "An Interest Rate above Equilibrium",
       "stages": 4
     },
     {
-      "slide": 20,
+      "slide": 16,
       "id": "moneyshortage",
       "title": "An Interest Rate below Equilibrium",
       "stages": 4
     },
     {
-      "slide": 21,
+      "slide": 17,
       "id": "mssummary",
       "title": "Money Supply and Interest Rates",
       "stages": 1
     },
     {
-      "slide": 22,
+      "slide": 18,
       "id": "moneymarketcheck",
       "title": "Money-Market Checkpoint",
       "stages": 3
     },
     {
-      "slide": 23,
+      "slide": 19,
       "id": "longrates",
       "title": "Long-Term Interest Rates across Countries",
       "stages": 1
     },
     {
-      "slide": 24,
+      "slide": 20,
       "id": "pollreturn",
       "title": "One-Year and Two-Year Investments",
       "stages": 3
     },
     {
-      "slide": 25,
+      "slide": 21,
       "id": "termrates",
       "title": "Longer-Term Rates and Bond Prices",
       "stages": 3
     },
     {
-      "slide": 26,
+      "slide": 22,
       "id": "sectionC",
       "title": "15.3 Monetary Policy and Aggregate Demand",
       "stages": 1
     },
     {
-      "slide": 27,
+      "slide": 23,
       "id": "policychoice",
       "title": "Fiscal and Monetary Policy",
       "stages": 2
     },
     {
-      "slide": 28,
+      "slide": 24,
       "id": "adchannel",
       "title": "Monetary Policy and Aggregate Demand",
       "stages": 4
     },
     {
-      "slide": 29,
+      "slide": 25,
       "id": "transmission",
       "title": "Borrowing Costs and Investment",
       "stages": 4
     },
     {
-      "slide": 30,
+      "slide": 26,
       "id": "adexpand",
       "title": "Expansionary Policy and Aggregate Demand",
       "stages": 4
     },
     {
-      "slide": 31,
+      "slide": 27,
       "id": "adcontract",
       "title": "Contractionary Policy and Aggregate Demand",
       "stages": 4
     },
     {
-      "slide": 32,
+      "slide": 28,
       "id": "part1summary",
       "title": "Monetary Policy: Short-Run Effects",
       "stages": 1
