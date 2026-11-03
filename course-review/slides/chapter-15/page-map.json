@@ -213,6 +213,31 @@
       "stages": 4
     },
     {
+      "id": "longrunobjective",
+      "title": "Long-Run Effects of Monetary Policy",
+      "stages": 1
+    },
+    {
+      "id": "longrunexpand",
+      "title": "Monetary Expansion: Short Run and Long Run",
+      "stages": 5
+    },
+    {
+      "id": "longruncontract",
+      "title": "Monetary Contraction: Short Run and Long Run",
+      "stages": 5
+    },
+    {
+      "id": "neutrality",
+      "title": "Monetary Neutrality",
+      "stages": 2
+    },
+    {
+      "id": "longruncheck",
+      "title": "Check Monetary Neutrality",
+      "stages": 3
+    },
+    {
       "id": "close2",
       "title": "Policy Reasoning",
       "stages": 4
