@@ -9,13 +9,13 @@
     {
       "slide": 2,
       "id": "opening",
-      "title": "Two FOMC Decisions",
-      "stages": 2
+      "title": "September 2024: A Rate Cut",
+      "stages": 3
     },
     {
       "slide": 3,
       "id": "roadmap1",
-      "title": "Learning Objectives",
+      "title": "Roadmap",
       "stages": 1
     },
     {
@@ -27,7 +27,7 @@
     {
       "slide": 5,
       "id": "pollstart",
-      "title": "Money Allocation Activity",
+      "title": "Money or Bonds",
       "stages": 1
     },
     {
@@ -39,13 +39,13 @@
     {
       "slide": 7,
       "id": "classcurve",
-      "title": "From Choices to Money Demand",
+      "title": "Money Demand: P1\u2013P3",
       "stages": 3
     },
     {
       "slide": 8,
       "id": "mdcurve",
-      "title": "The Demand for Money",
+      "title": "Interest Rates and Money Demand",
       "stages": 3
     },
     {
@@ -70,12 +70,12 @@
       "slide": 12,
       "id": "ffr",
       "title": "The Federal Funds Rate",
-      "stages": 3
+      "stages": 4
     },
     {
       "slide": 13,
       "id": "fedchain",
-      "title": "From a Fed Purchase to Money Supply",
+      "title": "A Fed Bond Purchase",
       "stages": 4
     },
     {
@@ -93,19 +93,19 @@
     {
       "slide": 16,
       "id": "excessmoney",
-      "title": "Adjustment from a High Interest Rate",
+      "title": "An Interest Rate above Equilibrium",
       "stages": 4
     },
     {
       "slide": 17,
       "id": "moneyshortage",
-      "title": "Adjustment from a Low Interest Rate",
+      "title": "An Interest Rate below Equilibrium",
       "stages": 4
     },
     {
       "slide": 18,
       "id": "mssummary",
-      "title": "Money-Market Effects",
+      "title": "Money Supply and Interest Rates",
       "stages": 1
     },
     {
@@ -123,13 +123,13 @@
     {
       "slide": 21,
       "id": "pollreturn",
-      "title": "Comparing One-Year and Two-Year Investments",
+      "title": "One-Year and Two-Year Investments",
       "stages": 3
     },
     {
       "slide": 22,
       "id": "termrates",
-      "title": "Maturity and Interest Rates",
+      "title": "Longer-Term Interest Rates",
       "stages": 3
     },
     {
@@ -147,7 +147,7 @@
     {
       "slide": 25,
       "id": "transmission",
-      "title": "From Interest Rates to Aggregate Demand",
+      "title": "Borrowing Costs and Investment",
       "stages": 4
     },
     {

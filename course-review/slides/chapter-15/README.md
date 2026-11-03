@@ -1,6 +1,6 @@
 # Chapter 15: Monetary Policy
 
-Public student presentation and reading copies for the November 3 and 5, 2026 classes. Part 1 has 29 slides and Part 2 has 22. The lecture PDFs preserve 76 and 65 cumulative reveal states; completed reading copies include in-slide checkpoint explanations.
+Public student presentation and reading copies for the November 3 and 5, 2026 classes. Part 1 has 29 slides and Part 2 has 22. The lecture PDFs preserve 78 and 65 cumulative reveal states; completed reading copies include in-slide checkpoint explanations.
 
 Original course explanations, examples, questions, figures and presentation code are distinct from the OECD numerical data. Publication does not assign a new blanket open-source or Creative Commons license to the teaching materials. Any repository-wide software license should not be read as relicensing these teaching materials or the OECD data.
 
