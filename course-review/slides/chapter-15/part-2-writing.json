@@ -1,0 +1,353 @@
+{
+  "schema": 2,
+  "deck": "15-2",
+  "edits": {
+    "practiceoverview.0": {
+      "slide": "practiceoverview",
+      "path": "div:nth-of-type(1) > h1:nth-of-type(1)",
+      "original": "Inflation and the Output Gap",
+      "value": "Inflation Target",
+      "label": "Heading",
+      "node": 0
+    },
+    "practiceoverview.2": {
+      "slide": "practiceoverview",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "original": "A goal for inflation over time.",
+      "value": "A goal for inflation over time. Usually 2%, announced every year.",
+      "label": "Text",
+      "node": 0
+    },
+    "practiceoverview.3": {
+      "slide": "practiceoverview",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > h3:nth-of-type(1)",
+      "original": "Output gap",
+      "value": "Why working with the inflation Target?",
+      "label": "Heading",
+      "node": 0
+    },
+    "practiceoverview.8": {
+      "slide": "practiceoverview",
+      "path": "div:nth-of-type(2) > p:nth-of-type(3)",
+      "original": "Fed inflation goal: 2% PCE.",
+      "value": "",
+      "label": "Text",
+      "node": 0
+    },
+    "practiceoverview.4": {
+      "slide": "practiceoverview",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "original": "Real GDP relative to potential GDP.",
+      "value": "Transparency \nReduces uncertainty.",
+      "label": "Text",
+      "node": 0,
+      "rich": {
+        "list": "number"
+      }
+    },
+    "practiceoverview.6": {
+      "slide": "practiceoverview",
+      "path": "div:nth-of-type(2) > p:nth-of-type(2)",
+      "original": "Y: real GDP · Y*: potential GDP · g: output gap (%)",
+      "value": "The federal reserve will implement their policies following this target.\nUsually, the announcement will also include a range of operation. For instance: a 2% target, with a range of operation between 1.6% and 2.4%.",
+      "label": "Text",
+      "node": 0,
+      "rich": {
+        "list": "bullet"
+      }
+    },
+    "practiceoverview.7": {
+      "slide": "practiceoverview",
+      "path": "div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "original": "Y = 980; Y* = 1,000 → g = −2%",
+      "value": "\n",
+      "label": "Text",
+      "node": 0
+    },
+    "practiceoverview.5": {
+      "slide": "practiceoverview",
+      "path": "div:nth-of-type(2) > p:nth-of-type(1)",
+      "original": "g = 100 × (Y − Y*) / Y*",
+      "value": "",
+      "label": "Formula",
+      "node": 0
+    },
+    "taylor.10": {
+      "slide": "taylor",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1) > strong:nth-of-type(1)",
+      "original": "Inflation above target:",
+      "value": "The Formula: i = r* + π + 0.5(π − π*) + 0.5g\n\"i\" is the target interest rate.",
+      "label": "Text",
+      "node": 0,
+      "rich": {
+        "list": "bullet"
+      }
+    },
+    "taylor.1": {
+      "slide": "taylor",
+      "path": "div:nth-of-type(2) > p:nth-of-type(1)",
+      "original": "i = r* + π + 0.5(π − π*) + 0.5g",
+      "value": "A formula to guide Monetary Policy decisions",
+      "label": "Formula",
+      "node": 0
+    },
+    "zerobound.1": {
+      "slide": "zerobound",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "original": "Limit",
+      "value": "\nUsually, central banks cannot reduce interest rates far below 0. ",
+      "label": "Heading",
+      "node": 0,
+      "rich": {
+        "size": "large"
+      }
+    },
+    "zerobound.2": {
+      "slide": "zerobound",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "original": "Nominal rates cannot fall far below zero.",
+      "value": "",
+      "label": "Text",
+      "node": 0
+    },
+    "zerobound.3": {
+      "slide": "zerobound",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > h3:nth-of-type(1)",
+      "original": "Reason",
+      "value": "Why is it a problem?",
+      "label": "Heading",
+      "node": 0
+    },
+    "zerobound.7": {
+      "slide": "zerobound",
+      "path": "div:nth-of-type(2) > p:nth-of-type(1)",
+      "original": "Some central banks have used slightly negative rates.",
+      "value": "",
+      "label": "Text",
+      "node": 0
+    },
+    "zerobound.5": {
+      "slide": "zerobound",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > h3:nth-of-type(1)",
+      "original": "Next tool",
+      "value": "The aftermath of crisis",
+      "label": "Heading",
+      "node": 0
+    },
+    "zerobound.6": {
+      "slide": "zerobound",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > p:nth-of-type(1)",
+      "original": "QE targets longer-term borrowing costs.",
+      "value": "After 2008 and during the pandemic, the central banks found their interest rates close to 0%. As a result, other policies had to be implemented.",
+      "label": "Text",
+      "node": 0
+    },
+    "zerobound.4": {
+      "slide": "zerobound",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "original": "People can hold cash instead.",
+      "value": "People can hold cash instead, and yet have a higher return. This can be understood as a limit for regular monetary policy.",
+      "label": "Text",
+      "node": 0
+    },
+    "neutrality.0": {
+      "slide": "neutrality",
+      "path": "div:nth-of-type(1) > h1:nth-of-type(1)",
+      "original": "Monetary Neutrality",
+      "value": "Long Run Effects - Monetary Neutrality ",
+      "label": "Heading",
+      "node": 0
+    },
+    "qe.2": {
+      "slide": "qe",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "original": "The central bank buys large amounts of longer-term bonds.",
+      "value": "The central bank buys large amounts of longer-term bonds. ",
+      "label": "Text",
+      "node": 0
+    },
+    "qe.1": {
+      "slide": "qe",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "original": "Action",
+      "value": "What is this:",
+      "label": "Heading",
+      "node": 0,
+      "rich": {
+        "size": "large"
+      }
+    },
+    "qe.3": {
+      "slide": "qe",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > h3:nth-of-type(1)",
+      "original": "Bond market",
+      "value": "How it works?",
+      "label": "Heading",
+      "node": 0,
+      "rich": {
+        "size": "large"
+      }
+    },
+    "qe.4": {
+      "slide": "qe",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "original": "Higher bond prices mean lower yields.",
+      "value": "Higher bond prices mean lower interest rates over the economy.",
+      "label": "Text",
+      "node": 0
+    },
+    "qe.5": {
+      "slide": "qe",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > h3:nth-of-type(1)",
+      "original": "Spending",
+      "value": "",
+      "label": "Heading",
+      "node": 0
+    },
+    "qe.7": {
+      "slide": "qe",
+      "path": "div:nth-of-type(2) > p:nth-of-type(1)",
+      "original": "More reserves do not automatically mean more lending.",
+      "value": "",
+      "label": "Text",
+      "node": 0
+    },
+    "neutrality.2": {
+      "slide": "neutrality",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "original": "Money changes prices, not real output.",
+      "value": "Money supply increase changes prices, not real output, this phenomena is called Monetary Neutrality.",
+      "label": "Text",
+      "node": 0
+    },
+    "roadmap2.1": {
+      "slide": "roadmap2",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "original": "Choose a policy rate.",
+      "value": "Understand how he Fed chooses a policy.",
+      "label": "Text",
+      "node": 0
+    },
+    "roadmap2.3": {
+      "slide": "roadmap2",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(3)",
+      "original": "Compare short- and long-run effects.",
+      "value": "Understand long-run effects.",
+      "label": "Text",
+      "node": 0
+    },
+    "taylor.16": {
+      "slide": "taylor",
+      "path": "div:nth-of-type(2) > p:nth-of-type(2)",
+      "original": "i is a nominal policy-rate benchmark.",
+      "value": "",
+      "label": "Text",
+      "node": 0
+    },
+    "taylor.11": {
+      "slide": "taylor",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "original": "Raises the suggested rate.",
+      "value": " ",
+      "label": "Text",
+      "node": 0
+    },
+    "taylor.12": {
+      "slide": "taylor",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2) > strong:nth-of-type(1)",
+      "original": "Output below potential:",
+      "value": "Output below potential:\nInflation above target:",
+      "label": "Text",
+      "node": 0,
+      "rich": {
+        "list": "bullet"
+      }
+    },
+    "taylor.13": {
+      "slide": "taylor",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "original": "Lowers the suggested rate.",
+      "value": "Lowers the suggested rate.\nRaises the suggested rate.",
+      "label": "Text",
+      "node": 0,
+      "rich": {
+        "list": "bullet"
+      }
+    },
+    "qe.6": {
+      "slide": "qe",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > p:nth-of-type(1)",
+      "original": "Lower borrowing costs can support C and I.",
+      "value": "(similar to regular Monetary Policy) Lower borrowing costs can support C and I.",
+      "label": "Text",
+      "node": 0
+    },
+    "neutrality.4": {
+      "slide": "neutrality",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "original": "Workers, capital and technology determine potential output.",
+      "value": "Recall, Workers, capital and technology determine potential output.",
+      "label": "Text",
+      "node": 0
+    },
+    "neutrality.3": {
+      "slide": "neutrality",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > h3:nth-of-type(1)",
+      "original": "Real capacity",
+      "value": "Real capacity",
+      "label": "Heading",
+      "node": 0,
+      "rich": {
+        "size": "large"
+      }
+    },
+    "neutrality.1": {
+      "slide": "neutrality",
+      "path": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > h3:nth-of-type(1)",
+      "original": "Long run",
+      "value": "Long run",
+      "label": "Heading",
+      "node": 0,
+      "rich": {
+        "size": "large"
+      }
+    }
+  },
+  "titles": {
+    "Inflation and the Output Gap": "Inflation Target",
+    "Monetary Neutrality": "Long Run Effects - Monetary Neutrality "
+  },
+  "structure": {
+    "added": [
+      {
+        "id": "custom-e11a2cbd-0706-4761-bf95-cf55c8ce4d0d",
+        "layout": "content",
+        "credit": ""
+      }
+    ],
+    "removed": [
+      "shortlong",
+      "custom-e11a2cbd-0706-4761-bf95-cf55c8ce4d0d"
+    ],
+    "order": [
+      "cover2",
+      "roadmap2",
+      "practiceoverview",
+      "taylor",
+      "zerobound",
+      "qe",
+      "neutrality",
+      "longrunexpand",
+      "longruncontract",
+      "checkpoint2"
+    ],
+    "styles": {
+      "practiceoverview": "large",
+      "taylor": "large",
+      "zerobound": "large",
+      "qe": "large",
+      "neutrality": "large"
+    }
+  },
+  "published_at": "2026-11-05T18:23:01.325275+00:00"
+}

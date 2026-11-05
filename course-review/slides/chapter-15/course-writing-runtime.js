@@ -1,0 +1,342 @@
+/* Small, data-only rich text renderer. No instructor-entered HTML is interpreted. */
+(()=>{
+  const types=['bold','italic','underline','sup','sub','not-bold','not-italic','not-underline'];
+  const css=`.ss-writing-host{white-space:pre-line}.ss-writing-host strong{font-weight:700}.ss-writing-host em{font-style:italic}.ss-writing-host u{text-decoration:underline}.ss-writing-host sup,.ss-writing-host sub{font-size:.7em;line-height:0;position:relative;vertical-align:baseline}.ss-writing-host sup{top:-.45em}.ss-writing-host sub{bottom:-.2em}.ss-writing-host[data-ss-list]{display:inline-block;max-width:100%;vertical-align:top;white-space:normal}.ss-list-row{display:flex;gap:.38em;align-items:baseline;min-height:1.25em}.ss-list-row+.ss-list-row{margin-top:.12em}.ss-list-marker{flex-shrink:0;min-width:.7em;text-align:right;user-select:none}.ss-list-copy{min-width:0;white-space:pre-wrap}.ss-equation-token{display:inline-grid;grid-template-rows:auto auto;text-align:center;vertical-align:middle;line-height:1.05;margin:0 .12em;white-space:pre}.ss-fraction-top{display:block;border-bottom:1px solid currentColor;padding:0 .16em .1em}.ss-fraction-bottom{display:block;grid-row:2;padding:.1em .16em 0}.ss-fraction-slash{position:absolute;width:0;height:0;font-size:0;overflow:hidden}`;
+  function install(){if(!document.getElementById('ss-rich-styles')){const style=document.createElement('style');style.id='ss-rich-styles';style.textContent=css+'.ss-list-copy{min-width:1ch;min-height:1em}';document.head.append(style);}}
+  function clean(value={}){
+    const r={};if(value.marks?.length)r.marks=value.marks.filter(m=>types.includes(m.type)&&m.end>m.start).map(m=>({type:m.type,start:m.start,end:m.end}));
+    if(['bullet','number'].includes(value.list))r.list=value.list;
+    if(['small','large'].includes(value.size))r.size=value.size;
+    if(value.equations?.length)r.equations=value.equations.map(e=>({...e}));
+    return r;
+  }
+  function mergeMarks(marks){
+    const out=[];for(const type of types){const list=marks.filter(m=>m.type===type&&m.end>m.start).sort((a,b)=>a.start-b.start);for(const m of list){const last=out.at(-1);if(last?.type===type&&last.end>=m.start)last.end=Math.max(last.end,m.end);else out.push({...m});}}return out;
+  }
+  function shift(rich,before,after){
+    const r=clean(rich);let start=0;while(start<before.length&&start<after.length&&before[start]===after[start])start++;
+    let tail=0;while(tail<before.length-start&&tail<after.length-start&&before[before.length-1-tail]===after[after.length-1-tail])tail++;
+    const oldEnd=before.length-tail,newEnd=after.length-tail,delta=after.length-before.length;
+    const point=(p,end=false)=>p<start?p:p===start?(end&&oldEnd===start?newEnd:p):p>=oldEnd?p+delta:(end?newEnd:start);
+    if(r.marks)r.marks=mergeMarks(r.marks.filter(m=>!(oldEnd>start&&m.start>=start&&m.end<=oldEnd&&!(m.start<=start&&m.end>=oldEnd))).map(m=>({...m,start:point(m.start),end:point(m.end,true)})).filter(m=>m.end>m.start));
+    if(r.equations)r.equations=r.equations.flatMap(e=>{
+      if(e.end<=start)return [e];if(e.start>=oldEnd)return [{...e,start:e.start+delta,end:e.end+delta}];
+      if(start>=e.start&&oldEnd<=e.end){const slash=e.start+e.top.length,nextSlash=oldEnd<=slash?slash+delta:start>slash?slash:-1,newEnd=e.end+delta;
+        if(nextSlash>=0&&after[nextSlash]==='/'){const top=after.slice(e.start,nextSlash),bottom=after.slice(nextSlash+1,newEnd);if(top&&bottom&&!top.includes('\n')&&!bottom.includes('\n'))return [{...e,top,bottom,end:newEnd}];}}
+      return [];
+    });
+    return clean(r);
+  }
+  function covers(r,type,start,end,base=false){
+    const positive=(r.marks||[]).filter(m=>m.type===type),negative=(r.marks||[]).filter(m=>m.type==='not-'+type);
+    if(negative.some(m=>m.start<=start&&m.end>=end))return false;
+    return positive.some(m=>m.start<=start&&m.end>=end)||base;
+  }
+  function toggle(rich,type,start,end,base=false){
+    const r=clean(rich),on=!covers(r,type,start,end,base),group=[type,'not-'+type,...(['sup','sub'].includes(type)?['sup','sub']:[])],marks=[];
+    for(const m of r.marks||[]){if(!group.includes(m.type)||m.end<=start||m.start>=end)marks.push(m);else{if(m.start<start)marks.push({...m,end:start});if(m.end>end)marks.push({...m,start:end});}}
+    if(on||base)marks.push({type:on?type:'not-'+type,start,end});r.marks=mergeMarks(marks);return clean(r);
+  }
+  function readDOM(root){
+    let text='';const marks=[],equations=[];
+    function visit(node,active=[]){
+      if(node.nodeType===3){const start=text.length;text+=node.nodeValue;for(const type of active)marks.push({type,start,end:text.length});return;}
+      if(node.nodeType!==1&&node.nodeType!==11)return;
+      if(node.nodeType===1){
+        if(node.classList.contains('ss-list-marker'))return;
+        if(node.classList.contains('ss-equation-token')){const start=text.length,top=node.dataset.ssTop||'',bottom=node.dataset.ssBottom||'';text+=top+'/'+bottom;equations.push({kind:'fraction',top,bottom,start,end:text.length});for(const type of active)marks.push({type,start,end:text.length});
+          const a=node.querySelector('.ss-fraction-top'),b=node.querySelector('.ss-fraction-bottom');if(a)for(const m of readDOM(a).marks)marks.push({...m,start:m.start+start,end:m.end+start});if(b)for(const m of readDOM(b).marks)marks.push({...m,start:m.start+start+top.length+1,end:m.end+start+top.length+1});return;}
+        if(node.tagName==='BR'){if(node.dataset.ssPlaceholder!=='1')text+='\n';return;}
+        if(['DIV','P'].includes(node.tagName)&&text&&!text.endsWith('\n'))text+='\n';
+        const type={STRONG:'bold',B:'bold',EM:'italic',I:'italic',U:'underline',SUP:'sup',SUB:'sub'}[node.tagName]||node.dataset.ssMark;
+        if(types.includes(type))active=[...active,type];
+      }
+      for(const child of node.childNodes)visit(child,active);
+    }
+    visit(root);return {text,marks:mergeMarks(marks),equations};
+  }
+  function read(host,base={}){
+    const result=readDOM(host),prefix=host.dataset.ssPrefix||'',suffix=host.dataset.ssSuffix||'';
+    const a=prefix&&result.text.startsWith(prefix)?prefix.length:0,b=suffix&&result.text.endsWith(suffix)?suffix.length:0,text=result.text.slice(a,b?-b:undefined);
+    return {text,rich:clean({...base,marks:result.marks.map(m=>({...m,start:Math.max(0,m.start-a),end:Math.min(text.length,m.end-a)})).filter(m=>m.end>m.start),equations:result.equations.map(e=>({...e,start:e.start-a,end:e.end-a})).filter(e=>e.start>=0&&e.end<=text.length)})};
+  }
+  function selection(host){
+    const s=host.ownerDocument.getSelection();if(!s?.rangeCount||!host.contains(s.anchorNode)||!host.contains(s.focusNode))return null;
+    const prefix=(host.dataset.ssPrefix||'').length,length=read(host).text.length;
+    function offset(node,n){const r=document.createRange();r.selectNodeContents(host);r.setEnd(node,n);return Math.max(0,Math.min(length,readDOM(r.cloneContents()).text.length-prefix));}
+    const a=offset(s.anchorNode,s.anchorOffset),b=offset(s.focusNode,s.focusOffset);return {start:Math.min(a,b),end:Math.max(a,b)};
+  }
+  function select(host,start,end=start){
+    host.focus({preventScroll:true});const offset=(host.dataset.ssPrefix||'').length,walker=document.createTreeWalker(host,NodeFilter.SHOW_TEXT),nodes=[];let n;
+    while(n=walker.nextNode())if(!n.parentElement.closest('.ss-list-marker'))nodes.push(n);
+    if(!nodes.length){host.append(document.createTextNode(''));nodes.push(host.firstChild);}
+    function point(index){let remaining=index+offset;for(let i=0;i<nodes.length;i++){const node=nodes[i];if(remaining<=node.length){if(remaining===node.length&&node.nodeValue.endsWith('\n')&&nodes[i+1])return [nodes[i+1],0];return [node,remaining];}remaining-=node.length;}return [nodes.at(-1),nodes.at(-1).length];}
+    const a=point(start),b=point(end),range=document.createRange();range.setStart(...a);range.setEnd(...b);const s=getSelection();s.removeAllRanges();s.addRange(range);
+  }
+  function render(host,value,rich={},options={}){
+    install();if(host.dataset.ssComposing==='1')return;
+    rich=clean(rich);const prefix=options.prefix||'',suffix=options.suffix||'',factor=(rich.size==='small'?.85:rich.size==='large'?1.15:1)*(options.scale||1),signature=JSON.stringify([value,rich,prefix,suffix,factor]);
+    if(host.dataset.ssSignature===signature)return;
+    const selected=document.hasFocus()&&document.activeElement===host?selection(host):null;host.dataset.ssPrefix=prefix;host.dataset.ssSuffix=suffix;host.dataset.ssSignature=signature;
+    host.style.fontSize=factor===1?'':factor+'em';host.style.lineHeight=options.scale&&options.scale!==1?'1.35':'';
+    if(rich.list)host.dataset.ssList=rich.list;else delete host.dataset.ssList;
+    const fragment=document.createDocumentFragment();if(prefix)fragment.append(document.createTextNode(prefix));
+    function decorate(node,at){
+      for(const m of rich.marks||[])if(m.start<=at&&m.end>at){
+        const tag={bold:'strong',italic:'em',underline:'u',sup:'sup',sub:'sub'}[m.type]||'span',el=document.createElement(tag);
+        if(m.type.startsWith('not-')){el.dataset.ssMark=m.type;if(m.type==='not-bold')el.style.fontWeight='400';if(m.type==='not-italic')el.style.fontStyle='normal';if(m.type==='not-underline'){el.style.textDecoration='none';el.style.display='inline-block';}}
+        el.append(node);node=el;
+      }return node;
+    }
+    function appendText(parent,a,b,equations=true){
+      let i=a;while(i<b){
+        const equation=equations&&rich.equations?.find(e=>e.start===i&&e.end<=b&&value.slice(e.start,e.end)===e.top+'/'+e.bottom);
+        if(equation){const token=document.createElement('span');token.className='ss-equation-token';token.contentEditable='false';token.dataset.ssTop=equation.top;token.dataset.ssBottom=equation.bottom;
+          token.dataset.ssStart=equation.start;token.dataset.ssEnd=equation.end;
+          const top=document.createElement('span'),slash=document.createElement('span'),bottom=document.createElement('span');top.className='ss-fraction-top';slash.className='ss-fraction-slash';bottom.className='ss-fraction-bottom';slash.textContent='/';appendText(top,i,i+equation.top.length,false);appendText(bottom,i+equation.top.length+1,equation.end,false);token.append(top,slash,bottom);parent.append(token);i=equation.end;continue;}
+        let end=b;for(const m of rich.marks||[])for(const n of [m.start,m.end])if(n>i&&n<end)end=n;for(const e of rich.equations||[])if(e.start>i&&e.start<end)end=e.start;
+        parent.append(decorate(document.createTextNode(value.slice(i,end)),i));i=end;
+      }
+    }
+    function placeholder(){const br=document.createElement('br');br.dataset.ssPlaceholder='1';return br;}
+    if(rich.list){let start=0;value.split('\n').forEach((line,i)=>{if(i)fragment.append(document.createTextNode('\n'));const row=document.createElement('span');row.className='ss-list-row';const marker=document.createElement('span');marker.className='ss-list-marker';marker.contentEditable='false';marker.textContent=rich.list==='number'?(i+1)+'.':'•';const copy=document.createElement('span');copy.className='ss-list-copy';appendText(copy,start,start+line.length);if(!line.length)copy.append(document.createTextNode(''),placeholder());row.append(marker,copy);fragment.append(row);start+=line.length+1;});}
+    else if(!Object.keys(rich).length&&options.anchor){options.anchor.nodeValue=prefix+value+suffix;host.replaceChildren(options.anchor);if(value.endsWith('\n'))host.append(placeholder());if(selected)select(host,selected.start,selected.end);return;}
+    else appendText(fragment,0,value.length);
+    if(suffix)fragment.append(document.createTextNode(suffix));if(!rich.list&&value.endsWith('\n'))fragment.append(placeholder());host.replaceChildren(fragment);if(selected)select(host,Math.min(value.length,selected.start),Math.min(value.length,selected.end));
+  }
+  window.SlideStudioRich={clean,shift,toggle,covers,read,selection,select,render,install};
+})();
+
+/* Original course base layouts. All instructor-entered content remains plain text. */
+(()=>{
+  const definitions=[
+    {id:'content',name:'Title & explanation',description:'A heading and three short teaching points.'},
+    {id:'columns',name:'Two columns',description:'Compare two ideas side by side.'},
+    {id:'equation',name:'Key equation',description:'One formula, its meaning, and an example.'},
+    {id:'section',name:'Section divider',description:'Introduce the next part of your class.'},
+    {id:'activity',name:'Activity / checkpoint',description:'A prompt and a separate answer step.',stages:2},
+    {id:'roadmap',name:'Roadmap / objectives',description:'Three numbered goals for the class.'},
+    {id:'definition',name:'Definition & example',description:'A key term, its meaning, and an application.'},
+    {id:'worked',name:'Worked calculation',description:'Given values, formula, substitution, and result.',stages:3},
+    {id:'chain',name:'Cause & effect',description:'Three linked steps and a final takeaway.'},
+    {id:'table',name:'Comparison table',description:'Three columns for cases, features, or outcomes.'},
+    {id:'timeline',name:'Timeline',description:'Three events with dates and a closing lesson.'},
+    {id:'balance',name:'Balance sheet',description:'Assets and liabilities plus equity side by side.'}
+  ];
+  const extraCSS=`
+  .ss-base-slide .ss-roadmap-row{display:grid;grid-template-columns:52px 1fr;gap:20px;align-items:start;margin:26px 0 32px}.ss-base-slide .ss-number{color:#008b8b;font-size:34px;line-height:1.1;border-bottom:2px solid #dba525;padding-bottom:8px}.ss-base-slide .ss-roadmap-row h2{margin-bottom:10px}.ss-base-slide .ss-roadmap-row p{font-size:24px;margin:0}
+  .ss-base-slide .ss-term{color:#008b8b;font-size:36px;margin:14px 0 20px}.ss-base-slide .ss-example{border-left:4px solid #dba525;padding:20px 26px;background:#f6f8fa;margin-top:34px}.ss-base-slide .ss-example h2{font-size:24px;margin-bottom:12px}.ss-base-slide .ss-example p{margin:0;font-size:25px}
+  .ss-base-slide .ss-given{font-size:24px;margin-bottom:22px}.ss-base-slide .ss-worked-step{display:grid;grid-template-columns:185px 1fr;gap:20px;padding:20px 0;border-top:1px solid #dce3e9;align-items:center}.ss-base-slide .ss-worked-step h2{font-size:24px;margin:0}.ss-base-slide .ss-worked-step p{font-size:30px;margin:0}.ss-base-slide .ss-worked-result p{color:#008b8b}.ss-base-slide .ss-interpretation{font-size:23px;margin-top:26px}.ss-base-slide[data-stage="1"] [data-ss-stage="2"],.ss-base-slide[data-stage="1"] [data-ss-stage="3"],.ss-base-slide[data-stage="2"] [data-ss-stage="3"]{visibility:hidden}
+  .ss-base-slide .ss-chain{display:grid;grid-template-columns:1fr 46px 1fr 46px 1fr;align-items:center;margin:48px 0 48px}.ss-base-slide .ss-chain-card{padding:24px 20px;min-height:185px;background:#f4f7fa;border-top:3px solid #008b8b}.ss-base-slide .ss-chain-card h2{font-size:25px;margin-bottom:18px}.ss-base-slide .ss-chain-card p{font-size:24px;margin:0}.ss-base-slide .ss-arrow{color:#be9028;font-size:36px;text-align:center}.ss-base-slide .ss-takeaway{font-size:25px;padding-top:23px;border-top:1px solid #dce3e9;margin-top:28px}
+  .ss-base-slide .ss-table{width:100%;border-collapse:collapse;font-size:24px;line-height:1.35;table-layout:fixed;margin:16px 0 28px}.ss-base-slide .ss-table th{background:#f3f6f9;color:#003366;border-bottom:2px solid #003366;font-weight:700;text-align:left;padding:16px 18px}.ss-base-slide .ss-table td{padding:18px;border-bottom:1px solid #dce3e9;vertical-align:top}.ss-base-slide .ss-table th,.ss-base-slide .ss-table td{overflow-wrap:anywhere}
+  .ss-base-slide .ss-timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin:32px 0 48px}.ss-base-slide .ss-event{border-top:3px solid #dba525;padding-top:21px}.ss-base-slide .ss-event .ss-date{color:#008b8b;font-size:22px;margin:0 0 20px}.ss-base-slide .ss-event h2{font-size:27px;margin-bottom:20px}.ss-base-slide .ss-event p{font-size:24px;margin:0}
+  .ss-base-slide .ss-balance-columns{display:grid;grid-template-columns:1fr 1fr;gap:38px}.ss-base-slide .ss-balance-columns h2{font-size:27px;margin:12px 0 18px}.ss-base-slide .ss-balance-columns .ss-table{font-size:24px}.ss-base-slide .ss-balance-columns .ss-table th,.ss-base-slide .ss-balance-columns .ss-table td{padding:16px 12px}.ss-base-slide .ss-balance-columns .ss-table th:last-child,.ss-base-slide .ss-balance-columns .ss-table td:last-child{text-align:right;width:31%}.ss-base-slide .ss-balance-identity{text-align:center;color:#008b8b;font-size:29px;margin-top:32px}
+  `;
+  const css=`.ss-base-slide{position:relative!important;width:1200px!important;height:675px!important;box-sizing:border-box!important;background:#fff!important;color:#003366!important;font-family:Arial,sans-serif!important;padding:38px 44px 72px!important;overflow:hidden!important;margin:0 auto!important;break-after:page;page-break-after:always}.ss-base-slide>h1{font-size:32px!important;line-height:1.2!important;font-weight:700!important;color:#003366!important;border:0!important;border-bottom:2px solid #dba525!important;padding:0 0 13px!important;margin:0 0 25px!important}.ss-base-slide .ss-main{font-size:27px;line-height:1.45}.ss-base-slide .ss-main p{margin:0 0 24px}.ss-base-slide .ss-columns{display:grid;grid-template-columns:1fr 1fr;gap:44px}.ss-base-slide h2{font-size:28px;line-height:1.25;margin:0 0 22px;color:#003366}.ss-base-slide .ss-equation{font-size:38px;line-height:1.4;color:#008b8b;margin:18px 0 32px;padding:22px 24px;background:#f4f7fa}.ss-base-slide .ss-divider{height:440px;display:flex;flex-direction:column;justify-content:center;text-align:center}.ss-base-slide.ss-section>h1{border:0!important;margin:140px 40px 28px!important;text-align:center!important;font-size:42px!important}.ss-base-slide.ss-section .ss-divider{height:auto}.ss-base-slide .ss-answer{padding:20px 24px;border-left:4px solid #008b8b;background:#f4f8f9;color:#007e7e}.ss-base-slide[data-stage="1"] .ss-answer{visibility:hidden}.ss-base-slide>.sources{position:absolute!important;left:44px!important;right:44px!important;bottom:53px!important;font-size:12px!important;line-height:1.2!important;height:auto!important;margin:0!important;color:#435c73!important}.ss-base-slide>footer{position:absolute!important;left:44px!important;right:44px!important;bottom:14px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important;border-top:1px solid #dce3e9!important;padding:9px 0 0!important;font:12px Arial,sans-serif!important;color:#516d89!important;height:26px!important;background:white!important}`;
+  function el(tag,text,className){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;}
+  function stageCount(id){return definitions.find(d=>d.id===id)?.stages||1;}
+  function thumbnail(id){
+    const thumb=el('div',undefined,'layout-mini '+id);thumb.setAttribute('aria-hidden','true');
+    const lines='<span class="mini-line"></span><span class="mini-line short"></span>',cells='<i></i>'.repeat(12);
+    let content=lines;
+    if(id==='columns')content='<div class="mini-col">'+lines+'</div><div class="mini-col">'+lines+'</div>';
+    if(id==='equation')content='<span class="mini-equation">Y = C + I + G + NX</span><span class="mini-line"></span>';
+    if(id==='activity')content=lines+'<div class="mini-answer"></div>';
+    if(id==='roadmap')content=[1,2,3].map(n=>'<div class="mini-goal"><b>'+n+'</b><span class="mini-line"></span></div>').join('');
+    if(id==='definition')content='<span class="mini-term"></span>'+lines+'<div class="mini-answer"></div>';
+    if(id==='worked')content='<div class="mini-worked"><i></i><span></span><i></i><span></span><i></i><span></span></div>';
+    if(id==='chain')content='<div class="mini-chain"><i></i><b>→</b><i></i><b>→</b><i></i></div>'+lines;
+    if(id==='table')content='<div class="mini-table">'+cells+'</div>';
+    if(id==='timeline')content='<div class="mini-timeline"><i></i><i></i><i></i></div><div class="mini-three"><span></span><span></span><span></span></div>'+lines;
+    if(id==='balance')content='<div class="mini-balances"><div class="mini-table">'+'<i></i>'.repeat(8)+'</div><div class="mini-table">'+'<i></i>'.repeat(8)+'</div></div>';
+    thumb.innerHTML='<span class="mini-title"></span><span class="mini-rule"></span>'+content;return thumb;
+  }
+  function install(){if(!document.getElementById('ss-layout-styles')){const s=el('style',css+'.ss-base-slide .ss-divider-rule{width:180px;height:2px;background:#dba525;margin:0 auto 24px}'+extraCSS);s.id='ss-layout-styles';document.head.append(s);}}
+  function create(entry,stage=1,footer){
+    install();const root=el('section',undefined,'slide ss-base-slide ss-'+entry.layout);root.dataset.id=entry.id;root.dataset.stage=stage;
+    const titles={section:'New section',activity:'Class checkpoint',equation:'Key equation',roadmap:'Learning objectives',definition:'Key concept',worked:'Worked calculation',chain:'How the change works',table:'Compare the cases',timeline:'Events and policy responses',balance:'Bank balance sheet'};
+    const title=titles[entry.layout]||'New slide';
+    root.append(el('h1',title));if(entry.layout==='section')root.append(el('div',undefined,'ss-divider-rule'));const body=el('div',undefined,'ss-main');root.append(body);
+    if(entry.layout==='content')for(const text of ['Start with the main idea.','Explain the next step.','Connect it to the example.'])body.append(el('p',text));
+    if(entry.layout==='columns'){
+      body.classList.add('ss-columns');for(const [heading,a,b] of [['First idea','Explain the first idea.','Add a supporting point.'],['Second idea','Explain the second idea.','Show the connection.']]){const col=el('div');col.append(el('h2',heading),el('p',a),el('p',b));body.append(col);}
+    }
+    if(entry.layout==='equation')body.append(el('p','Y = C + I + G + NX','ss-equation'),el('p','Explain what each term means.'),el('p','Apply the relationship to an example.'));
+    if(entry.layout==='section'){body.classList.add('ss-divider');body.append(el('p','Introduce the next question.'));}
+    if(entry.layout==='activity')body.append(el('p','Write your question here.'),el('p','Ask students to explain their reasoning.'),el('p','Answer or discussion cue.','ss-answer'));
+    if(entry.layout==='roadmap')for(const [i,title,text] of [[1,'Define the key concept.','State what students should recognize.'],[2,'Explain the mechanism.','Connect the main steps.'],[3,'Apply the model.','Use an example to check understanding.']]){const row=el('div',undefined,'ss-roadmap-row'),copy=el('div');copy.append(el('h2',title),el('p',text));row.append(el('div',String(i),'ss-number'),copy);body.append(row);}
+    if(entry.layout==='definition'){const example=el('div',undefined,'ss-example');example.append(el('h2','Example'),el('p','Apply the concept to a familiar situation.'));body.append(el('h2','Key term','ss-term'),el('p','Write a concise definition of the term.'),example);}
+    if(entry.layout==='worked'){
+      body.append(el('p','Given: list the values and their units.','ss-given'));
+      for(const [stage,label,text] of [[1,'Relationship','Write the formula.'],[2,'Substitution','Insert the given values.'],[3,'Result','State the result with units.']]){const row=el('div',undefined,'ss-worked-step'+(stage===3?' ss-worked-result':''));row.dataset.ssStage=stage;row.append(el('h2',label),el('p',text));body.append(row);}
+      const interpretation=el('p','Interpret the result in one sentence.','ss-interpretation');interpretation.dataset.ssStage='3';body.append(interpretation);
+    }
+    if(entry.layout==='chain'){
+      const chain=el('div',undefined,'ss-chain');for(const [i,title,text] of [[0,'Initial change','Identify what changes first.'],[1,'Response','Explain the next response.'],[2,'Final effect','State the predicted outcome.']]){if(i)chain.append(el('div','→','ss-arrow'));const card=el('div',undefined,'ss-chain-card');card.append(el('h2',title),el('p',text));chain.append(card);}body.append(chain,el('p','State the model conditions behind the prediction.','ss-takeaway'));
+    }
+    function table(headers,rows){const t=el('table',undefined,'ss-table'),head=el('thead'),hr=el('tr');for(const text of headers)hr.append(el('th',text));head.append(hr);const b=el('tbody');for(const row of rows){const r=el('tr');for(const text of row)r.append(el('td',text));b.append(r);}t.append(head,b);return t;}
+    if(entry.layout==='table')body.append(table(['Item or case','Key feature','Implication'],[['First case','Describe the feature.','Explain the effect.'],['Second case','Describe the difference.','Explain the effect.'],['Third case','Describe the difference.','Explain the effect.']]),el('p','Summarize the most useful comparison.','ss-takeaway'));
+    if(entry.layout==='timeline'){
+      const line=el('div',undefined,'ss-timeline');for(const [title,text] of [['First event','Describe the initial situation.'],['Next event','Explain what changed.'],['Later event','Describe the response.']]){const event=el('div',undefined,'ss-event');event.append(el('p','Date or period','ss-date'),el('h2',title),el('p',text));line.append(event);}body.append(line,el('p','What does this sequence help explain?','ss-takeaway'));
+    }
+    if(entry.layout==='balance'){
+      const columns=el('div',undefined,'ss-balance-columns');for(const [title,rows] of [['Assets',[['Reserves','Value'],['Loans','Value'],['Total assets','Value']]],['Liabilities + equity',[['Deposits','Value'],['Equity','Value'],['Total liabilities + equity','Value']]]]){const side=el('div');side.append(el('h2',title),table(['Item','Amount'],rows));columns.append(side);}body.append(columns,el('p','Assets = Liabilities + Equity','ss-balance-identity'));
+    }
+    root.append(el('div',entry.credit||'','sources'));
+    const f=footer?footer.cloneNode(true):el('footer');if(!f.children.length)f.append(el('span','ECON_OX 112 · Principles of Macroeconomics'),el('span','1 / 1'));root.append(f);return root;
+  }
+  function clone(frame,id){
+    const copy=frame.cloneNode(true),holder=copy.matches('[data-id],[data-slide],[data-concept]')?copy:copy.querySelector('[data-id],[data-slide],[data-concept]');
+    (holder||copy).dataset.id=id;copy.dataset.id=id;copy.classList.remove('editor-frame','editor-visible');
+    for(const span of [...copy.querySelectorAll('.ss-writing-host,.editor-text')])span.replaceWith(document.createTextNode(span.dataset.ssOriginal??span.textContent));
+    const map=new Map();for(const e of copy.querySelectorAll('[id]')){const old=e.id;e.id=id+'-'+old;map.set(old,e.id);}
+    for(const e of copy.querySelectorAll('*'))for(const a of [...e.attributes]){let value=a.value;for(const [old,now] of map){value=value.split('url(#'+old+')').join('url(#'+now+')');if(value==='#'+old)value='#'+now;}if(value!==a.value)e.setAttribute(a.name,value);}
+    return copy;
+  }
+  window.SlideStudioLayouts={definitions,css,create,clone,install,stageCount,thumbnail};
+})();
+
+/* Original course writing overlay. Text and validated rich-text data, never HTML. */
+(()=>{
+  'use strict';
+  const script=document.currentScript,source=script?.dataset.writing;
+  const excluded='svg,script,style,button,select,option,nav,footer,.sources,.p2-credit,.credit,.credits,.local-controls,.public-institution,.public-identification,.institutional-header,.cover-course,.cover-author,.instructor,.p2-institution';
+  let data={edits:{}},scheduled=false,baseItems=null,structureKey=null,groups=new Map(),structureIssues=[];
+  const originals=new WeakMap(),optionBases=new WeakMap(),hosts=new WeakMap();
+  function roots(){
+    const nodes=[...document.querySelectorAll('.monetary-slide,.fiscal-slide,.p2-slide,section.slide,article.slide')];
+    return nodes.filter(e=>!nodes.some(n=>n!==e&&e.contains(n))).map((root,index)=>{
+      const holder=root.closest('[data-id],[data-concept],[data-slide]');
+      const id=holder?.dataset.id||'slide:'+(holder?.dataset.concept||holder?.dataset.slide||index+1);
+      return {root,id,index,frame:root.closest('section.slide,article.p2-slide')||root};
+    });
+  }
+  function structure(next){
+    if(script?.dataset.player==='1'||document.readyState==='loading')return;
+    const s=next.structure||{},active=['added','removed','order'].some(k=>s[k]?.length),key=JSON.stringify([s.added||[],s.removed||[],s.order||[]]);
+    if(!active&&!baseItems)return;if(key===structureKey)return;
+    if(!baseItems){baseItems=roots();if(!baseItems.length){baseItems=null;return;}}
+    structureKey=key;structureIssues=[];
+    for(const list of groups.values())for(const item of list)item.frame.remove();groups=new Map();
+    for(const item of baseItems){const list=groups.get(item.id)||[];list.push(item);groups.set(item.id,list);item.frame.remove();}
+    const footer=baseItems[0]?.frame.querySelector('footer'),lecture=script?.dataset.copy==='lecture';
+    for(const e of s.added||[]){
+      let frames=[];
+      if(e.layout==='copy'){
+        const source=baseItems.filter(i=>i.id===e.source);
+        if(!source.length){structureIssues.push(e.source);continue;}
+        frames=source.map(i=>{
+          const text=fields(i).map(f=>({f,value:f.node.nodeValue}));for(const {f} of text)f.node.nodeValue=f.prefix+f.original+f.suffix;
+          const clone=window.SlideStudioLayouts.clone(i.frame,e.id);for(const {f,value} of text)f.node.nodeValue=value;return clone;
+        });
+      }else{
+        const count=window.SlideStudioLayouts.stageCount(e.layout),stages=lecture?Array.from({length:count},(_,i)=>i+1):[count];frames=stages.map(stage=>window.SlideStudioLayouts.create(e,stage,footer));
+      }
+      groups.set(e.id,frames.map((frame,index)=>({root:frame.querySelector('.monetary-slide,.fiscal-slide')||frame,id:e.id,index,frame})));
+    }
+    const order=[...(s.order||[])];for(const id of groups.keys())if(!order.includes(id))order.push(id);
+    const removed=new Set(s.removed||[]),visible=order.filter(id=>!removed.has(id));
+    for(const id of visible)if(!groups.has(id))structureIssues.push(id);
+    const ids=visible.filter(id=>groups.has(id)),parent=baseItems[0].frame.parentElement||document.body;
+    ids.forEach((id,index)=>{for(const item of groups.get(id)){
+      const spans=item.frame.querySelectorAll('footer span'),last=spans[spans.length-1];if(last){const previous=last.textContent;last.textContent=previous.replace(/^\d+\s*\/\s*\d+/,`${index+1} / ${ids.length}`);}
+      parent.append(item.frame);
+    }});
+  }
+  function allItems(){return baseItems?[...groups.values()].flat():roots();}
+  function setCredit(id,value){
+    const entry=data.structure?.added?.find(e=>e.id===id);if(!entry||entry.layout==='copy')return;
+    entry.credit=value;structureKey=JSON.stringify([data.structure.added||[],data.structure.removed||[],data.structure.order||[]]);
+    // Credit changes do not rebuild the slide's editable text hosts.
+    for(const item of allItems())if(item.id===id){const credit=item.frame.querySelector('.sources');if(credit&&credit.textContent!==value)credit.textContent=value;}
+  }
+  function selector(root,el){
+    const parts=[];
+    while(el!==root&&el?.parentElement){
+      const tag=el.tagName.toLowerCase(),siblings=[...el.parentElement.children].filter(n=>n.tagName===el.tagName);
+      parts.unshift(tag+':nth-of-type('+(siblings.indexOf(el)+1)+')');el=el.parentElement;
+    }
+    return parts.join(' > ');
+  }
+  function fields(item){
+    const walker=document.createTreeWalker(item.root,NodeFilter.SHOW_TEXT|NodeFilter.SHOW_ELEMENT,{acceptNode(n){
+      if(n.nodeType===1){if(n.matches('.ss-writing-host')&&hosts.has(n))return NodeFilter.FILTER_ACCEPT;if(n.matches(excluded))return NodeFilter.FILTER_REJECT;return NodeFilter.FILTER_SKIP;}
+      return n.parentElement.closest('.ss-writing-host')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT;
+    }}),list=[];
+    let current;
+    while(current=walker.nextNode()){
+      const host=current.nodeType===1?current:null,node=host?hosts.get(host):current,parent=host?host.parentElement:node.parentElement;
+      if(!parent)continue;
+      if(parent.closest(excluded))continue;
+      let base=originals.get(node);
+      if(!base){if(node.nodeValue.trim().length<2)continue;base={original:node.nodeValue.trim(),prefix:node.nodeValue.match(/^\s*/)[0],suffix:node.nodeValue.match(/\s*$/)[0]};originals.set(node,base);}
+      const {original,prefix,suffix}=base,path=selector(item.root,parent),ni=[...parent.childNodes].filter(n=>n.nodeType===Node.TEXT_NODE||n.nodeType===Node.ELEMENT_NODE&&(n.classList.contains('editor-text')||n.classList.contains('ss-writing-host'))).indexOf(host||node);
+      const label=/^H[1-6]$/.test(parent.tagName)||parent.closest('h1,h2,h3,.chapter-title,.cover-title')?'Heading':parent.closest('th,td')?'Table cell':parent.closest('.response,.answer,.p2-answer,.result')?'Answer':parent.closest('.formula,.return-formula')?'Formula':'Text';
+      list.push({key:item.id+'.'+list.length,slide:item.id,path,nodeIndex:ni,original,label,node,host,parent,prefix,suffix});
+    }
+    return list;
+  }
+  function attach(f,host){
+    host.classList.add('ss-writing-host');host.dataset.ssOriginal=f.prefix+f.original+f.suffix;hosts.set(host,f.node);f.host=host;
+    host.dataset.ssPrefix=f.prefix;host.dataset.ssSuffix=f.suffix;return host;
+  }
+  function localEdit(f,value,rich){
+    const e={slide:f.slide,path:f.path,node:f.nodeIndex,original:f.original,value,label:f.label};rich=window.SlideStudioRich.clean(rich);
+    if(Object.keys(rich).length)e.rich=rich;
+    data.edits??={};if(value===f.original&&!e.rich)delete data.edits[f.key];else data.edits[f.key]=e;
+    if(f.host)delete f.host.dataset.ssSignature;apply();
+  }
+  function match(f,e){return f.original===e.original&&(f.path===e.path&&f.nodeIndex===(e.node||0));}
+  function apply(next){
+    if(next)data=next;
+    structure(data);
+    const found=new Set(),items=roots();
+    for(const item of items){
+      const list=fields(item),edits=Object.entries(data.edits||{}).filter(([,e])=>e.slide===item.id);
+      const used=new Map();
+      for(const [key,e] of edits){
+        let f=list.find(f=>match(f,e));
+        if(!f){const possible=list.filter(f=>f.original===e.original);if(possible.length===1)f=possible[0];}
+        if(f){used.set(f,e);found.add(key);}
+      }
+      for(const f of list){
+        const edit=used.get(f),value=edit?.value??f.original,target=f.prefix+value+f.suffix,rich=edit?.rich||{},variation=data.structure?.styles?.[item.id]||'normal',scale=f.label==='Heading'?1:variation==='compact'?.9:variation==='large'?1.12:1;
+        if(f.host||Object.keys(rich).length||scale!==1){
+          if(!f.host){const host=document.createElement('span');f.node.replaceWith(host);attach(f,host);}
+          window.SlideStudioRich.render(f.host,value,rich,{prefix:f.prefix,suffix:f.suffix,anchor:f.node,scale});
+        }else{if(f.node.nodeValue!==target)f.node.nodeValue=target;if(value.includes('\n'))f.parent.style.whiteSpace='pre-line';}
+      }
+    }
+    // Keep existing jump menus readable when a unique slide title was edited.
+    for(const option of document.querySelectorAll('select option')){
+      if(!optionBases.has(option))optionBases.set(option,option.textContent);
+      let text=optionBases.get(option);
+      for(const [before,after] of Object.entries(data.titles||{}))if(text.includes(before))text=text.replace(before,after);
+      if(option.textContent!==text)option.textContent=text;
+    }
+    window.dispatchEvent(new CustomEvent('course-writing-applied',{detail:{found:[...found]}}));
+    return {items,found};
+  }
+  function checks(){
+    const {items,found}=apply(),removed=new Set(data.structure?.removed||[]),missing=Object.keys(data.edits||{}).filter(k=>!found.has(k)&&!removed.has(data.edits[k].slide)),overflow=[];
+    missing.push(...structureIssues.map(id=>'Slide arrangement: '+id));
+    for(const item of items){
+      if(!Object.values(data.edits||{}).some(e=>e.slide===item.id)&&!data.structure?.added?.some(e=>e.id===item.id)&&!data.structure?.styles?.[item.id])continue;
+      const rect=item.frame.getBoundingClientRect();if(rect.width<1||rect.height<1)continue;
+      const obstacles=[...item.frame.querySelectorAll('.sources,.p2-credit,footer')].filter(e=>e.textContent.trim()).map(e=>e.getBoundingClientRect()).filter(r=>r.height>0);
+      const bottom=Math.min(rect.bottom-28,...obstacles.map(r=>r.top-2));
+      for(const f of fields(item)){
+        const el=f.host||f.node.parentElement,style=getComputedStyle(el);if(style.visibility==='hidden'||style.display==='none')continue;
+        const range=document.createRange();range.selectNodeContents(el);const r=range.getBoundingClientRect();
+        if(r.width&&r.height&&(r.left<rect.left+10||r.right>rect.right-10||r.top<rect.top||r.bottom>bottom))overflow.push({slide:item.id,label:f.label,text:(f.host?window.SlideStudioRich.read(f.host).text:f.node.nodeValue||'').slice(0,90)});
+      }
+    }
+    return {missing,overflow};
+  }
+  const ready=(async()=>{if(script?.dataset.writingInline){data=JSON.parse(document.getElementById(script.dataset.writingInline).textContent);}else if(source){const r=await fetch(source,{cache:'no-store'});if(!r.ok)throw Error('Writing changes could not be loaded.');data=await r.json();}apply();return true;})();
+  const observer=new MutationObserver(()=>{if(scheduled)return;scheduled=true;requestAnimationFrame(()=>{scheduled=false;apply();});});
+  observer.observe(document.documentElement,{subtree:true,childList:true,characterData:true});
+  window.CourseWriting={ready,roots,allItems,setCredit,fields,attach,localEdit,apply,checks,getData:()=>data};
+  document.addEventListener('DOMContentLoaded',()=>apply());
+  if(script?.dataset.live==='1')setInterval(async()=>{try{const r=await fetch(source,{cache:'no-store'});if(r.ok)apply(await r.json());}catch{}},1200);
+})();
