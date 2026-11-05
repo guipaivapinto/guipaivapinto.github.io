@@ -327,7 +327,8 @@
     ],
     "removed": [
       "shortlong",
-      "custom-e11a2cbd-0706-4761-bf95-cf55c8ce4d0d"
+      "custom-e11a2cbd-0706-4761-bf95-cf55c8ce4d0d",
+      "checkpoint2"
     ],
     "order": [
       "cover2",
@@ -338,8 +339,7 @@
       "qe",
       "neutrality",
       "longrunexpand",
-      "longruncontract",
-      "checkpoint2"
+      "longruncontract"
     ],
     "styles": {
       "practiceoverview": "large",
@@ -349,5 +349,5 @@
       "neutrality": "large"
     }
   },
-  "published_at": "2026-11-05T18:23:01.325275+00:00"
+  "published_at": "2026-11-05T19:02:24.768420+00:00"
 }
