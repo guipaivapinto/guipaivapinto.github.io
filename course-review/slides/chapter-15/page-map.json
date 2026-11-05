@@ -39,7 +39,7 @@
     {
       "slide": 7,
       "id": "classcurve",
-      "title": "Money Demand: P1\u2013P3",
+      "title": "Money Demand: P1–P3",
       "stages": 3
     },
     {
@@ -171,114 +171,70 @@
   ],
   "part2": [
     {
+      "slide": 1,
       "id": "cover2",
       "title": "Monetary Policy in Practice",
       "stages": 1
     },
     {
+      "slide": 2,
       "id": "roadmap2",
-      "title": "Learning Objectives",
+      "title": "Roadmap",
       "stages": 1
     },
     {
-      "id": "dualmandate",
-      "title": "Choosing a Policy Response",
-      "stages": 3
+      "slide": 3,
+      "id": "practiceoverview",
+      "title": "Inflation Targeting and the Output Gap",
+      "stages": 1
     },
     {
-      "id": "outputgap",
-      "title": "Measuring the Output Gap",
-      "stages": 3
-    },
-    {
-      "id": "practicegapnegative",
-      "title": "Responding to a Negative Output Gap",
-      "stages": 4
-    },
-    {
-      "id": "practicegappositive",
-      "title": "Responding to a Positive Output Gap",
-      "stages": 4
-    },
-    {
-      "id": "supplytradeoff",
-      "title": "When Output and Inflation Disagree",
-      "stages": 3
-    },
-    {
+      "slide": 4,
       "id": "taylor",
-      "title": "A Standard Taylor Rule",
+      "title": "The Taylor Rule",
       "stages": 3
     },
     {
-      "id": "taylorexample",
-      "title": "Calculating a Policy-Rate Benchmark",
+      "slide": 5,
+      "id": "zerobound",
+      "title": "The Zero Lower Bound",
+      "stages": 3
+    },
+    {
+      "slide": 6,
+      "id": "qe",
+      "title": "Quantitative Easing",
       "stages": 4
     },
     {
-      "id": "taylorprinciple",
-      "title": "Why the Rule Responds to Inflation",
-      "stages": 3
-    },
-    {
-      "id": "targeting",
-      "title": "Inflation Targeting",
-      "stages": 3
-    },
-    {
-      "id": "fomcreturn",
-      "title": "The September 2024 Decision",
+      "slide": 7,
+      "id": "shortlong",
+      "title": "Short- vs Long-Run Effects",
       "stages": 2
     },
     {
-      "id": "comparison",
-      "title": "Taylor Rule and Inflation Targeting",
-      "stages": 1
-    },
-    {
-      "id": "limits",
-      "title": "Why Policymakers Use Judgment",
-      "stages": 3
-    },
-    {
-      "id": "taylorcheck",
-      "title": "Try the Rule",
-      "stages": 3
-    },
-    {
-      "id": "policybrief",
-      "title": "Write a Conditional Policy Recommendation",
-      "stages": 4
-    },
-    {
-      "id": "longrunobjective",
-      "title": "Long-Run Effects of Monetary Policy",
-      "stages": 1
-    },
-    {
-      "id": "longrunexpand",
-      "title": "Monetary Expansion: Short Run and Long Run",
-      "stages": 5
-    },
-    {
-      "id": "longruncontract",
-      "title": "Monetary Contraction: Short Run and Long Run",
-      "stages": 5
-    },
-    {
+      "slide": 8,
       "id": "neutrality",
       "title": "Monetary Neutrality",
-      "stages": 2
-    },
-    {
-      "id": "longruncheck",
-      "title": "Check Monetary Neutrality",
       "stages": 3
     },
     {
-      "id": "close2",
-      "title": "Policy Reasoning",
-      "stages": 4
+      "slide": 9,
+      "id": "longrunexpand",
+      "title": "Long-Run Changes: Monetary Expansion",
+      "stages": 3
+    },
+    {
+      "slide": 10,
+      "id": "longruncontract",
+      "title": "Long-Run Changes: Monetary Contraction",
+      "stages": 3
+    },
+    {
+      "slide": 11,
+      "id": "checkpoint2",
+      "title": "Monetary Neutrality Checkpoint",
+      "stages": 2
     }
   ]
 }
