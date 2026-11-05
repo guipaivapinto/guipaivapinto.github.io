@@ -173,7 +173,7 @@
     {
       "slide": 1,
       "id": "cover2",
-      "title": "Monetary Policy in Practice",
+      "title": "Chapter 15: Monetary Policy",
       "stages": 1
     },
     {
@@ -185,8 +185,8 @@
     {
       "slide": 3,
       "id": "practiceoverview",
-      "title": "Inflation Targeting and the Output Gap",
-      "stages": 1
+      "title": "Inflation and the Output Gap",
+      "stages": 3
     },
     {
       "slide": 4,
@@ -204,12 +204,12 @@
       "slide": 6,
       "id": "qe",
       "title": "Quantitative Easing",
-      "stages": 4
+      "stages": 3
     },
     {
       "slide": 7,
       "id": "shortlong",
-      "title": "Short- vs Long-Run Effects",
+      "title": "Short- and Long-Run Effects",
       "stages": 2
     },
     {
@@ -221,19 +221,19 @@
     {
       "slide": 9,
       "id": "longrunexpand",
-      "title": "Long-Run Changes: Monetary Expansion",
+      "title": "Monetary Expansion",
       "stages": 3
     },
     {
       "slide": 10,
       "id": "longruncontract",
-      "title": "Long-Run Changes: Monetary Contraction",
+      "title": "Monetary Contraction",
       "stages": 3
     },
     {
       "slide": 11,
       "id": "checkpoint2",
-      "title": "Monetary Neutrality Checkpoint",
+      "title": "Long-Run Checkpoint",
       "stages": 2
     }
   ]
