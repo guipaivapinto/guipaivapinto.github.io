@@ -1,0 +1,59 @@
+{
+  "schema": 2,
+  "deck": "15-1",
+  "edits": {
+    "policychoice.13": {
+      "slide": "policychoice",
+      "path": "div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "original": "New fiscal measures may need a law. Automatic stabilizers do not.",
+      "value": "New fiscal measures may need a law, with the exception of Automatic stabilizers.",
+      "label": "Text",
+      "node": 0
+    },
+    "policychoice.14": {
+      "slide": "policychoice",
+      "path": "div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > p:nth-of-type(1)",
+      "original": "Adding demand does not repair a loss of productive capacity. Supply shocks create a policy tradeoff.",
+      "value": "",
+      "label": "Text",
+      "node": 0
+    }
+  },
+  "titles": {},
+  "structure": {
+    "added": [],
+    "removed": [
+      "termrates"
+    ],
+    "order": [
+      "cover1",
+      "opening",
+      "roadmap1",
+      "sectionA",
+      "pollstart",
+      "return",
+      "classcurve",
+      "mdshifts",
+      "moneydemandcheck",
+      "sectionB",
+      "ffr",
+      "fedchain",
+      "msexpand",
+      "mscontract",
+      "excessmoney",
+      "moneyshortage",
+      "mssummary",
+      "moneymarketcheck",
+      "longrates",
+      "pollreturn",
+      "sectionC",
+      "policychoice",
+      "adchannel",
+      "transmission",
+      "adexpand",
+      "adcontract",
+      "part1summary"
+    ]
+  },
+  "published_at": "2026-11-05T18:39:54.666025+00:00"
+}
