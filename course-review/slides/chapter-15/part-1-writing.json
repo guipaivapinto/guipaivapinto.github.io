@@ -17,13 +17,31 @@
       "value": "",
       "label": "Text",
       "node": 0
+    },
+    "adchannel.5": {
+      "slide": "adchannel",
+      "path": "div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(4) > p:nth-of-type(1)",
+      "original": "At the same price level, higher C and I raise planned spending. AD shifts right.",
+      "value": "At the same price level, higher C and I raise. AD shifts right.",
+      "label": "Text",
+      "node": 0
+    },
+    "adchannel.6": {
+      "slide": "adchannel",
+      "path": "div:nth-of-type(1) > p:nth-of-type(2)",
+      "original": "Higher borrowing rates reverse this chain: C and I fall, and AD shifts left.",
+      "value": "The opposition would be true for a contractionary monetary policy. ",
+      "label": "Text",
+      "node": 0
     }
   },
   "titles": {},
   "structure": {
     "added": [],
     "removed": [
-      "termrates"
+      "termrates",
+      "part1summary",
+      "transmission"
     ],
     "order": [
       "cover1",
@@ -49,11 +67,9 @@
       "sectionC",
       "policychoice",
       "adchannel",
-      "transmission",
       "adexpand",
-      "adcontract",
-      "part1summary"
+      "adcontract"
     ]
   },
-  "published_at": "2026-11-05T18:39:54.666025+00:00"
+  "published_at": "2026-11-05T18:41:42.324834+00:00"
 }
