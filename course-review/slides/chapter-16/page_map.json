@@ -1,0 +1,182 @@
+[
+  {
+    "slide": 1,
+    "id": "title",
+    "title": "Chapter 16: Inflation, Disinflation, and Deflation",
+    "part": 1,
+    "lecture_first": 1,
+    "lecture_last": 1,
+    "reading_page": 1
+  },
+  {
+    "slide": 2,
+    "id": "roadmap",
+    "title": "Roadmap and Learning Objectives",
+    "part": 1,
+    "lecture_first": 2,
+    "lecture_last": 2,
+    "reading_page": 2
+  },
+  {
+    "slide": 3,
+    "id": "classical",
+    "title": "The Classical Model of Money and Prices",
+    "part": 1,
+    "lecture_first": 3,
+    "lecture_last": 5,
+    "reading_page": 3
+  },
+  {
+    "slide": 4,
+    "id": "seigniorage-tax",
+    "title": "Seigniorage and the Inflation Tax",
+    "part": 1,
+    "lecture_first": 6,
+    "lecture_last": 8,
+    "reading_page": 4
+  },
+  {
+    "slide": 5,
+    "id": "hyperinflation",
+    "title": "The Logic of Hyperinflation",
+    "part": 1,
+    "lecture_first": 9,
+    "lecture_last": 11,
+    "reading_page": 5
+  },
+  {
+    "slide": 6,
+    "id": "money-functions",
+    "title": "Money During Hyperinflation",
+    "part": 1,
+    "lecture_first": 12,
+    "lecture_last": 14,
+    "reading_page": 6
+  },
+  {
+    "slide": 7,
+    "id": "prices-wages",
+    "title": "Price and Wage Adjustment",
+    "part": 1,
+    "lecture_first": 15,
+    "lecture_last": 17,
+    "reading_page": 7
+  },
+  {
+    "slide": 8,
+    "id": "politics",
+    "title": "Moderate Inflation and Disinflation",
+    "part": 2,
+    "lecture_first": 18,
+    "lecture_last": 20,
+    "reading_page": 8
+  },
+  {
+    "slide": 9,
+    "id": "recall",
+    "title": "Potential Output and Unemployment",
+    "part": 2,
+    "lecture_first": 21,
+    "lecture_last": 23,
+    "reading_page": 9
+  },
+  {
+    "slide": 10,
+    "id": "gap-rules",
+    "title": "Okun’s Law",
+    "part": 2,
+    "lecture_first": 24,
+    "lecture_last": 24,
+    "reading_page": 10
+  },
+  {
+    "slide": 11,
+    "id": "cbo-gaps",
+    "title": "Cyclical Unemployment and the Output Gap",
+    "part": 2,
+    "lecture_first": 25,
+    "lecture_last": 26,
+    "reading_page": 11
+  },
+  {
+    "slide": 12,
+    "id": "phillips-data",
+    "title": "Inflation and Unemployment, 1961–1969",
+    "part": 2,
+    "lecture_first": 27,
+    "lecture_last": 27,
+    "reading_page": 12
+  },
+  {
+    "slide": 13,
+    "id": "srpc",
+    "title": "The Short-Run Phillips Curve",
+    "part": 2,
+    "lecture_first": 28,
+    "lecture_last": 30,
+    "reading_page": 13
+  },
+  {
+    "slide": 14,
+    "id": "supply",
+    "title": "Supply Shocks and the Phillips Curve",
+    "part": 2,
+    "lecture_first": 31,
+    "lecture_last": 33,
+    "reading_page": 14
+  },
+  {
+    "slide": 15,
+    "id": "history",
+    "title": "Oil Shocks and Stagflation",
+    "part": 2,
+    "lecture_first": 34,
+    "lecture_last": 36,
+    "reading_page": 15
+  },
+  {
+    "slide": 16,
+    "id": "expected",
+    "title": "Expected Inflation",
+    "part": 2,
+    "lecture_first": 37,
+    "lecture_last": 39,
+    "reading_page": 16
+  },
+  {
+    "slide": 17,
+    "id": "expectations-shift",
+    "title": "Inflation Expectations and the Short-Run Phillips Curve",
+    "part": 3,
+    "lecture_first": 40,
+    "lecture_last": 42,
+    "reading_page": 17
+  },
+  {
+    "slide": 18,
+    "id": "longrun-adjustment",
+    "title": "Adjustment to the Long Run",
+    "part": 3,
+    "lecture_first": 43,
+    "lecture_last": 45,
+    "reading_page": 18
+  },
+  {
+    "slide": 19,
+    "id": "lrpc",
+    "title": "The Long-Run Phillips Curve",
+    "part": 3,
+    "lecture_first": 46,
+    "lecture_last": 48,
+    "reading_page": 19
+  },
+  {
+    "slide": 20,
+    "id": "nairu",
+    "title": "NAIRU and the Natural Rate of Unemployment",
+    "part": 3,
+    "lecture_first": 49,
+    "lecture_last": 51,
+    "reading_page": 20
+  }
+]
