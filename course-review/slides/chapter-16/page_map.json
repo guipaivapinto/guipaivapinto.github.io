@@ -119,10 +119,10 @@
   {
     "slide": 14,
     "id": "phillips-data",
-    "title": "Inflation and Unemployment, 1961–1969",
+    "title": "Introducing the Phillips Curve: The Data",
     "part": 2,
     "lecture_first": 29,
-    "lecture_last": 29,
+    "lecture_last": 30,
     "reading_page": 14
   },
   {
@@ -130,8 +130,8 @@
     "id": "srpc",
     "title": "The Short-Run Phillips Curve",
     "part": 2,
-    "lecture_first": 30,
-    "lecture_last": 32,
+    "lecture_first": 31,
+    "lecture_last": 33,
     "reading_page": 15
   },
   {
@@ -139,8 +139,8 @@
     "id": "supply",
     "title": "Supply Shocks and the Phillips Curve",
     "part": 2,
-    "lecture_first": 33,
-    "lecture_last": 35,
+    "lecture_first": 34,
+    "lecture_last": 36,
     "reading_page": 16
   },
   {
@@ -148,8 +148,8 @@
     "id": "history",
     "title": "Oil Shocks and Stagflation",
     "part": 2,
-    "lecture_first": 36,
-    "lecture_last": 38,
+    "lecture_first": 37,
+    "lecture_last": 39,
     "reading_page": 17
   },
   {
@@ -157,8 +157,8 @@
     "id": "sectionC",
     "title": "16.3 Inflation and Unemployment in the Long Run",
     "part": 3,
-    "lecture_first": 39,
-    "lecture_last": 39,
+    "lecture_first": 40,
+    "lecture_last": 40,
     "reading_page": 18
   },
   {
@@ -166,8 +166,8 @@
     "id": "expectations-shift",
     "title": "Inflation Expectations and the Short-Run Phillips Curve",
     "part": 3,
-    "lecture_first": 40,
-    "lecture_last": 42,
+    "lecture_first": 41,
+    "lecture_last": 43,
     "reading_page": 19
   },
   {
@@ -175,8 +175,8 @@
     "id": "longrun-adjustment",
     "title": "Adjustment to the Long Run",
     "part": 3,
-    "lecture_first": 43,
-    "lecture_last": 45,
+    "lecture_first": 44,
+    "lecture_last": 46,
     "reading_page": 20
   },
   {
@@ -184,8 +184,8 @@
     "id": "lrpc",
     "title": "The Long-Run Phillips Curve and NAIRU",
     "part": 3,
-    "lecture_first": 46,
-    "lecture_last": 48,
+    "lecture_first": 47,
+    "lecture_last": 49,
     "reading_page": 21
   }
 ]
