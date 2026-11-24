@@ -1,0 +1,172 @@
+[
+  {
+    "slide": 1,
+    "id": "18-title",
+    "title": "Chapter 18: International Macroeconomics",
+    "objective_id": null,
+    "reading_page": 1,
+    "lecture_first": 1,
+    "lecture_last": 1,
+    "stages": 1
+  },
+  {
+    "slide": 2,
+    "id": "18-opening-story",
+    "title": "Opening Story",
+    "objective_id": null,
+    "reading_page": 2,
+    "lecture_first": 2,
+    "lecture_last": 2,
+    "stages": 1
+  },
+  {
+    "slide": 3,
+    "id": "18-exchange-data",
+    "title": "The Euro–Dollar Exchange Rate in 2022",
+    "objective_id": null,
+    "reading_page": 3,
+    "lecture_first": 3,
+    "lecture_last": 3,
+    "stages": 1
+  },
+  {
+    "slide": 4,
+    "id": "18-roadmap",
+    "title": "Roadmap",
+    "objective_id": null,
+    "reading_page": 4,
+    "lecture_first": 4,
+    "lecture_last": 4,
+    "stages": 1
+  },
+  {
+    "slide": 5,
+    "id": "18-capital-bop",
+    "title": "Capital Flows and the Balance of Payments",
+    "objective_id": "18-O1",
+    "reading_page": 5,
+    "lecture_first": 5,
+    "lecture_last": 7,
+    "stages": 3
+  },
+  {
+    "slide": 6,
+    "id": "18-bop-accounts",
+    "title": "U.S. Balance of Payments in 2022",
+    "objective_id": "18-O1",
+    "reading_page": 6,
+    "lecture_first": 8,
+    "lecture_last": 14,
+    "stages": 7
+  },
+  {
+    "slide": 7,
+    "id": "18-bop-identities",
+    "title": "Current and Financial Account Identities",
+    "objective_id": "18-O2",
+    "reading_page": 7,
+    "lecture_first": 15,
+    "lecture_last": 18,
+    "stages": 4
+  },
+  {
+    "slide": 8,
+    "id": "18-saving-identities",
+    "title": "The Current Account, Saving, and Investment",
+    "objective_id": "18-O2",
+    "reading_page": 8,
+    "lecture_first": 19,
+    "lecture_last": 22,
+    "stages": 4
+  },
+  {
+    "slide": 9,
+    "id": "18-financial-model",
+    "title": "Modelling the Financial Account",
+    "objective_id": "18-O3",
+    "reading_page": 9,
+    "lecture_first": 23,
+    "lecture_last": 25,
+    "stages": 3
+  },
+  {
+    "slide": 10,
+    "id": "18-flow-determinants",
+    "title": "Determinants and Two-Way Capital Flows",
+    "objective_id": "18-O3",
+    "reading_page": 10,
+    "lecture_first": 26,
+    "lecture_last": 29,
+    "stages": 4
+  },
+  {
+    "slide": 11,
+    "id": "18-understanding-rates",
+    "title": "Understanding Exchange Rates",
+    "objective_id": "18-O4",
+    "reading_page": 11,
+    "lecture_first": 30,
+    "lecture_last": 33,
+    "stages": 4
+  },
+  {
+    "slide": 12,
+    "id": "18-appreciation-depreciation",
+    "title": "Appreciation and Depreciation",
+    "objective_id": "18-O4",
+    "reading_page": 12,
+    "lecture_first": 34,
+    "lecture_last": 36,
+    "stages": 3
+  },
+  {
+    "slide": 13,
+    "id": "18-dollar-equilibrium",
+    "title": "The Equilibrium Exchange Rate",
+    "objective_id": "18-O4",
+    "reading_page": 13,
+    "lecture_first": 37,
+    "lecture_last": 40,
+    "stages": 4
+  },
+  {
+    "slide": 14,
+    "id": "18-dollar-market-shifts",
+    "title": "Changes in the Dollar Market",
+    "objective_id": "18-O4",
+    "reading_page": 14,
+    "lecture_first": 41,
+    "lecture_last": 45,
+    "stages": 5
+  },
+  {
+    "slide": 15,
+    "id": "18-dollar-demand-determinants",
+    "title": "Determinants of Dollar Demand",
+    "objective_id": "18-O4",
+    "reading_page": 15,
+    "lecture_first": 46,
+    "lecture_last": 49,
+    "stages": 4
+  },
+  {
+    "slide": 16,
+    "id": "18-nominal-real-rates",
+    "title": "Nominal and Real Exchange Rates",
+    "objective_id": "18-O5",
+    "reading_page": 16,
+    "lecture_first": 50,
+    "lecture_last": 52,
+    "stages": 3
+  },
+  {
+    "slide": 17,
+    "id": "18-inflation-exchange-rates",
+    "title": "Inflation and Exchange Rates",
+    "objective_id": "18-O5",
+    "reading_page": 17,
+    "lecture_first": 53,
+    "lecture_last": 54,
+    "stages": 2
+  }
+]
