@@ -161,50 +161,60 @@
   },
   {
     "slide": 17,
-    "id": "17-great-moderation",
-    "title": "The Great Moderation, 1985–2007",
+    "id": "17-section-policy-limits",
+    "title": "The Great Moderation and Policy Limits",
     "objective_id": "17-O5",
     "reading_page": 17,
     "lecture_first": 48,
-    "lecture_last": 51,
-    "stages": 4
+    "lecture_last": 48,
+    "stages": 1
   },
   {
     "slide": 18,
+    "id": "17-great-moderation",
+    "title": "The Great Moderation, 1985–2007",
+    "objective_id": "17-O5",
+    "reading_page": 18,
+    "lecture_first": 49,
+    "lecture_last": 51,
+    "stages": 3
+  },
+  {
+    "slide": 19,
     "id": "17-monetary-fiscal-limits",
     "title": "Monetary Limits and Fiscal Policy",
     "objective_id": "17-O5",
-    "reading_page": 18,
+    "reading_page": 19,
     "lecture_first": 52,
     "lecture_last": 55,
     "stages": 4
   },
   {
-    "slide": 19,
+    "slide": 20,
     "id": "17-greece-debt",
     "title": "Greece: Debt and GDP",
     "objective_id": "17-O5",
-    "reading_page": 19,
+    "reading_page": 20,
     "lecture_first": 56,
     "lecture_last": 57,
     "stages": 2
   },
   {
-    "slide": 20,
+    "slide": 21,
     "id": "17-secular-stagnation",
     "title": "Policy in a Low-Interest-Rate World",
     "objective_id": "17-O5",
-    "reading_page": 20,
+    "reading_page": 21,
     "lecture_first": 58,
     "lecture_last": 61,
     "stages": 4
   },
   {
-    "slide": 21,
+    "slide": 22,
     "id": "17-coronavirus",
     "title": "The Coronavirus Pandemic",
     "objective_id": "17-O5",
-    "reading_page": 21,
+    "reading_page": 22,
     "lecture_first": 62,
     "lecture_last": 64,
     "stages": 3
