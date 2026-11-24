@@ -91,122 +91,132 @@
   },
   {
     "slide": 10,
-    "id": "18-saving-identities",
-    "title": "The Current Account, Saving, and Investment",
+    "id": "18-country-accounts-activity",
+    "title": "Activity: Country Accounts",
     "objective_id": "18-O2",
     "reading_page": 10,
     "lecture_first": 25,
-    "lecture_last": 28,
-    "stages": 4
+    "lecture_last": 25,
+    "stages": 1
   },
   {
     "slide": 11,
-    "id": "18-financial-model",
-    "title": "Modelling the Financial Account",
-    "objective_id": "18-O3",
+    "id": "18-saving-identities",
+    "title": "The Current Account, Saving, and Investment",
+    "objective_id": "18-O2",
     "reading_page": 11,
-    "lecture_first": 29,
-    "lecture_last": 31,
-    "stages": 3
+    "lecture_first": 26,
+    "lecture_last": 29,
+    "stages": 4
   },
   {
     "slide": 12,
-    "id": "18-flow-determinants",
-    "title": "Determinants and Two-Way Capital Flows",
+    "id": "18-financial-model",
+    "title": "Modelling the Financial Account",
     "objective_id": "18-O3",
     "reading_page": 12,
-    "lecture_first": 32,
-    "lecture_last": 35,
-    "stages": 4
+    "lecture_first": 30,
+    "lecture_last": 32,
+    "stages": 3
   },
   {
     "slide": 13,
-    "id": "18-section-exchange-rates",
-    "title": "18.2 Exchange Rates",
-    "objective_id": "18-O4",
+    "id": "18-flow-determinants",
+    "title": "Determinants and Two-Way Capital Flows",
+    "objective_id": "18-O3",
     "reading_page": 13,
-    "lecture_first": 36,
+    "lecture_first": 33,
     "lecture_last": 36,
-    "stages": 1
+    "stages": 4
   },
   {
     "slide": 14,
-    "id": "18-understanding-rates",
-    "title": "Understanding Exchange Rates",
+    "id": "18-section-exchange-rates",
+    "title": "18.2 Exchange Rates",
     "objective_id": "18-O4",
     "reading_page": 14,
     "lecture_first": 37,
-    "lecture_last": 40,
-    "stages": 4
-  },
-  {
-    "slide": 15,
-    "id": "18-appreciation-depreciation",
-    "title": "Appreciation and Depreciation",
-    "objective_id": "18-O4",
-    "reading_page": 15,
-    "lecture_first": 41,
-    "lecture_last": 43,
-    "stages": 3
-  },
-  {
-    "slide": 16,
-    "id": "18-dollar-equilibrium",
-    "title": "The Equilibrium Exchange Rate",
-    "objective_id": "18-O4",
-    "reading_page": 16,
-    "lecture_first": 44,
-    "lecture_last": 47,
-    "stages": 4
-  },
-  {
-    "slide": 17,
-    "id": "18-dollar-market-shifts",
-    "title": "Changes in the Dollar Market",
-    "objective_id": "18-O4",
-    "reading_page": 17,
-    "lecture_first": 48,
-    "lecture_last": 52,
-    "stages": 5
-  },
-  {
-    "slide": 18,
-    "id": "18-dollar-demand-determinants",
-    "title": "Determinants of Dollar Demand",
-    "objective_id": "18-O4",
-    "reading_page": 18,
-    "lecture_first": 53,
-    "lecture_last": 56,
-    "stages": 4
-  },
-  {
-    "slide": 19,
-    "id": "18-section-inflation",
-    "title": "18.3 Inflation and Exchange Rates",
-    "objective_id": "18-O5",
-    "reading_page": 19,
-    "lecture_first": 57,
-    "lecture_last": 57,
+    "lecture_last": 37,
     "stages": 1
   },
   {
-    "slide": 20,
-    "id": "18-nominal-real-rates",
-    "title": "Nominal and Real Exchange Rates",
-    "objective_id": "18-O5",
-    "reading_page": 20,
-    "lecture_first": 58,
-    "lecture_last": 60,
+    "slide": 15,
+    "id": "18-understanding-rates",
+    "title": "Understanding Exchange Rates",
+    "objective_id": "18-O4",
+    "reading_page": 15,
+    "lecture_first": 38,
+    "lecture_last": 41,
+    "stages": 4
+  },
+  {
+    "slide": 16,
+    "id": "18-appreciation-depreciation",
+    "title": "Appreciation and Depreciation",
+    "objective_id": "18-O4",
+    "reading_page": 16,
+    "lecture_first": 42,
+    "lecture_last": 44,
     "stages": 3
   },
   {
+    "slide": 17,
+    "id": "18-dollar-equilibrium",
+    "title": "The Equilibrium Exchange Rate",
+    "objective_id": "18-O4",
+    "reading_page": 17,
+    "lecture_first": 45,
+    "lecture_last": 48,
+    "stages": 4
+  },
+  {
+    "slide": 18,
+    "id": "18-dollar-market-shifts",
+    "title": "Changes in the Dollar Market",
+    "objective_id": "18-O4",
+    "reading_page": 18,
+    "lecture_first": 49,
+    "lecture_last": 53,
+    "stages": 5
+  },
+  {
+    "slide": 19,
+    "id": "18-dollar-demand-determinants",
+    "title": "Determinants of Dollar Demand",
+    "objective_id": "18-O4",
+    "reading_page": 19,
+    "lecture_first": 54,
+    "lecture_last": 57,
+    "stages": 4
+  },
+  {
+    "slide": 20,
+    "id": "18-section-inflation",
+    "title": "18.3 Inflation and Exchange Rates",
+    "objective_id": "18-O5",
+    "reading_page": 20,
+    "lecture_first": 58,
+    "lecture_last": 58,
+    "stages": 1
+  },
+  {
     "slide": 21,
+    "id": "18-nominal-real-rates",
+    "title": "Nominal and Real Exchange Rates",
+    "objective_id": "18-O5",
+    "reading_page": 21,
+    "lecture_first": 59,
+    "lecture_last": 61,
+    "stages": 3
+  },
+  {
+    "slide": 22,
     "id": "18-inflation-exchange-rates",
     "title": "Inflation and Exchange Rates",
     "objective_id": "18-O5",
-    "reading_page": 21,
-    "lecture_first": 61,
-    "lecture_last": 62,
+    "reading_page": 22,
+    "lecture_first": 62,
+    "lecture_last": 63,
     "stages": 2
   }
 ]
